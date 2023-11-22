@@ -1,0 +1,54 @@
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "vendor/reset";
+
+html {
+  box-sizing: border-box;
+  font-size: calc(100vw / 1920 * 10);
+
+
+  @include breakpoint($xl-bp) {
+    font-size: calc(100vw / 1024 * 10);
+  }
+
+
+  @include breakpoint($sm-bp) {
+    font-size: calc(100vw / 375 * 10);
+  }
+}
+
+
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  font-family: Montserrat;
+  font-style: normal;
+  background: var(--white);
+}
+
+
+img {
+  image-rendering: crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+svg {
+  transition: all 0.1s linear;
+}
+
+
+
+
+@import './blocks/header.scss';
+@import './blocks/footer.scss';
+@import './blocks/main.scss';
+@import './blocks/package-types.scss';
+@import './blocks/type-of-package.scss';
+@import './blocks/why-us.scss';

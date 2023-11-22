@@ -1,0 +1,97 @@
+:root {
+    --black: #343434;
+    --white: #FCFCFC;
+    --blue: #263A81;
+    --pink: #FD257A;
+    --green: #60DD68;
+
+    --gradient: linear-gradient(90deg, #263A81 1.1%, rgba(38, 58, 129, 0.09) 143.49%, rgba(38, 58, 129, 0.00) 143.51%);
+
+    --gray: #616161;
+    --blur: rgba(52, 52, 52, 0.20);
+}
+
+.page-padding {
+    padding-left: 19rem;
+    padding-right: 19rem;
+}
+
+.pink-button {
+    background: var(--pink);
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: normal;
+    padding: 1.8rem 3rem;
+    border: none;
+    border-radius: 3rem;
+}
+
+.border-blue-button {
+    position: relative;
+    width: max-content;
+
+    button {
+        padding: 2.5rem 6.1rem;
+        color: var(--white);
+        font-size: 2.4rem;
+        font-weight: 500;
+        line-height: normal;
+        border: none;
+        background: var(--blue);
+        border-radius: 55%;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: rotate(-6deg);
+        border: 0.2rem solid var(--pink);
+        border-radius: 55%;
+        top: 0;
+        left: 0;
+    }
+}
+
+.blue-button {
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: normal;
+    background: var(--blue);
+    padding: 1.5rem 3rem;
+    border-radius: 3rem;
+    border: none;
+    width: max-content;
+}
+
+h2 {
+    color: var(--black);
+    font-size: 5.6rem;
+    font-weight: 600;
+    line-height: normal;
+}
+
+$ssh-bp: 1600px;
+
+$cos_bp: 1330px;
+$ll_bp: 1240px;
+
+$xl-bp: 1024px;
+
+$lg-bp: 920px;
+$sm-bp: 500px;
+$mb-bp: 850px;
+$sr-bp: 700px;
+$srm-bp: 780px;
+$mm-bp: 1440px;
+
+// help bp
+$rm-bp: 1792px;
+$pm-bp: 1545px;
+$hb-bp: 1330px;
+$bm-bp: 1170px;
+$jb-bp: 850px;
+$lb-bp: 650px;

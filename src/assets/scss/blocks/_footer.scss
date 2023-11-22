@@ -1,0 +1,59 @@
+.rights {
+	margin-top: 10.8rem;
+	height: 17rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	clip-path: polygon(0 69%, 100% 0, 100% 100%, 0% 100%);
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+
+	&.--for-item {
+		margin-top: 7.6rem;
+
+		@include breakpoint($sm-bp) {
+			margin-top: 1rem;
+		}
+	}
+
+	@include breakpoint($xl-bp) {
+		margin-top: 5rem;
+	}
+
+	@include breakpoint($sm-bp) {
+		height: 5rem;
+		margin-top: 3rem;
+		clip-path: polygon(0 60%, 100% 0, 100% 100%, 0% 100%);
+		justify-content: flex-end;
+		padding-right: 3rem;
+	}
+
+	p {
+		font-family: "JoannaSansNova";
+		font-size: 3.1rem;
+		line-height: 110%;
+		transform: rotate(-4deg);
+		color: #FFFFFF;
+		margin-top: 4rem;
+
+		@include breakpoint($sm-bp) {
+			font-size: 1.6rem;
+			margin-top: 0rem;
+		}
+	}
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}
