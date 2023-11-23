@@ -1,0 +1,125 @@
+.addition {
+
+    ul {
+        margin-top: 5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        li {
+            border: 0.15rem solid var(--black);
+            border-radius: 0.2rem;
+            padding: 1.5rem 0rem 1.5rem 1.5rem;
+            width: 37rem;
+            position: relative;
+
+            p {
+                color: var(--gray);
+                font-size: 2.4rem;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+            h3 {
+                color: var(--black);
+                font-size: 2.4rem;
+                font-weight: 500;
+                line-height: normal;
+                text-align: center;
+            }
+
+            a {
+                position: absolute;
+                right: 1.5rem;
+                bottom: 1.5rem;
+            }
+
+            div {
+                width: 100%;
+                height: 24rem;
+                margin-top: 1.5rem;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            &:first-child {
+                width: 76rem;
+                padding: 3.1rem 1.1rem 0 2.3rem;
+                border-radius: 0.2rem 2rem 0.2rem 0.2rem;
+            }
+
+            &:nth-child(2) {
+                border-radius: 2rem 2rem 0.2rem 2rem;
+            }
+
+            &:nth-child(3) {
+                border-radius: 0.2rem 0.2rem 0.2rem 2rem;
+            }
+
+            &:nth-child(4) {
+                border-radius: 2rem 0.2rem 2rem 0.2rem;
+            }
+
+            &:nth-child(5) {
+                border-radius: 0.2rem 2rem 0.2rem 0.2rem;
+
+                div {
+                    width: 84%;
+                }
+            }
+
+            &:nth-child(6) {
+                border-radius: 2rem 2rem 0.2rem 2rem;
+
+                div {
+                    width: 93%;
+                }
+            }
+
+            &:nth-child(7) {
+                border-radius: 0.2rem 0.2rem 0.2rem 2rem;
+
+                div {
+                    width: 79%;
+                }
+            }
+
+            &:nth-child(8) {
+                border-radius: 0.2rem 2rem 0.2rem 0.2rem;
+
+                div {
+                    width: 80%;
+                }
+            }
+
+            &:nth-child(9) {
+                border-radius: 0.2rem 2rem 0.2rem 0.2rem;
+
+                div {
+                    width: 92%;
+                }
+            }
+
+            &:nth-child(10) {
+                border-radius: 2rem 2rem 0.2rem 2rem;
+
+                div {
+                    width: 96%;
+                }
+            }
+
+            &:nth-child(11) {
+                border-radius: 2rem 0.2rem 2rem 0.2rem;
+
+                div {
+                    width: 52%;
+                }
+            }
+           
+        }
+    }
+}

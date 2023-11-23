@@ -1,0 +1,61 @@
+.blog__content {
+    margin-top: 4.2rem;
+    display: flex;
+    gap: 3rem;
+}
+
+.blog__text {
+    width: 63rem;
+    position: relative;
+
+    h3 {
+        color: var(--black);
+        font-size: 3.2rem;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    p {
+        color: var(--gray);
+        font-size: 2.4rem;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 3rem;
+    }
+
+    svg {
+        position: absolute;
+        fill: transparent;
+        width: 66.2rem;
+        height: 21rem;
+        margin-top: 1rem;
+    }
+}
+
+.blog__video-container {
+    width: 93rem;
+
+    video {
+        width: 100%;
+        height: 52rem;
+        border-radius: 2rem;
+    }
+}
+
+.blog__social-media {
+    display: flex;
+    gap: 5rem;
+    margin-top: 1.8rem;
+    justify-content: end;
+
+    a {
+        width: 6rem;
+        height: 6rem;
+
+        svg {
+            stroke: var(--black);
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

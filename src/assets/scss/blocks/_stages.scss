@@ -1,0 +1,41 @@
+.stages {
+
+    ul {
+        margin-top: 5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15rem;
+
+        li {
+            color: var(--black);
+            border-radius: 2rem;
+            border: 0.3rem solid var(--blue);
+            padding: 1rem 1rem 4.1rem 1.5rem;
+            width: 37rem;
+
+            &:nth-child(even) {
+                background: var(--blue);
+                color: var(--white);
+            }
+
+            h3 {
+                font-size: 4rem;
+                font-weight: 400;
+                line-height: normal;
+                text-align: end;
+            }
+
+            p:first-of-type {
+                font-size: 3.2rem;
+                font-weight: 500;
+                line-height: normal;
+            }
+
+            p:last-of-type {
+                font-size: 2.4rem;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+    }
+}
