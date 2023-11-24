@@ -1890,6 +1890,7 @@ header ul a:hover {
     left: 0;
     opacity: 0.2;
     border-radius: 50%;
+    z-index: -1;
 }
 
 .innovations__content .innovations__background:nth-child(2) {
@@ -1945,6 +1946,10 @@ header ul a:hover {
     object-fit: cover;
 }
 
+.addition {
+    position: relative;
+}
+
 .addition ul {
     margin-top: 5rem;
     display: -ms-flexbox;
@@ -1960,6 +1965,7 @@ header ul a:hover {
     padding: 1.5rem 0rem 1.5rem 1.5rem;
     width: 36.5rem;
     position: relative;
+    background: var(--white);
 }
 
 .addition ul li p {
@@ -2000,6 +2006,26 @@ header ul a:hover {
     width: 75rem;
     padding: 3.1rem 1.1rem 0 2.3rem;
     border-radius: 0.2rem 2rem 0.2rem 0.2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.addition ul li:first-child .addition__first-el-bg {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 30rem;
+    position: absolute;
+    right: -7rem;
+    bottom: -5rem;
+}
+
+.addition ul li:first-child .addition__first-el-bg svg {
+    width: 14rem;
+    height: 14rem;
+    opacity: 0.2;
 }
 
 .addition ul li:nth-child(2) {
@@ -2070,6 +2096,24 @@ header ul a:hover {
     width: 52%;
 }
 
+.addition__background {
+    position: absolute;
+    top: 10rem;
+    left: 150rem;
+    right: 0;
+    bottom: 0;
+    background: var(--green);
+    -webkit-filter: blur(15rem);
+    filter: blur(15rem);
+    width: 17.6rem;
+    height: 17.6rem;
+    z-index: -1;
+}
+
+.our-works {
+    position: relative;
+}
+
 .our-works p {
     color: var(--black);
     font-size: 2.4rem;
@@ -2103,6 +2147,19 @@ header ul a:hover {
 .panel-container {
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
+}
+
+.our-works__background {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 16rem;
+    width: 78%;
+}
+
+.our-works__background img {
+    width: 100%;
+    height: 100%;
 }
 
 .our-clients ul {
@@ -2332,6 +2389,25 @@ header ul a:hover {
     padding: 5rem 3rem 3.5rem 3rem;
 }
 
+.contacts__content form {
+    position: relative;
+    overflow: hidden;
+}
+
+.contacts__content form .form-bg {
+    position: absolute;
+    bottom: -4rem;
+    right: 0;
+    opacity: 0.2;
+    width: 33rem;
+    height: 30rem;
+}
+
+.contacts__content form .form-bg svg {
+    width: 100%;
+    height: 100%;
+}
+
 .contacts__content form h3 {
     color: var(--black);
     font-size: 3.2rem;
@@ -2411,6 +2487,19 @@ header ul a:hover {
     -ms-flex-direction: column;
     flex-direction: column;
     gap: 5rem;
+    position: relative;
+}
+
+.contacts__inner .contacts__inner-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.contacts__inner .contacts__inner-bg svg {
+    width: 100%;
+    height: 100%;
 }
 
 .contacts__inner p,

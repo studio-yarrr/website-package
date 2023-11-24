@@ -10969,29 +10969,29 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power3.out"
   });
 
-  // gsap.from(".innovations ul li", {
-  //   opacity: 0,
-  //   y: 50,
-  //   stagger: 0.3, // Задержка между анимацией каждого элемента списка
-  //   scrollTrigger: {
-  //     trigger: ".innovations__content",
-  //     start: "top 80%", // Анимация начнется, когда верх блока .innovations__content достигнет 80% высоты окна просмотра
-  //     end: "bottom top",
-  //     toggleActions: "play none none none"
-  //   }
-  // });
+  gsap.from(".innovations ul li", {
+    opacity: 0,
+    y: 50,
+    stagger: 0.3, // Задержка между анимацией каждого элемента списка
+    scrollTrigger: {
+      trigger: ".innovations__content",
+      start: "top 80%", // Анимация начнется, когда верх блока .innovations__content достигнет 80% высоты окна просмотра
+      end: "bottom top",
+      toggleActions: "play none none none"
+    }
+  });
 
-  // gsap.from(".innovations__img", {
-  //   opacity: 0,
-  //   x: -50,
-  //   duration: 1, // Продолжительность анимации
-  //   scrollTrigger: {
-  //     trigger: ".innovations__content",
-  //     start: "top 80%",
-  //     end: "bottom top",
-  //     toggleActions: "play none none none"
-  //   }
-  // });
+  gsap.from(".innovations__img", {
+    opacity: 0,
+    x: -50,
+    duration: 1, // Продолжительность анимации
+    scrollTrigger: {
+      trigger: ".innovations__content",
+      start: "top 80%",
+      end: "bottom top",
+      toggleActions: "play none none none"
+    }
+  });
 
   function getRandomDirection() {
     var angle = Math.random() * 360;
@@ -11085,4 +11085,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animateElement('.why-us .rotation-card', '.rotation-card__background');
   animateElement('.innovations', '.innovations__background');
+
+  // animateElement('.addition', '.addition__background');
 })
