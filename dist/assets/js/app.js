@@ -10895,20 +10895,6 @@ document.addEventListener("DOMContentLoaded", () => {
     stagger: 0.2 // небольшая задержка между анимациями каждого элемента
   });
 
-  // gsap.from(".our-clients ul li", {
-  //   scrollTrigger: {
-  //     trigger: ".our-clients ul",
-  //     start: "top bottom", // Начало анимации, когда верх списка достигает нижней части вьюпорта
-  //     end: "bottom top",
-  //     toggleActions: "play none none none"
-  //   },
-  //   duration: 1,
-  //   opacity: 0,
-  //   rotation: -90, // начальный угол вращения
-  //   ease: "power3.out", // плавная анимация
-  //   stagger: 0.2 // небольшая задержка между анимациями каждого элемента
-  // });
-
   gsap.from(".our-clients ul li", {
     scrollTrigger: {
       trigger: ".our-clients ul",
