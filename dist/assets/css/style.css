@@ -1610,6 +1610,7 @@ header ul a:hover {
 
 .blog__video-inner .unmute-ico {
     display: none;
+    padding-left: 0.6rem;
 }
 
 .blog__social-media {
