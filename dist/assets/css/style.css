@@ -997,6 +997,7 @@ header ul a:hover {
 .title-block__video button svg {
     width: 70%;
     height: 70%;
+    padding-left: 1rem;
 }
 
 .title-block__information {
@@ -2027,6 +2028,7 @@ header ul a:hover {
 .production__video button svg {
     width: 55%;
     height: 55%;
+    padding-left: 1rem;
 }
 
 .production__video video {
