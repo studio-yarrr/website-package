@@ -32,6 +32,25 @@
     padding: 1.8rem 3rem;
     border: none;
     border-radius: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.pink-button:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.329);
+    border-radius: 3rem;
+    transition: all 1s ease;
+    z-index: 0;
+}
+
+.pink-button:hover:before {
+    width: 100%;
 }
 
 .border-blue-button {
@@ -82,6 +101,25 @@
     border: none;
     width: -webkit-max-content;
     width: max-content;
+    position: relative;
+    overflow: hidden;
+}
+
+.blue-button:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.155);
+    border-radius: 3rem;
+    transition: all 1s ease;
+    z-index: 0;
+}
+
+.blue-button:hover:before {
+    width: 100%;
 }
 
 .white-button {
@@ -95,6 +133,25 @@
     width: max-content;
     background: var(--white);
     padding: 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.white-button:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(253, 37, 123, 0.1647058824);
+    border-radius: 3rem;
+    transition: all 1s ease;
+    z-index: 0;
+}
+
+.white-button:hover:before {
+    width: 100%;
 }
 
 h2 {

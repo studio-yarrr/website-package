@@ -34,7 +34,28 @@
     padding: 1.8rem 3rem;
     border: none;
     border-radius: 3rem;
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.329);
+        border-radius: 3rem;
+        transition: all 1s ease;
+        z-index: 0;
+    }
+
+    &:hover:before {
+        width: 100%;
+    }
 }
+
+
 
 .border-blue-button {
     position: relative;
@@ -85,6 +106,25 @@
     border-radius: 3rem;
     border: none;
     width: max-content;
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.155);
+        border-radius: 3rem;
+        transition: all 1s ease;
+        z-index: 0;
+    }
+
+    &:hover:before {
+        width: 100%;
+    }
 }
 
 .white-button {
@@ -97,6 +137,25 @@
     width: max-content;
     background: var(--white);
     padding: 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: #fd257b2a;
+        border-radius: 3rem;
+        transition: all 1s ease;
+        z-index: 0;
+    }
+
+    &:hover:before {
+        width: 100%;
+    }
 }
 
 h2 {
@@ -106,9 +165,7 @@ h2 {
     line-height: normal;
 }
 
-a {
-    // 
-}
+
 
 $ssh-bp: 1600px;
 
