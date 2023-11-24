@@ -6,7 +6,7 @@
 
 .production__video {
     width: 102rem;
-    height: 100%;
+    // height: 100%;
     position: relative;
 
     button {
@@ -33,6 +33,7 @@
         width: 100%;
         height: 100%;
         border-radius: 2rem;
+        object-fit: cover;
     }
 }
 

@@ -1409,6 +1409,15 @@ header ul a:hover {
     color: var(--gray);
 }
 
+.why-us .panel-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
 .why-us ul {
     margin-top: 5rem;
     display: -ms-flexbox;
@@ -1570,7 +1579,7 @@ header ul a:hover {
 
 .blog__video-container video {
     width: 100%;
-    height: 52rem;
+    height: 49rem;
     border-radius: 2rem;
 }
 
@@ -1989,7 +1998,6 @@ header ul a:hover {
 
 .production__video {
     width: 102rem;
-    height: 100%;
     position: relative;
 }
 
@@ -2021,6 +2029,8 @@ header ul a:hover {
     width: 100%;
     height: 100%;
     border-radius: 2rem;
+    -o-object-fit: cover;
+    object-fit: cover;
 }
 
 .production__text {
