@@ -4,6 +4,12 @@ header {
     align-items: center;
     padding-top: 0.2rem;
     border-bottom: 0.1rem solid var(--gray);
+    transition: all .2s linear;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 12;
+    background: var(--white);
 
     ul {
         display: flex;

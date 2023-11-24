@@ -1,7 +1,39 @@
+.innovations {
+    position: relative;
+    overflow: hidden;
+}
+
+
 .innovations__content {
     margin-top: 5rem;
     display: flex;
     gap: 16.5rem;
+    
+
+    .innovations__background {
+        position: absolute;
+        background: var(--green);
+        width: 17rem;
+        height: 17rem;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0.2;
+        border-radius: 50%;
+
+        &:nth-child(2) {
+            top: 40rem;
+            left: 40rem;
+        }
+
+        &:nth-child(3) {
+            top: 20rem;
+            left: 80rem;
+        }
+    }
+
+    
 
     ul {
         display: flex;
