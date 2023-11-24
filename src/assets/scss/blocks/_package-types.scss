@@ -6,12 +6,26 @@
         gap: 2rem;
         flex-wrap: wrap;
         margin-top: 5.2rem;
+        position: relative;
+
+        .package-types-background {
+            position: absolute;
+            background: var(--green);
+            filter: blur(10rem);
+            width: 17.6rem;
+            height: 17.6rem;
+            top: 24rem;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            animation: package-types-background-anim 8s infinite;
+        }
 
         li {
             padding: 1.7rem 1.5rem 1.5rem 1.8rem;
             border: 0.2rem solid var(--black);
             border-radius: 2rem;
-            width: 50rem;
+            width: 49.4rem;
             height: 36.4rem;
 
             h3 {
@@ -25,6 +39,19 @@
     }
 }
 
+
+@keyframes package-types-background-anim {
+    0% {
+        left: 0%;
+    }
+    50% {
+        left: 90%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+
 .package-types__inner {
     margin-top: 3rem;
     display: flex;
@@ -32,7 +59,8 @@
 }
 
 .package-types__img {
-    width: 100%;
+    width: 57rem;
+    height: 26.1rem;
 
     img {
         width: 100%;

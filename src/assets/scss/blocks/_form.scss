@@ -53,6 +53,22 @@
     a {
         text-decoration-line: underline;
         display: inline;
+        border-bottom: 0.1rem solid var(--white);
+        
+        background-image: linear-gradient(to right,
+                var(--pink),
+                var(--pink) 50%,
+                var(--white) 50%);
+        background-size: 200% 100%;
+        background-position: 100%;
+        position: relative;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-position: 0;
+        }
     }
 
     p {

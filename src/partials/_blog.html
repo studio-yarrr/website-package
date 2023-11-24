@@ -12,9 +12,22 @@
         </div>
 
         <div class="blog__video-container">
-            <video controls="controls" poster="./assets/images/blog/blog-video-prewiew.jpg">
-                <source src="./assets/videos/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4">
-            </video>
+            <div class="blog__video-inner">
+                <button class="mute-ico">
+                    <svg>
+                        <use href="#mute-ico"></use>
+                    </svg>
+                </button>
+
+                <button class="unmute-ico">
+                    <svg>
+                        <use href="#unmute-ico"></use>
+                    </svg>
+                </button>
+                <video controls autoplay muted poster="./assets/images/blog/blog-video-prewiew.jpg">
+                    <source src="./assets/videos/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4">
+                </video>
+            </div>
 
             <div class="blog__social-media">
                 <a href="#">

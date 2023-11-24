@@ -7,6 +7,27 @@
 .production__video {
     width: 102rem;
     height: 100%;
+    position: relative;
+
+    button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10rem;
+        height: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 50%;
+        z-index: 11;
+
+        svg {
+            width: 55%;
+            height: 55%;
+        }
+    }
 
     video {
         width: 100%;

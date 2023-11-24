@@ -39,16 +39,20 @@
 .border-blue-button {
     position: relative;
     width: max-content;
+    padding: 2.5rem 6.1rem;
+    background: var(--blue);
+    border-radius: 55%;
+    border: none;
+    
 
-    button {
-        padding: 2.5rem 6.1rem;
+    span {
+
         color: var(--white);
         font-size: 2.4rem;
         font-weight: 500;
         line-height: normal;
         border: none;
-        background: var(--blue);
-        border-radius: 55%;
+
     }
 
     &::before {
@@ -61,6 +65,13 @@
         border-radius: 55%;
         top: 0;
         left: 0;
+        transition: all 0.3s linear;
+    }
+
+    &:hover {
+        &::before {
+            transform: rotate(0deg);
+        }
     }
 }
 
@@ -93,6 +104,10 @@ h2 {
     font-size: 5.6rem;
     font-weight: 600;
     line-height: normal;
+}
+
+a {
+    // 
 }
 
 $ssh-bp: 1600px;

@@ -2,6 +2,14 @@
     margin-top: 5rem;
     display: flex;
     gap: 2rem;
+
+    .swiper-slide {
+        width: 49.4rem;
+    }
+}
+
+.technical-capabilities-swiper {
+    width: 100%;
 }
 
 .technical-capabilities__inner {
@@ -51,7 +59,7 @@
     }
 
     .blue-button {
-        width: 100%;
+        width: 39.4rem;
         text-align: center;
         margin-top: 2.5rem;
     }

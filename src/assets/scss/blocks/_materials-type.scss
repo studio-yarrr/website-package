@@ -71,13 +71,25 @@
     }
 }
 
+.materials-types__description-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 
 .materials-types__description {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
     margin-top: 5rem;
-    height: 25rem;
+    width: 41.5rem;
+
+    &:last-of-type {
+        
+        p {
+            width: 100%; 
+        }
+    }
 
     svg {
         fill: transparent;
@@ -89,7 +101,6 @@
 
 .materials-types__description-title {
     width: 100%;
-    position: absolute;
     left: 5rem;
 
     h3 {
@@ -106,5 +117,6 @@
         font-weight: 500;
         line-height: normal;
         margin-top: 2rem;
+        width: 120%;
     }
 }
