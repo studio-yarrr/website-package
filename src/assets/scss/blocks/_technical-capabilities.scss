@@ -3,8 +3,25 @@
     display: flex;
     gap: 2rem;
 
+    @include breakpoint($xl-bp) {
+        gap: 0rem;
+    }
+
     .swiper-slide {
         width: 49.2rem;
+    }
+}
+
+.technical-capabilities {
+    .swiper-pagination-bullet {
+        width: 2rem;
+        height: 2rem;
+        border: 0.3rem solid var(--pink);
+        background: var(--white);
+    }
+
+    .swiper-pagination-bullet-active {
+        background: var(--pink);
     }
 }
 
@@ -62,6 +79,10 @@
         width: 39.4rem;
         text-align: center;
         margin-top: 2.5rem;
+
+        @include breakpoint($xl-bp) {
+            width: 82.5rem;
+        }
     }
 }
 
@@ -74,4 +95,13 @@
         height: 100%;
         object-fit: cover;
     }
+}
+
+.technical-capabilities-pagination {
+    margin-top: 5rem;
+    display: flex;
+    gap: 2rem;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
 }

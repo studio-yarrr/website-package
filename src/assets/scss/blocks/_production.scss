@@ -2,12 +2,20 @@
     margin-top: 4.5rem;
     display: flex;
     gap: 2rem;
+
+    @include breakpoint($xl-bp) {
+        flex-direction: column;
+    }
 }
 
 .production__video {
     width: 102rem;
     // height: 100%;
     position: relative;
+
+    @include breakpoint($xl-bp) {
+        width: 100%;
+    }
 
     button {
         position: absolute;
@@ -46,6 +54,10 @@
     background: var(--gradient);
     padding: 2rem 2.7rem 2rem 2rem;
     border-radius: 2rem;
+
+    @include breakpoint($xl-bp) {
+        width: 100%;
+    }
 
     p {
         color: var(--white);

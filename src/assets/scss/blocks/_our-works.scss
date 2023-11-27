@@ -8,6 +8,10 @@
         line-height: normal;
         width: 76rem;
         margin-top: 2.1rem;
+
+        @include breakpoint($xl-bp) {
+            width: 100%;
+        }
     }
 
     ul {
@@ -15,6 +19,11 @@
         display: flex;
         flex-wrap: wrap;
         gap: 2rem;
+
+        @include breakpoint($xl-bp) {
+            gap: 0;
+            row-gap: 3rem;
+        }
 
         li {
             width: 36.5rem;
@@ -26,6 +35,26 @@
                 object-fit: cover;
             }
         }
+    }
+
+    .swiper-grid-column>.swiper-wrapper {
+        flex-direction: unset;
+    }
+
+    .swiper-slide {
+        margin-top: 0rem !important;
+    }
+
+    .swiper-pagination-bullet {
+        margin: 0;
+        width: 2rem;
+        height: 2rem;
+        background: var(--white);
+        border: 0.3rem solid var(--pink);
+    }
+
+    .swiper-pagination-bullet-active {
+        background: var(--pink);
     }
 }
 
@@ -39,9 +68,24 @@
     top: 0;
     left: 16rem;
     width: 78%;
-    
+
+    @include breakpoint($xl-bp) {
+        width: 100%;
+        left: 0;
+        top: 20rem;
+    }
+
     img {
         width: 100%;
         height: 100%;
     }
+}
+
+.our-works-pagination {
+    width: fit-content;
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
 }

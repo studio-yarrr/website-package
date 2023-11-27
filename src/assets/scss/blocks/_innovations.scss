@@ -8,7 +8,12 @@
     margin-top: 5rem;
     display: flex;
     gap: 16.5rem;
-    
+
+    @include breakpoint($xl-bp) {
+        flex-direction: column;
+        gap: 7rem;
+    }
+
 
     .innovations__background {
         position: absolute;
@@ -34,13 +39,18 @@
         }
     }
 
-    
+
 
     ul {
         display: flex;
         flex-direction: column;
         gap: 5rem;
         padding-top: 8.5rem;
+
+        @include breakpoint($xl-bp) {
+            padding-top: 0rem;
+            gap: 3rem;
+        }
 
         li {
             color: var(--gray);
@@ -67,6 +77,10 @@
 
 .innovations__img {
     width: 57.5rem;
+
+    @include breakpoint($xl-bp) {
+        width: 60%;
+    }
 
     img {
         width: 100%;

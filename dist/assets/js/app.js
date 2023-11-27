@@ -10786,22 +10786,38 @@ document.addEventListener("DOMContentLoaded", () => {
     prodPlayButton.style.display = 'none';
   });
 
-  if (window.matchMedia("(max-width: 500px)").matches) {
+  if (window.matchMedia("(max-width: 1024px)").matches) {
     let materialsTypesSwiper = new Swiper(".materials-types-swiper", {
-
+      slidesPerView: 1,
+      pagination: {
+        el: ".materials-types-pagination",
+        clickable: true,
+      },
     });
   }
 
 
-  if (window.matchMedia("(max-width: 500px)").matches) {
+  if (window.matchMedia("(max-width: 1024px)").matches) {
     let ourWorksSwiper = new Swiper(".our-works-swiper", {
-
+      slidesPerView: 2,
+      grid: {
+        rows: 2,
+      },
+      spaceBetween: 30,
+      pagination: {
+        el: ".our-works-pagination",
+        clickable: true,
+      },
     });
   }
 
-  if (window.matchMedia("(max-width: 500px)").matches) {
+  if (window.matchMedia("(max-width: 1024px)").matches) {
     let technicalCapabilitiesSwiper = new Swiper(".technical-capabilities-swiper", {
-
+      slidesPerView: 1,
+      pagination: {
+        el: ".technical-capabilities-pagination",
+        clickable: true,
+      },
     });
   }
 
@@ -10992,6 +11008,82 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleActions: "play none none none"
     }
   });
+
+  const path = document.querySelector('.line-svg path');
+  const length = path.getTotalLength();
+
+  path.style.strokeDasharray = length;
+  path.style.strokeDashoffset = length;
+
+  function animateLine() {
+    gsap.to(path, {
+      strokeDashoffset: 0,
+      duration: 1.5
+    });
+  }
+
+  gsap.to('.blog__content', {
+    scrollTrigger: {
+      trigger: '.blog__content',
+      start: 'top center',
+      end: 'bottom top',
+      onEnter: () => animateLine(),
+      onEnterBack: () => animateLine(),
+      once: true
+    }
+  });
+
+
+  const pathTop = document.querySelector('.stages-line path');
+
+  const lengthTop = pathTop.getTotalLength();
+
+  pathTop.style.strokeDasharray = lengthTop;
+  pathTop.style.strokeDashoffset = lengthTop;
+
+  function animateTopPart() {
+    gsap.to(pathTop, {
+      strokeDashoffset: 0,
+      duration: 2.5
+    });
+  }
+
+  gsap.to('.stages ul', {
+    scrollTrigger: {
+      trigger: '.stages ul',
+      start: "top 80%",
+      onEnter: () => animateTopPart(),
+      onEnterBack: () => animateTopPart(),
+    }
+  });
+
+
+
+
+  const order = [1, 2, 3, 6, 5, 4];
+
+  order.forEach((num, i) => {
+    const li = document.querySelector(`.stages ul li:nth-child(${num + 1})`);
+
+    gsap.fromTo(li,
+      { opacity: 0, x: -50 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: '.stages ul',
+          start: "top 80%",
+          toggleActions: "play none none none"
+        },
+        delay: i * 0.3
+      }
+    );
+  });
+
+
+
+
 
   function getRandomDirection() {
     var angle = Math.random() * 360;

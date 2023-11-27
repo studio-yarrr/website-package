@@ -15,6 +15,10 @@
             position: relative;
             background: var(--white);
 
+            @include breakpoint($xl-bp) {
+                width: 45rem;
+            }
+
             p {
                 color: var(--gray);
                 font-size: 2.4rem;
@@ -55,6 +59,11 @@
                 position: relative;
                 overflow: hidden;
 
+                @include breakpoint($xl-bp) {
+                    width: 100%;
+                    padding-bottom: 10rem;
+                }
+
                 .addition__first-el-bg {
                     display: flex;
                     flex-wrap: wrap;
@@ -63,7 +72,7 @@
                     position: absolute;
                     right: -7rem;
                     bottom: -5rem;
-                    
+
 
                     svg {
                         width: 14rem;
@@ -156,4 +165,9 @@
     width: 17.6rem;
     height: 17.6rem;
     z-index: -1;
+
+    @include breakpoint($xl-bp) {
+        left: 0rem;
+        display: none;
+    }
 }

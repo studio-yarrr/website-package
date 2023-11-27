@@ -1,4 +1,3 @@
-
 .title-block {
 	margin-top: 5.3rem;
 	display: grid;
@@ -7,37 +6,39 @@
 	column-gap: 13.7rem;
 	row-gap: 11.4rem;
 	position: relative;
-	
+
+	@include breakpoint($xl-bp) {
+		grid-template-columns: auto;
+		grid-template-rows: repeat(3, auto);
+		row-gap: 0rem;
+	}
+
+
 }
 
 
 .blur-background {
 	width: 50rem;
-    height: 50rem;
+	height: 50rem;
 	position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 125rem;
-    background: var(--green);
-    filter: blur(30rem);
-    z-index: -1;
-    border-radius: 50.3rem;
-	animation: bgPulse 4s infinite;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 125rem;
+	background: var(--green);
+	filter: blur(30rem);
+	z-index: -1;
+	border-radius: 50.3rem;
+
+
+	@include breakpoint($xl-bp) {
+		width: 50rem;
+		height: 50rem;
+		left: 32rem;
+		top: 43rem;
+	}
 }
 
-
-// @keyframes bgPulse {
-//     0% {
-//         transform: scale(1);
-//     }
-//     50% {
-//         transform: scale(2);
-//     }
-//     100% {
-//         transform: scale(1);
-//     }
-// }
 
 .cursor {
 	display: inline-block;
@@ -68,12 +69,20 @@
 	grid-area: 1 / 1 / 2 / 2;
 	width: 90rem;
 
+	@include breakpoint($xl-bp) {
+		grid-area: 1 / 1 / 2 / 2;
+	}
+
 	h1 {
 		background: linear-gradient(90deg, #343434 0.96%, #263A81 100%);
 		-webkit-background-clip: text;
 		color: transparent;
 		font-size: 15.5rem;
 		letter-spacing: -0.4rem;
+
+		@include breakpoint($sm-bp) {
+			font-size: 5.2rem;
+		}
 	}
 
 	.blue-button {
@@ -85,14 +94,41 @@
 		position: absolute;
 		left: 60rem;
 		top: 17rem;
+
+		@include breakpoint($xl-bp) {
+			left: 53rem;
+		}
+
+		@include breakpoint($sm-bp) {
+			left: 44rem;
+			font-size: 1.6rem;
+			padding: 1rem 3rem;
+		}
 	}
 
-	svg {
+	.figure-arrow {
 		width: 22.3rem;
 		height: 12.4rem;
 		position: absolute;
 		left: 79.3rem;
 		top: 25.5rem;
+
+		@include breakpoint($xl-bp) {
+			display: none;
+		}
+	}
+
+	.figure-arrow-mobile {
+		display: none;
+		width: 8.3rem;
+		height: 12.4rem;
+		position: absolute;
+		left: 73.3rem;
+		top: 25.5rem;
+
+		@include breakpoint($xl-bp) {
+			display: block;
+		}
 	}
 }
 
@@ -104,6 +140,15 @@
 	grid-area: 1 / 2 / 3 / 3;
 	position: relative;
 	width: 49rem;
+
+	@include breakpoint($xl-bp) {
+		grid-area: 2 / 1 / 3 / 2;
+		width: 55rem;
+		height: 70rem;
+		margin: 0 auto;
+		margin-top: 11rem;
+		padding: 2.8rem 2rem;
+	}
 
 	video {
 		width: 100%;
@@ -137,6 +182,11 @@
 .title-block__information {
 	grid-area: 2 / 1 / 3 / 2;
 
+	@include breakpoint($xl-bp) {
+		grid-area: 3 / 1 / 4 / 2;
+		margin-top: 3rem;
+	}
+
 	h2 {
 		color: var(--pink);
 		font-size: 4rem;
@@ -146,6 +196,10 @@
 
 	.border-blue-button {
 		margin-top: 4.6rem;
+
+		@include breakpoint($xl-bp) {
+			margin-top: 2.6rem;
+		}
 	}
 
 
@@ -154,11 +208,15 @@
 		display: flex;
 		gap: 4.7rem;
 
+		@include breakpoint($xl-bp) {
+			margin-top: 2.6rem;
+		}
+
 		.title-block__info-inner {
 			display: flex;
 			align-items: center;
 			flex-direction: column;
-			
+
 
 			p {
 				color: var(--black);
@@ -194,6 +252,10 @@
 	justify-content: center;
 	align-items: center;
 
+	@include breakpoint($xl-bp) {
+		display: none;
+	}
+
 	button {
 		width: 6rem;
 		height: 6rem;
@@ -218,15 +280,15 @@
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.1);
+	}
+
+	100% {
+		transform: scale(1);
+	}
 }
-
-

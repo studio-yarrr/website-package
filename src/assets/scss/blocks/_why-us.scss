@@ -12,6 +12,10 @@
         flex-wrap: wrap;
         gap: 2rem;
 
+        @include breakpoint($sm-bp) {
+            margin-top: 2rem;
+        }
+
         li {
             border: 0.2rem solid var(--black);
             border-radius: 2rem;
@@ -22,6 +26,16 @@
             align-items: center;
             justify-content: center;
             position: relative;
+
+            @include breakpoint($xl-bp) {
+                width: 45rem;
+            }
+
+            @include breakpoint($sm-bp) {
+                width: 15.8rem;
+                height: 16rem;
+                border: 0.1rem solid var(--black);
+            }
 
             .rotation-card__background {
                 position: absolute;
@@ -38,12 +52,21 @@
                 display: flex;
                 flex-direction: column;
                 gap: 2.5rem;
+
+                @include breakpoint($sm-bp) {
+                    gap: 0.5rem;
+                }
             }
 
             svg {
                 fill: transparent;
                 width: 22.3rem;
                 height: 19.3rem;
+
+                @include breakpoint($sm-bp) {
+                    width: 10rem;
+                    height: 10rem;
+                }
             }
 
             p {
@@ -53,6 +76,11 @@
                 font-style: normal;
                 font-weight: 500;
                 line-height: normal;
+
+                @include breakpoint($sm-bp) {
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                }
             }
 
             &:nth-child(1) {
@@ -61,6 +89,11 @@
                 .rotation-card__background {
                     width: 20.8rem;
                     height: 20.8rem;
+
+                    @include breakpoint($sm-bp) {
+                        width: 9rem;
+                        height: 9rem;
+                    }
                 }
             }
 
@@ -70,6 +103,11 @@
                 .rotation-card__background {
                     width: 15.9rem;
                     height: 15.9rem;
+
+                    @include breakpoint($sm-bp) {
+                        width: 9rem;
+                        height: 9rem;
+                    }
                 }
             }
 
@@ -79,6 +117,11 @@
                 .rotation-card__background {
                     width: 17rem;
                     height: 17rem;
+
+                    @include breakpoint($sm-bp) {
+                        width: 9rem;
+                        height: 9rem;
+                    }
                 }
             }
 
@@ -88,6 +131,11 @@
                 .rotation-card__background {
                     width: 16.3rem;
                     height: 16.3rem;
+
+                    @include breakpoint($sm-bp) {
+                        width: 9rem;
+                        height: 9rem;
+                    }
                 }
             }
         }
