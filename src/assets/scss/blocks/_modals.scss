@@ -1,0 +1,288 @@
+.header-modal,
+.application-modal {
+    display: none;
+    position: fixed;
+    z-index: 15;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+
+    .close-container {
+        display: flex;
+        justify-content: flex-end;
+
+        .close {
+            width: 4rem;
+            height: 4rem;
+            background: none;
+            border: none;
+
+            @include breakpoint($sm-bp) {
+                width: 3rem;
+                height: 2rem;
+            }
+
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+}
+
+.header-modal.open,
+.application-modal.open {
+    opacity: 1;
+}
+
+.header-modal__background {
+    width: 27.2rem;
+    height: 27.2rem;
+    background: var(--green);
+    filter: blur(15rem);
+    position: absolute;
+    right: -16rem;
+    top: 25rem;
+}
+
+.header-modal-content {
+    position: relative;
+    overflow-x: hidden;
+    background-color: var(--white);
+    width: 100%;
+    height: 100%;
+    transform: translateY(-5rem);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    padding: 3.8rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include breakpoint($sm-bp) {
+        padding: 3rem 1.8rem 2rem 1.8rem;
+    }
+}
+
+.header-modal.open .header-modal-content,
+.application-modal.open .application-modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.header-modal__logo {
+    width: 12rem;
+    height: 7.6rem;
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.header-modal__inner {
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        margin-top: 3rem;
+
+        li {
+            a {
+                color: var(--black);
+                font-size: 2rem;
+                font-weight: 500;
+                line-height: normal;
+            }
+        }
+    }
+}
+
+.header-modal__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    a {
+        color: var(--black);
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration-line: underline;
+    }
+
+    .pink-button {
+        width: fit-content;
+        color: var(--white);
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: normal;
+        text-decoration: none;
+    }
+}
+
+
+
+
+.application-modal-content {
+    background-color: var(--white);
+    width: 60rem;
+    height: 65rem;
+    margin: 15% auto;
+    transform: translateY(-5rem);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 2rem;
+    padding: 3rem;
+
+    @include breakpoint($sm-bp) {
+        width: 90%;
+        padding: 1rem;
+        height: fit-content;
+    }
+
+    h2 {
+        color: var(--blue);
+        text-align: center;
+        font-size: 4rem;
+        font-weight: 500;
+        line-height: 150%;
+
+        @include breakpoint($sm-bp) {
+            font-size: 2.4rem;
+        }
+    }
+
+}
+
+.application-modal__close-container {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+        width: 2.2rem;
+        height: 2.2rem;
+        background: none;
+        border: none;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.application-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &>p {
+        color: var(--gray);
+        text-align: center;
+        font-size: 2.4rem;
+        font-weight: 400;
+        line-height: normal;
+        width: 36.6rem;
+        margin-top: 2rem;
+
+        @include breakpoint($sm-bp) {
+            font-size: 1.6rem;
+            width: 100%;
+            margin-top: 1rem;
+        }
+    }
+}
+
+.application-form__inputs {
+    width: 43.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+
+    @include breakpoint($sm-bp) {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    input {
+        color: var(--black);
+        font-size: 2.2rem;
+        font-weight: 400;
+        line-height: normal;
+        padding: 1.5rem 2.5rem;
+        outline: none;
+
+        border-radius: 3rem;
+        border: 0.1rem solid var(--blue);
+        background: var(--white);
+
+        @include breakpoint($sm-bp) {
+            padding: 1rem;
+            font-size: 1.6rem;
+        }
+
+        &::placeholder {
+            color: var(--gray);
+        }
+    }
+}
+
+.application-form__submit {
+    width: 43.3rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include breakpoint($sm-bp) {
+        width: 100%;
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+
+    p,
+    a {
+        color: var(--gray);
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 150%;
+
+        @include breakpoint($sm-bp) {
+            font-size: 1rem;
+        }
+    }
+
+    a {
+        display: inline;
+
+        background-image: linear-gradient(to right,
+                var(--pink),
+                var(--pink) 50%,
+                var(--black) 50%);
+        background-size: 200% 100%;
+        background-position: 100%;
+        position: relative;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-position: 0;
+        }
+    }
+
+    .blue-button {
+        width: 100%;
+    }
+
+}

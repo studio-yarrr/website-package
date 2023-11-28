@@ -7,6 +7,10 @@
         flex-direction: column;
     }
 
+    @include breakpoint($sm-bp) {
+        margin-top: 1.5rem;
+    }
+
     .contacts__inner,
     form {
         width: 50%;
@@ -16,6 +20,11 @@
 
         @include breakpoint($xl-bp) {
             width: 100%;
+        }
+
+        @include breakpoint($sm-bp) {
+            padding: 2.3rem 1.5rem 2.7rem 1.5rem;
+            border: 0.1rem solid var(--black);
         }
     }
 
@@ -43,6 +52,10 @@
             font-weight: 500;
             line-height: normal;
             text-align: center;
+
+            @include breakpoint($sm-bp) {
+                font-size: 1.8rem;
+            }
         }
 
         .form-content {
@@ -55,6 +68,11 @@
             @include breakpoint($xl-bp) {
                 padding: 0;
             }
+
+            @include breakpoint($sm-bp) {
+                margin-top: 2.5rem;
+                gap: 1.4rem;
+            }
         }
 
         input {
@@ -66,6 +84,11 @@
             font-weight: 400;
             line-height: normal;
             outline: none;
+
+            @include breakpoint($sm-bp) {
+                padding: 1.2rem 1.5rem;
+                font-size: 1.6rem;
+            }
 
             &::placeholder {
                 opacity: 0.5;
@@ -81,6 +104,10 @@
             font-size: 1.6rem;
             font-weight: 400;
             line-height: 150%;
+
+            @include breakpoint($sm-bp) {
+                font-size: 1rem;
+            }
 
             a {
                 display: inline;
@@ -118,6 +145,11 @@
         gap: 3rem;
     }
 
+    @include breakpoint($sm-bp) {
+        gap: 2rem;
+        
+    }
+
     .contacts__inner-bg {
         position: absolute;
         bottom: 0;
@@ -137,6 +169,11 @@
         font-weight: 500;
         line-height: normal;
         width: max-content;
+
+        @include breakpoint($sm-bp) {
+            font-size: 1.8rem;
+            width: 22rem;
+        }
     }
 
     a {

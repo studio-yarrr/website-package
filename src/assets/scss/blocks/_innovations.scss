@@ -14,6 +14,10 @@
         gap: 7rem;
     }
 
+    @include breakpoint($sm-bp) {
+        margin-top: 2.5rem;
+        gap: 3rem;
+    }
 
     .innovations__background {
         position: absolute;
@@ -27,6 +31,11 @@
         opacity: 0.2;
         border-radius: 50%;
         z-index: -1;
+
+        @include breakpoint($sm-bp) {
+            width: 8rem;
+            height: 8rem;
+        }
 
         &:nth-child(2) {
             top: 40rem;
@@ -51,6 +60,7 @@
             padding-top: 0rem;
             gap: 3rem;
         }
+        
 
         li {
             color: var(--gray);
@@ -62,6 +72,11 @@
             align-items: center;
             padding-left: 4rem;
 
+            @include breakpoint($xl-bp) {
+                font-size: 1.8rem;
+                padding-left: 2.5rem;
+            }
+
             &::before {
                 content: "";
                 position: absolute;
@@ -70,6 +85,11 @@
                 background: var(--pink);
                 border-radius: 50%;
                 left: 0;
+
+                @include breakpoint($xl-bp) {
+                    width: 1.4rem;
+                    height: 1.4rem;
+                }
             }
         }
     }
@@ -80,6 +100,10 @@
 
     @include breakpoint($xl-bp) {
         width: 60%;
+    }
+
+    @include breakpoint($sm-bp) {
+        width: 100%;
     }
 
     img {

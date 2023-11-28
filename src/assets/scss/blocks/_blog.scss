@@ -7,6 +7,11 @@
         flex-direction: column;
         gap: 20rem;
     }
+
+    @include breakpoint($sm-bp) {
+        margin-top: 1.5rem;
+        gap: 0rem;
+    }
 }
 
 .blog__text {
@@ -22,6 +27,10 @@
         font-size: 3.2rem;
         font-weight: 500;
         line-height: normal;
+
+        @include breakpoint($sm-bp) {
+            font-size: 2rem;
+        }
     }
 
     p {
@@ -30,6 +39,11 @@
         font-weight: 400;
         line-height: normal;
         margin-top: 3rem;
+
+        @include breakpoint($sm-bp) {
+            font-size: 2rem;
+            margin-top: 2rem;
+        }
     }
 
     svg {
@@ -43,6 +57,12 @@
             width: 100%;
             top: 15rem;
         }
+
+        @include breakpoint($sm-bp) {
+            position: unset;
+            height: 10rem;
+            margin-top: 0;
+        }
     }
 }
 
@@ -53,10 +73,16 @@
         width: 100%;
     }
 
+    
     video {
         width: 100%;
         border-radius: 2rem;
         object-fit: cover;
+
+        @include breakpoint($sm-bp) {
+            height: 27.5rem;
+        }
+    
     }
 }
 
@@ -73,6 +99,11 @@
         top: 1.8rem;
         right: 1.2rem;
         z-index: 11;
+
+        @include breakpoint($sm-bp) {
+            width: 4.3rem;
+            height: 4.3rem;
+        }
 
         svg {
             width: 100%;
@@ -93,9 +124,19 @@
     margin-top: 1.8rem;
     justify-content: end;
 
+    @include breakpoint($sm-bp) {
+        margin-top: 2rem;
+        gap: 2rem;
+    }
+
     a {
         width: 6rem;
         height: 6rem;
+
+        @include breakpoint($sm-bp) {
+            width: 4rem;
+            height: 4rem;
+        }
 
 
         svg {

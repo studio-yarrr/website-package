@@ -155,7 +155,7 @@ svg {
 
   &:hover {
     &::before {
-      transform: rotate(0deg);
+      transform: rotate(6deg);
     }
   }
 }
@@ -209,6 +209,11 @@ svg {
   position: relative;
   overflow: hidden;
 
+  @include breakpoint($sm-bp) {
+    font-size: 1.6rem;
+    padding: 0.8rem 1.8rem;
+  }
+
   &:before {
     content: '';
     position: absolute;
@@ -258,3 +263,4 @@ h2 {
 @import './blocks/technical-capabilities.scss';
 @import './blocks/stages.scss';
 @import './blocks/contacts.scss';
+@import './blocks/modals.scss';

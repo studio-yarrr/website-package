@@ -12,6 +12,10 @@
         @include breakpoint($xl-bp) {
             width: 100%;
         }
+
+        @include breakpoint($sm-bp) {
+            font-size: 1.6rem;
+        }
     }
 
     ul {
@@ -23,6 +27,10 @@
         @include breakpoint($xl-bp) {
             gap: 0;
             row-gap: 3rem;
+        }
+
+        @include breakpoint($sm-bp) {
+            row-gap: 2rem;
         }
 
         li {
@@ -51,6 +59,12 @@
         height: 2rem;
         background: var(--white);
         border: 0.3rem solid var(--pink);
+
+        @include breakpoint($sm-bp) {
+            width: 1.5rem;
+            height: 1.5rem;
+            border: 0.2rem solid var(--pink);
+        }
     }
 
     .swiper-pagination-bullet-active {
@@ -88,4 +102,9 @@
     align-items: center;
     justify-content: center;
     gap: 2rem;
+
+    @include breakpoint($sm-bp) {
+        margin-top: 2rem;
+        gap: 1rem;
+    }
 }

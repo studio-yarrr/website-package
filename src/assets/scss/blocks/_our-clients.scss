@@ -5,12 +5,20 @@
         flex-wrap: wrap;
         gap: 2rem;
 
+        @include breakpoint($sm-bp) {
+            margin-top: 1.6rem;
+        }
+
         li {
             width: 36.5rem;
             border-radius: 2rem;
 
             @include breakpoint($xl-bp) {
                 width: 45rem;
+            }
+
+            @include breakpoint($sm-bp) {
+                width: 15.9rem;
             }
 
             img {

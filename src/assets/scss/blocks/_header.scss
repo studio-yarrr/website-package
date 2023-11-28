@@ -11,6 +11,10 @@ header {
     z-index: 12;
     background: var(--white);
 
+    @include breakpoint($sm-bp) {
+        padding: 2rem 1.8rem;
+    }
+
     ul {
         display: flex;
         gap: 4.9rem;
@@ -39,6 +43,12 @@ header {
             }
         }
     }
+
+    .pink-button {
+        @include breakpoint($xl-bp) {
+            display: none;
+        }
+    }
 }
 
 .header__logo-container {
@@ -46,14 +56,21 @@ header {
     align-items: center;
     gap: 3.5rem;
 
+    
+
     &>a {
         width: 11.6rem;
         height: 10.9rem;
+
+        @include breakpoint($sm-bp) {
+            width: 6rem;
+            height: 4rem;
+        }
     }
 
     svg {
         width: 100%;
-        height: 100%;
+        height: 100%;     
     }
 }
 
@@ -89,4 +106,28 @@ header {
             background-position: 0;
         }
     }
+}
+
+.burger-button {
+    display: none;
+    width: 4rem;
+    height: 4rem;
+    background: none;
+    border: none;
+
+    @include breakpoint($xl-bp) {
+        display: block;
+    }
+
+    @include breakpoint($sm-bp) {
+        width: 3rem;
+        height: 2rem;
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+
+
 }

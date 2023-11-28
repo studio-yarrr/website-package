@@ -12,9 +12,18 @@
 		gap: 2rem;
 	}
 
+	@include breakpoint($sm-bp) {
+		padding: 1.8rem 2.4rem 1.3rem 2.4rem;
+	}
+
 	a {
 		width: 11.5rem;
 		height: 7rem;
+
+		@include breakpoint($sm-bp) {
+			width: 8.3rem;
+			height: 5rem;
+		}
 
 		svg {
 			width: 100%;
@@ -49,10 +58,14 @@
 				font-weight: 400;
 				line-height: normal;
 
+				@include breakpoint($sm-bp) {
+					font-size: 1.6rem;
+				}
+
 				background-image: linear-gradient(to right,
-						var(--pink),
-						var(--pink) 50%,
-						var(--white) 50%);
+					var(--pink),
+					var(--pink) 50%,
+					var(--white) 50%);
 				background-size: 200% 100%;
 				background-position: 100%;
 				position: relative;
@@ -78,6 +91,11 @@
 		a {
 			width: 6rem;
 			height: 6rem;
+
+			@include breakpoint($sm-bp) {
+				width: 4rem;
+				height: 4rem;
+			}
 
 			svg {
 				stroke: var(--white);
@@ -113,12 +131,22 @@
 		gap: 2rem;
 	}
 
+	@include breakpoint($sm-bp) {
+		padding: 1.3rem 2.4rem;
+		gap: 1.5rem;
+	}
+
 	a,
 	p {
 		color: var(--white);
 		font-size: 1.8rem;
 		font-weight: 500;
 		line-height: normal;
+
+		@include breakpoint($sm-bp) {
+			font-size: 1.2rem;
+			width: 22.6rem;
+		}
 	}
 
 	a {
@@ -132,6 +160,11 @@
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		transition: all 0.3s ease-in-out;
+
+		@include breakpoint($sm-bp) {
+			border-bottom: 0.1rem solid var(--white);
+			width: fit-content;
+		}
 
 		&:hover {
 			background-position: 0;
