@@ -10738,28 +10738,28 @@ document.addEventListener("DOMContentLoaded", () => {
     typeText(textToType, 0);
   }
 
-  // typeAnimation()
+  typeAnimation()
 
-  // const counters = document.querySelectorAll('.title-block__info-inner div p:first-child');
+  const counters = document.querySelectorAll('.title-block__info-inner div p:first-child');
 
-  // counters.forEach(counter => {
-  //   const target = +counter.textContent;
-  //   counter.textContent = '0';
+  counters.forEach(counter => {
+    const target = +counter.textContent;
+    counter.textContent = '0';
 
-  //   const updateCounter = () => {
-  //     const current = +counter.textContent;
-  //     const increment = target / 1000;
+    const updateCounter = () => {
+      const current = +counter.textContent;
+      const increment = target / 1000;
 
-  //     if (current < target) {
-  //       counter.textContent = `${Math.ceil(current + increment)}`;
-  //       setTimeout(updateCounter, 1);
-  //     } else {
-  //       counter.textContent = target;
-  //     }
-  //   };
+      if (current < target) {
+        counter.textContent = `${Math.ceil(current + increment)}`;
+        setTimeout(updateCounter, 1);
+      } else {
+        counter.textContent = target;
+      }
+    };
 
-  //   updateCounter();
-  // });
+    updateCounter();
+  });
 
 
 
