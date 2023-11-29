@@ -83,8 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const counters = document.querySelectorAll('.title-block__info-inner div p:first-child');
 
   counters.forEach(counter => {
-    const target = +counter.textContent;
-    counter.textContent = '0';
+    const target = +counter.getAttribute('data-target');
 
     const updateCounter = () => {
       const current = +counter.textContent;
@@ -497,7 +496,7 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       let isValid = true;
-  
+
       // Проверка каждого поля в форме
       this.querySelectorAll('input, textarea, select').forEach(input => {
         if (!input.value) { // Проверка, если поле пустое
@@ -507,13 +506,13 @@ document.addEventListener("DOMContentLoaded", () => {
           input.classList.remove('error'); // Удаление класса error, если поле заполнено
         }
       });
-  
+
       // Если все поля заполнены, отправить форму
       if (isValid) {
         applicationModal.close()
         thanksModal.open()
         const formData = new FormData(this);
-  
+
         fetch('sendmail.php', {
           method: 'POST',
           body: formData
@@ -527,6 +526,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  
+
 
 })
