@@ -10836,7 +10836,7 @@ document.addEventListener("DOMContentLoaded", () => {
         trigger: ".package-types ul",
         start: "top 75%",
         end: "bottom top",
-        toggleActions: "restart none none none"
+        toggleActions: "play none none none"
       },
       duration: 1,
       opacity: 0,
