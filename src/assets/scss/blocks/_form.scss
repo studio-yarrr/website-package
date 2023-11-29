@@ -13,6 +13,12 @@
         font-weight: 600;
         line-height: normal;
 
+
+        &::before {
+            display: none;
+        }
+
+
         @include breakpoint($sm-bp) {
             font-size: 2rem;
             font-weight: 500;
@@ -43,6 +49,7 @@
         font-size: 2rem;
         font-weight: 400;
         line-height: normal;
+        transition: all 0.2s linear;
 
         width: 100%;
         outline: none;
@@ -55,6 +62,14 @@
         &::-webkit-input-placeholder {
             color: var(--white);
             opacity: 0.5;
+        }
+
+        &:focus {
+            border: 0.1rem solid var(--green);
+        }
+
+        &.error {
+            border: 0.1rem solid #E90B0B !important;
         }
     }
 }

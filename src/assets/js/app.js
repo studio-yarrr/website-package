@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const headerModal = new Modals.Modal("#header-modal")
   const applicationModal = new Modals.Modal("#application-modal")
+  const thanksModal = new Modals.Modal("#thanks-modal")
 
   initializeSwiper();
 
@@ -280,7 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
         start: "top 50%",
         toggleActions: "play none none none"
       },
-      x: -200, // начальное смещение по горизонтали
+      y: -200, // начальное смещение по горизонтали
       opacity: 0,
       duration: 1,
       ease: "power3.out"
@@ -293,7 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
         start: "top 50%",
         toggleActions: "play none none none"
       },
-      x: 200, // начальное смещение по горизонтали
+      y: 200, // начальное смещение по горизонтали
       opacity: 0,
       duration: 1,
       delay: 0.4,
@@ -493,5 +494,42 @@ document.addEventListener("DOMContentLoaded", () => {
     animateElement('.why-us .rotation-card', '.rotation-card__background');
     animateElement('.innovations', '.innovations__background');
   }
+
+
+  document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      let isValid = true;
+  
+      // Проверка каждого поля в форме
+      this.querySelectorAll('input, textarea, select').forEach(input => {
+        if (!input.value) { // Проверка, если поле пустое
+          input.classList.add('error'); // Добавление класса error
+          isValid = false;
+        } else {
+          input.classList.remove('error'); // Удаление класса error, если поле заполнено
+        }
+      });
+  
+      // Если все поля заполнены, отправить форму
+      if (isValid) {
+        applicationModal.close()
+        thanksModal.open()
+        const formData = new FormData(this);
+  
+        fetch('sendmail.php', {
+          method: 'POST',
+          body: formData
+        })
+          .then(response => response.text())
+          .then(data => {
+            console.log(data);
+          })
+          .catch(error => console.error('Error:', error));
+      }
+    });
+  });
+
+  
 
 })

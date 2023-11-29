@@ -5,6 +5,13 @@
         margin-top: 7rem;
     }
 
+    h2 {
+        &::before {
+            right: 0;
+            bottom: 0;
+        }
+    }
+
 
     ul {
         display: flex;

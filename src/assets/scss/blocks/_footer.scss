@@ -89,8 +89,8 @@
 		display: flex;
 
 		a {
-			width: 6rem;
-			height: 6rem;
+			width: 4rem;
+			height: 4rem;
 
 			@include breakpoint($sm-bp) {
 				width: 4rem;

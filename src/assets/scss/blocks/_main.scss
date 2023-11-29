@@ -1,5 +1,5 @@
 .title-block {
-	margin-top: 5.3rem;
+	margin-top: 5.9rem;
 	display: grid;
 	grid-template-columns: repeat(2, auto);
 	grid-template-rows: repeat(2, auto);
@@ -243,6 +243,12 @@
 		font-size: 4rem;
 		font-weight: 400;
 		line-height: normal;
+
+
+		&::before {
+			display: none;
+		}
+
 
 		@include breakpoint($sm-bp) {
 			font-size: 3.2rem;

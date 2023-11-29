@@ -17,6 +17,17 @@
 }
 
 .technical-capabilities {
+
+    h2 {
+        &::before {
+            left: 39rem;
+
+            @include breakpoint($sm-bp) {
+                left: 0;
+            }
+        }
+    }
+
     .swiper-pagination-bullet {
         width: 2rem;
         height: 2rem;

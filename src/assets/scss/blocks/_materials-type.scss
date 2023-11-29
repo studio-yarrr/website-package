@@ -1,5 +1,15 @@
 .materials-types {
 
+    h2 {
+        &::before {
+            right: 0;
+
+            @include breakpoint($sm-bp) {
+                right: 1rem;
+            }
+        }
+    }
+
     &>p {
         color: var(--black);
         font-size: 4rem;
@@ -68,6 +78,23 @@
         font-size: 3.2rem;
         font-weight: 500;
         line-height: normal;
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 4rem;
+            height: 0.4rem;
+            background: var(--green);
+            border-radius: 1rem;
+            position: absolute;
+            bottom: -1rem;
+
+            @include breakpoint($sm-bp) {
+                width: 2rem;
+                height: 0.2rem;
+                bottom: -0.2rem;
+            }
+        }
 
         @include breakpoint($sm-bp) {
             font-size: 2rem;
@@ -82,24 +109,19 @@
         }
     }
 
-    div {
-        width: 4rem;
-        height: 0.4rem;
-        background: var(--green);
-        border-radius: 2rem;
-        margin-top: 0.9rem;
-    }
+
 
     p {
         color: var(--white);
         font-size: 2.4rem;
         font-weight: 500;
         line-height: normal;
-        margin-top: 1.1rem;
+        margin-top: 2rem;
 
         @include breakpoint($sm-bp) {
             font-size: 1.6rem;
             font-weight: 400;
+            margin-top: 1rem;
         }
     }
 
@@ -142,7 +164,7 @@
         margin-top: 0rem;
     }
 
-    
+
 
     &:last-of-type {
 

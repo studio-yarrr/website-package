@@ -1,6 +1,17 @@
 .our-clients {
+
+    h2 {
+        &::before {
+            left: 20rem;
+
+            @include breakpoint($sm-bp) {
+                left: 8rem;
+            }
+        }
+    }
+
     ul {
-        margin-top: 5rem;
+        margin-top: 3rem;
         display: flex;
         flex-wrap: wrap;
         gap: 2rem;

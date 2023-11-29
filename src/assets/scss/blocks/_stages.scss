@@ -1,5 +1,17 @@
 .stages {
 
+    h2 {
+        &::before {
+            left: 19.5rem;
+            bottom: -0.8rem;
+
+            @include breakpoint($sm-bp) {
+                left: 0rem;
+                bottom: -0.2rem;
+            }
+        }
+    }
+
     ul {
         margin-top: 5rem;
         display: flex;
@@ -39,10 +51,11 @@
             &:nth-child(odd) {
                 background: var(--blue);
                 color: var(--white);
+
                 @include breakpoint($sm-bp) {
                     margin-left: auto;
                 }
-                
+
             }
 
             h3 {

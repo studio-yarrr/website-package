@@ -1,3 +1,16 @@
+.contacts {
+    h2 {
+        &::before {
+            left: 12rem;
+
+            @include breakpoint($sm-bp) {
+                left: 0rem;
+            }
+        }
+    }
+}
+
+
 .contacts__content {
     margin-top: 5rem;
     display: flex;
@@ -84,6 +97,7 @@
             font-weight: 400;
             line-height: normal;
             outline: none;
+            transition: all 0.2s linear;
 
             @include breakpoint($sm-bp) {
                 padding: 1.2rem 1.5rem;
@@ -92,6 +106,14 @@
 
             &::placeholder {
                 opacity: 0.5;
+            }
+
+            &:focus {
+                border: 0.1rem solid var(--green);
+            }
+
+            &.error {
+                border: 0.1rem solid #E90B0B;
             }
         }
 

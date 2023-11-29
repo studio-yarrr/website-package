@@ -1,6 +1,12 @@
 .type-of-package {
     position: relative;
 
+    h2 {
+        &::before {
+            display: none;
+        }
+    }
+
     .type-of-package-background {
         position: absolute;
         width: 100%;

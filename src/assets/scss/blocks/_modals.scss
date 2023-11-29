@@ -1,5 +1,6 @@
 .header-modal,
-.application-modal {
+.application-modal,
+.thanks-modal {
     display: none;
     position: fixed;
     z-index: 15;
@@ -38,7 +39,8 @@
 }
 
 .header-modal.open,
-.application-modal.open {
+.application-modal.open,
+.thanks-modal.open {
     opacity: 1;
 }
 
@@ -72,7 +74,8 @@
 }
 
 .header-modal.open .header-modal-content,
-.application-modal.open .application-modal-content {
+.application-modal.open .application-modal-content,
+.thanks-modal.open .thanks-modal-content {
     transform: translateY(0);
     opacity: 1;
 }
@@ -135,7 +138,7 @@
 .application-modal-content {
     background-color: var(--white);
     width: 60rem;
-    height: 65rem;
+    height: fit-content;
     margin: 15% auto;
     transform: translateY(-5rem);
     opacity: 0;
@@ -155,6 +158,10 @@
         font-size: 4rem;
         font-weight: 500;
         line-height: 150%;
+
+        &::before {
+            display: none;
+        }
 
         @include breakpoint($sm-bp) {
             font-size: 2.4rem;
@@ -221,6 +228,7 @@
         line-height: normal;
         padding: 1.5rem 2.5rem;
         outline: none;
+        transition: all 0.2s linear;
 
         border-radius: 3rem;
         border: 0.1rem solid var(--blue);
@@ -233,6 +241,14 @@
 
         &::placeholder {
             color: var(--gray);
+        }
+
+        &:focus {
+            border: 0.1rem solid var(--green);
+        }
+
+        &.error {
+            border: 0.1rem solid #E90B0B;
         }
     }
 }
@@ -285,4 +301,89 @@
         width: 100%;
     }
 
+}
+
+
+
+.thanks-modal-content {
+    overflow: hidden;
+    position: relative;
+    background-color: var(--white);
+    width: 74rem;
+    height: fit-content;
+    margin: 15% auto;
+    transform: translateY(-5rem);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 2rem;
+    padding: 6rem 5rem 2.5rem 5rem;
+
+    @include breakpoint($sm-bp) {
+        width: 90%;
+        padding: 1.5rem;
+        
+    }
+
+    h2 {
+        color: var(--blue);
+        font-size: 4.8rem;
+        font-weight: 500;
+        line-height: normal;
+
+        @include breakpoint($sm-bp) {
+            font-size: 2.4rem;
+            text-align: center;
+        }
+
+        &::before {
+            display: none;
+        }
+    }
+
+    p {
+        color: var(--black);
+        font-size: 2.4rem;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 3.6rem;
+
+        @include breakpoint($sm-bp) {
+            margin-top: 1rem;
+            font-size: 1.6rem;
+        }
+
+        span {
+            font-weight: 600;
+        }
+    }
+
+    .blue-button {
+        width: 30rem;
+        display: flex;
+        margin: 3rem auto 0rem;
+        justify-content: center;
+        align-items: center;
+
+        @include breakpoint($sm-bp) {
+            width: 100%;
+            margin-top: 1rem;
+        }
+    }
+}
+
+.thanks-modal__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    @include breakpoint($sm-bp) {
+        top: 2rem;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }

@@ -237,6 +237,24 @@ h2 {
   font-size: 5.6rem;
   font-weight: 600;
   line-height: normal;
+  position: relative;
+  width: fit-content;
+
+  &::before {
+    content: "";
+    width: 4rem;
+    height: 0.4rem;
+    background: var(--green);
+    border-radius: 1rem;
+    position: absolute;
+    bottom: 0;
+
+    @include breakpoint($sm-bp) {
+      width: 2rem;
+      height: 0.2rem;
+      bottom: -0.2rem;
+    }
+  }
 
   @include breakpoint($sm-bp) {
     font-size: 2.4rem;
