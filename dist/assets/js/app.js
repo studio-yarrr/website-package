@@ -10704,20 +10704,19 @@ document.addEventListener("DOMContentLoaded", () => {
   let header = document.querySelector('header');
   let headerHeight = header.offsetHeight;
   let page = document.querySelector('.page')
-  page.style.paddingTop = `${headerHeight + 'px'}`
-
+  page.style.paddingTop = `${headerHeight}px`;
 
   window.onscroll = function () {
     let currentScrollPosition = window.pageYOffset;
 
-    if (prevScrollPosition > currentScrollPosition) {
+    if (prevScrollPosition > currentScrollPosition || currentScrollPosition < 100) {
       header.style.top = "0";
     } else {
-      header.style.top = `-${headerHeight + 'px'}`;
+      header.style.top = `-${headerHeight}px`;
     }
 
     prevScrollPosition = currentScrollPosition;
-  }
+  };
 
 
   function typeAnimation(event) {
