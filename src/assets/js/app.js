@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (current < target) {
         counter.textContent = `${Math.ceil(current + increment)}`;
-        setTimeout(updateCounter, 1);
+        setTimeout(updateCounter, 0);
       } else {
         counter.textContent = target;
       }
