@@ -3165,6 +3165,7 @@ header ul a:hover {
         flex-direction: column;
         -ms-flex-pack: justify;
         justify-content: space-between;
+        border: 0.1rem solid var(--black);
     }
 }
 
@@ -4242,6 +4243,7 @@ header ul a:hover {
     flex-direction: column;
     gap: 5rem;
     position: relative;
+    overflow: hidden;
 }
 
 @media (max-width: 1024px) {
@@ -4258,14 +4260,23 @@ header ul a:hover {
 
 .contacts__inner .contacts__inner-bg {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: -15rem;
+    left: -15rem;
     z-index: -1;
 }
 
-.contacts__inner .contacts__inner-bg svg {
+@media (max-width: 500px) {
+    .contacts__inner .contacts__inner-bg {
+        bottom: -10rem;
+        left: -10rem;
+    }
+}
+
+.contacts__inner .contacts__inner-bg img {
     width: 100%;
     height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
 }
 
 .contacts__inner p,

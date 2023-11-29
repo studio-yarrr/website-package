@@ -401,99 +401,101 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    function getRandomDirection() {
-      var angle = Math.random() * 360;
-      return angle;
-    }
+    
+  }
 
-    function getRandomVelocity() {
-      var minVelocity = 1;
-      var maxVelocity = 3;
-      var velocity = Math.random() * (maxVelocity - minVelocity) + minVelocity;
-      return velocity;
-    }
+  function getRandomDirection() {
+    var angle = Math.random() * 360;
+    return angle;
+  }
 
-    function checkCollision(element, otherElements) {
-      var elementRect = element.getBoundingClientRect();
+  function getRandomVelocity() {
+    var minVelocity = 1;
+    var maxVelocity = 3;
+    var velocity = Math.random() * (maxVelocity - minVelocity) + minVelocity;
+    return velocity;
+  }
 
-      for (var i = 0; i < otherElements.length; i++) {
-        var otherRect = otherElements[i].getBoundingClientRect();
+  function checkCollision(element, otherElements) {
+    var elementRect = element.getBoundingClientRect();
 
-        if (
-          element !== otherElements[i] &&
-          elementRect.right >= otherRect.left &&
-          elementRect.left <= otherRect.right &&
-          elementRect.bottom >= otherRect.top &&
-          elementRect.top <= otherRect.bottom
-        ) {
-          return true;
-        }
+    for (var i = 0; i < otherElements.length; i++) {
+      var otherRect = otherElements[i].getBoundingClientRect();
+
+      if (
+        element !== otherElements[i] &&
+        elementRect.right >= otherRect.left &&
+        elementRect.left <= otherRect.right &&
+        elementRect.bottom >= otherRect.top &&
+        elementRect.top <= otherRect.bottom
+      ) {
+        return true;
       }
-
-      return false;
     }
 
-    function animateElement(containerSelector, elementSelector) {
-      var containers = document.querySelectorAll(containerSelector);
-      console.log(containers)
-      if (!containers.length) {
-        console.warn(`No containers found for ${containerSelector}.`);
+    return false;
+  }
+
+  function animateElement(containerSelector, elementSelector) {
+    var containers = document.querySelectorAll(containerSelector);
+    console.log(containers)
+    if (!containers.length) {
+      console.warn(`No containers found for ${containerSelector}.`);
+      return;
+    }
+
+    containers.forEach(function (container) {
+      var elements = container.querySelectorAll(elementSelector);
+      if (!elements.length) {
+        console.warn(`No elements found for ${elementSelector} inside ${containerSelector}.`);
         return;
       }
 
-      containers.forEach(function (container) {
-        var elements = container.querySelectorAll(elementSelector);
-        if (!elements.length) {
-          console.warn(`No elements found for ${elementSelector} inside ${containerSelector}.`);
-          return;
-        }
+      elements.forEach(function (element) {
+        var containerRect = container.getBoundingClientRect();
+        var elementRect = element.getBoundingClientRect();
 
-        elements.forEach(function (element) {
-          var containerRect = container.getBoundingClientRect();
-          var elementRect = element.getBoundingClientRect();
+        var containerWidth = containerRect.width - elementRect.width;
+        var containerHeight = containerRect.height - elementRect.height;
 
-          var containerWidth = containerRect.width - elementRect.width;
-          var containerHeight = containerRect.height - elementRect.height;
+        var posX = 0;
+        var posY = 0;
+        var direction = getRandomDirection();
+        var velocity = getRandomVelocity();
+        var isColliding = false;
 
-          var posX = 0;
-          var posY = 0;
-          var direction = getRandomDirection();
-          var velocity = getRandomVelocity();
-          var isColliding = false;
+        var animationInterval = setInterval(function () {
+          var radians = direction * Math.PI / 180;
+          var deltaX = velocity * Math.cos(radians);
+          var deltaY = velocity * Math.sin(radians);
 
-          var animationInterval = setInterval(function () {
-            var radians = direction * Math.PI / 180;
-            var deltaX = velocity * Math.cos(radians);
-            var deltaY = velocity * Math.sin(radians);
+          posX += deltaX;
+          posY += deltaY;
 
-            posX += deltaX;
-            posY += deltaY;
+          if (posX < 0 || posX > containerWidth) {
+            direction = (180 - direction) % 360;
+          }
+          if (posY < 0 || posY > containerHeight) {
+            direction = (360 - direction) % 360;
+          }
 
-            if (posX < 0 || posX > containerWidth) {
-              direction = (180 - direction) % 360;
+          if (checkCollision(element, elements)) {
+            if (!isColliding) {
+              direction = (direction + 180) % 360;
             }
-            if (posY < 0 || posY > containerHeight) {
-              direction = (360 - direction) % 360;
-            }
+            isColliding = true;
+          } else {
+            isColliding = false;
+          }
 
-            if (checkCollision(element, elements)) {
-              if (!isColliding) {
-                direction = (direction + 180) % 360;
-              }
-              isColliding = true;
-            } else {
-              isColliding = false;
-            }
-
-            element.style.transform = `translate(${posX}px, ${posY}px)`;
-          }, 30);
-        });
+          element.style.transform = `translate(${posX}px, ${posY}px)`;
+        }, 30);
       });
-    }
-
-    animateElement('.why-us .rotation-card', '.rotation-card__background');
-    animateElement('.innovations', '.innovations__background');
+    });
   }
+
+  animateElement('.why-us .rotation-card', '.rotation-card__background');
+  animateElement('.innovations', '.innovations__background');
 
 
   document.querySelectorAll('form').forEach(form => {
