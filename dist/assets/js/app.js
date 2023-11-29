@@ -10738,7 +10738,7 @@ document.addEventListener("DOMContentLoaded", () => {
     typeText(textToType, 0);
   }
 
-  typeAnimation()
+  // typeAnimation()
 
   // const counters = document.querySelectorAll('.title-block__info-inner div p:first-child');
 
