@@ -171,159 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
   if (window.matchMedia("(min-width: 1024px)").matches) {
-    gsap.from(".package-types ul li", {
-      scrollTrigger: {
-        trigger: ".package-types ul",
-        start: "top 75%",
-        end: "bottom top",
-        toggleActions: "restart none none none"
-      },
-      duration: 1,
-      opacity: 0,
-      y: 30,
-      stagger: 0.2,
-      ease: "power2.out"
-    });
-
-
-    gsap.from(".type-of-package ul li", {
-      scrollTrigger: {
-        trigger: ".type-of-package ul",
-        start: "top 80%", // Анимация начнется, когда верхний край списка достигнет 80% высоты вьюпорта
-        end: "bottom top",
-        toggleActions: "play none none none"
-      },
-      duration: 1.2,
-      opacity: 0,
-      scale: 0.5, // начинаем анимацию с масштаба 50%
-      transformOrigin: "center", // центр анимации в середине элемента
-      ease: "elastic.out(1, 0.75)", // эластичный эффект при "разворачивании"
-      stagger: 0.1 // небольшая задержка между анимациями каждого элемента
-    });
-
-    gsap.from(".why-us ul li", {
-      scrollTrigger: {
-        trigger: ".why-us ul",
-        start: "top 90%", // Начало анимации при достижении верха списка 90% высоты вьюпорта
-        end: "bottom top",
-        toggleActions: "play none none none"
-      },
-      duration: 1,
-      x: (index, target) => {
-        return index % 2 === 0 ? -200 : 200; // Чередование направления "пролета" для каждого элемента
-      },
-      opacity: 0,
-      ease: "power3.out", // Плавная анимация
-      stagger: 0.2 // Задержка между анимациями каждого элемента
-    });
-
-
-    gsap.from(".addition ul li", {
-      scrollTrigger: {
-        trigger: ".addition ul",
-        start: "top 60%", // Начало анимации, когда верх списка достигает нижней части вьюпорта
-        end: "bottom top",
-        toggleActions: "play none none none"
-      },
-      duration: 0.7,
-      opacity: 0, // начинаем с полностью прозрачного состояния
-      y: 50, // начальное смещение вверх
-      ease: "power1.out", // плавная анимация
-      stagger: 0.15 // небольшая задержка между анимациями каждого элемента
-    });
-
-    gsap.from(".our-works-swiper ul li", {
-      scrollTrigger: {
-        trigger: ".our-works-swiper ul",
-        start: "top bottom", // Начало анимации, когда верх списка достигает нижней части вьюпорта
-        end: "bottom top",
-        toggleActions: "play none none none"
-      },
-      duration: 1,
-      opacity: 0,
-      rotation: 90, // начальный угол вращения
-      ease: "power3.out", // плавная анимация
-      stagger: 0.2 // небольшая задержка между анимациями каждого элемента
-    });
-
-    gsap.from(".our-clients ul li", {
-      scrollTrigger: {
-        trigger: ".our-clients ul",
-        start: "top bottom", // Начало анимации, когда верх списка достигает нижней части вьюпорта
-        end: "bottom top",
-        toggleActions: "play none none none"
-      },
-      duration: 0.8,
-      opacity: 0,
-      scale: 0.9, // начальный масштаб
-      blur: "20px", // начальное размытие
-      ease: "power2.out", // плавное изменение
-      stagger: 0.1 // задержка между анимациями каждого элемента
-    });
-
-    gsap.from(".technical-capabilities-swiper .swiper-slide", {
-      scrollTrigger: {
-        trigger: ".technical-capabilities__content",
-        start: "top 70%", // Начало анимации, когда верх списка достигает нижней части вьюпорта
-        end: "bottom top",
-        toggleActions: "play none none none"
-      },
-      duration: 0.7,
-      opacity: 0,
-      y: 100, // начальное смещение по вертикали
-      ease: "power3.out", // плавная анимация
-      stagger: 0.15 // небольшая задержка между анимациями каждого элемента
-    });
-
-    gsap.from(".contacts__inner", {
-      scrollTrigger: {
-        trigger: ".contacts",
-        start: "top 50%",
-        toggleActions: "play none none none"
-      },
-      y: -200, // начальное смещение по горизонтали
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out"
-    });
-
-    // Анимация для блока с формой
-    gsap.from(".contacts__content form", {
-      scrollTrigger: {
-        trigger: ".contacts",
-        start: "top 50%",
-        toggleActions: "play none none none"
-      },
-      y: 200, // начальное смещение по горизонтали
-      opacity: 0,
-      duration: 1,
-      delay: 0.4,
-      ease: "power3.out"
-    });
-
-    gsap.from(".innovations ul li", {
-      opacity: 0,
-      y: 50,
-      stagger: 0.3, // Задержка между анимацией каждого элемента списка
-      scrollTrigger: {
-        trigger: ".innovations__content",
-        start: "top 80%", // Анимация начнется, когда верх блока .innovations__content достигнет 80% высоты окна просмотра
-        end: "bottom top",
-        toggleActions: "play none none none"
-      }
-    });
-
-    gsap.from(".innovations__img", {
-      opacity: 0,
-      x: -50,
-      duration: 1, // Продолжительность анимации
-      scrollTrigger: {
-        trigger: ".innovations__content",
-        start: "top 80%",
-        end: "bottom top",
-        toggleActions: "play none none none"
-      }
-    });
+    
 
     const path = document.querySelector('.line-svg path');
     const length = path.getTotalLength();
@@ -376,7 +224,170 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    const order = [1, 2, 3, 6, 5, 4];
+    
+
+
+
+
+
+    
+  }
+
+  gsap.from(".package-types ul li", {
+    scrollTrigger: {
+      trigger: ".package-types ul",
+      start: "top 75%",
+      end: "bottom top",
+      toggleActions: "restart none none none"
+    },
+    duration: 1,
+    opacity: 0,
+    y: 30,
+    stagger: 0.2,
+    ease: "power2.out"
+  });
+
+
+  gsap.from(".type-of-package ul li", {
+    scrollTrigger: {
+      trigger: ".type-of-package ul",
+      start: "top 80%", // Анимация начнется, когда верхний край списка достигнет 80% высоты вьюпорта
+      end: "bottom top",
+      toggleActions: "play none none none"
+    },
+    duration: 1.2,
+    opacity: 0,
+    scale: 0.5, // начинаем анимацию с масштаба 50%
+    transformOrigin: "center", // центр анимации в середине элемента
+    ease: "elastic.out(1, 0.75)", // эластичный эффект при "разворачивании"
+    stagger: 0.1 // небольшая задержка между анимациями каждого элемента
+  });
+
+  gsap.from(".why-us ul li", {
+    scrollTrigger: {
+      trigger: ".why-us ul",
+      start: "top 90%", // Начало анимации при достижении верха списка 90% высоты вьюпорта
+      end: "bottom top",
+      toggleActions: "play none none none"
+    },
+    duration: 1,
+    x: (index, target) => {
+      return index % 2 === 0 ? -200 : 200; // Чередование направления "пролета" для каждого элемента
+    },
+    opacity: 0,
+    ease: "power3.out", // Плавная анимация
+    stagger: 0.2 // Задержка между анимациями каждого элемента
+  });
+
+
+  gsap.from(".addition ul li", {
+    scrollTrigger: {
+      trigger: ".addition ul",
+      start: "top 60%", // Начало анимации, когда верх списка достигает нижней части вьюпорта
+      end: "bottom top",
+      toggleActions: "play none none none"
+    },
+    duration: 0.7,
+    opacity: 0, // начинаем с полностью прозрачного состояния
+    y: 50, // начальное смещение вверх
+    ease: "power1.out", // плавная анимация
+    stagger: 0.15 // небольшая задержка между анимациями каждого элемента
+  });
+
+  gsap.from(".our-works-swiper ul li", {
+    scrollTrigger: {
+      trigger: ".our-works-swiper ul",
+      start: "top bottom", // Начало анимации, когда верх списка достигает нижней части вьюпорта
+      end: "bottom top",
+      toggleActions: "play none none none"
+    },
+    duration: 1,
+    opacity: 0,
+    rotation: 90, // начальный угол вращения
+    ease: "power3.out", // плавная анимация
+    stagger: 0.2 // небольшая задержка между анимациями каждого элемента
+  });
+
+  gsap.from(".our-clients ul li", {
+    scrollTrigger: {
+      trigger: ".our-clients ul",
+      start: "top bottom", // Начало анимации, когда верх списка достигает нижней части вьюпорта
+      end: "bottom top",
+      toggleActions: "play none none none"
+    },
+    duration: 0.8,
+    opacity: 0,
+    scale: 0.9, // начальный масштаб
+    blur: "20px", // начальное размытие
+    ease: "power2.out", // плавное изменение
+    stagger: 0.1 // задержка между анимациями каждого элемента
+  });
+
+  gsap.from(".technical-capabilities-swiper .swiper-slide", {
+    scrollTrigger: {
+      trigger: ".technical-capabilities__content",
+      start: "top 70%", // Начало анимации, когда верх списка достигает нижней части вьюпорта
+      end: "bottom top",
+      toggleActions: "play none none none"
+    },
+    duration: 0.7,
+    opacity: 0,
+    y: 100, // начальное смещение по вертикали
+    ease: "power3.out", // плавная анимация
+    stagger: 0.15 // небольшая задержка между анимациями каждого элемента
+  });
+
+  gsap.from(".contacts__inner", {
+    scrollTrigger: {
+      trigger: ".contacts",
+      start: "top 50%",
+      toggleActions: "play none none none"
+    },
+    y: -200, // начальное смещение по горизонтали
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out"
+  });
+
+  // Анимация для блока с формой
+  gsap.from(".contacts__content form", {
+    scrollTrigger: {
+      trigger: ".contacts",
+      start: "top 50%",
+      toggleActions: "play none none none"
+    },
+    y: 200, // начальное смещение по горизонтали
+    opacity: 0,
+    duration: 1,
+    delay: 0.4,
+    ease: "power3.out"
+  });
+
+  gsap.from(".innovations ul li", {
+    opacity: 0,
+    y: 50,
+    stagger: 0.3, // Задержка между анимацией каждого элемента списка
+    scrollTrigger: {
+      trigger: ".innovations__content",
+      start: "top 80%", // Анимация начнется, когда верх блока .innovations__content достигнет 80% высоты окна просмотра
+      end: "bottom top",
+      toggleActions: "play none none none"
+    }
+  });
+
+  gsap.from(".innovations__img", {
+    opacity: 0,
+    x: -50,
+    duration: 1, // Продолжительность анимации
+    scrollTrigger: {
+      trigger: ".innovations__content",
+      start: "top 80%",
+      end: "bottom top",
+      toggleActions: "play none none none"
+    }
+  });
+
+  const order = [1, 2, 3, 6, 5, 4];
 
     order.forEach((num, i) => {
       const li = document.querySelector(`.stages ul li:nth-child(${num + 1})`);
@@ -396,13 +407,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       );
     });
-
-
-
-
-
-    
-  }
 
   function getRandomDirection() {
     var angle = Math.random() * 360;
