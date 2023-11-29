@@ -101,9 +101,11 @@
 		color: transparent;
 		font-size: 15.5rem;
 		letter-spacing: -0.4rem;
+		height: 15.5rem;
 
 		@include breakpoint($sm-bp) {
 			font-size: 5.2rem;
+			height: 15.2rem;
 		}
 	}
 
