@@ -8,6 +8,17 @@
         }
     }
 
+    &>h3 {
+        color: var(--blue);
+        font-size: 3.2rem;
+        font-weight: 500;
+        line-height: normal;
+
+        @include breakpoint($sm-bp) {
+            font-size: 1.8rem;
+        }
+    }
+
     ul {
         margin-top: 5rem;
         display: flex;
@@ -22,7 +33,7 @@
             border: 0.15rem solid var(--black);
             border-radius: 0.2rem;
             padding: 1.5rem 0rem 1.5rem 1.5rem;
-            width: 36.5rem;
+            width: 36rem;
             position: relative;
             background: var(--white);
 
@@ -92,7 +103,7 @@
             }
 
             &:first-child {
-                width: 75rem;
+                width: 74rem;
                 padding: 3.1rem 1.1rem 0 2.3rem;
                 border-radius: 0.2rem 2rem 0.2rem 0.2rem;
                 position: relative;
@@ -230,5 +241,32 @@
     @include breakpoint($xl-bp) {
         left: 0rem;
         display: none;
+    }
+}
+
+.addition-page-change {
+
+    ul {
+
+        li {
+
+            &:first-child {
+                width: 36rem;
+                padding: 1.5rem 0 1.5rem 1.5rem;
+
+                @include breakpoint($xl-bp) {
+                    width: 45rem;
+                }
+
+                @include breakpoint($sm-bp) {
+                    width: 15.95rem;
+                    padding: 0.8rem 0.5rem 0.5rem 0.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    border: 0.1rem solid var(--black);
+                }
+            }
+        }
     }
 }

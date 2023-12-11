@@ -10697,6 +10697,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const headerModal = new Modals.Modal("#header-modal")
   const applicationModal = new Modals.Modal("#application-modal")
   const thanksModal = new Modals.Modal("#thanks-modal")
+  const propositionModal = new Modals.Modal("#proposition-modal")
+  const closeModal = new Modals.Modal("#close-modal")
 
   initializeSwiper();
 
@@ -10718,9 +10720,9 @@ document.addEventListener("DOMContentLoaded", () => {
     prevScrollPosition = currentScrollPosition;
   };
 
-
+  let textElement = document.querySelector(".title-block__title h1");
   function typeAnimation(event) {
-    var textElement = document.querySelector(".title-block__title h1");
+
     var textToType = "Group Pack";
     textElement.innerText = "";
 
@@ -10737,7 +10739,9 @@ document.addEventListener("DOMContentLoaded", () => {
     typeText(textToType, 0);
   }
 
-  typeAnimation()
+  if (textElement) {
+    typeAnimation()
+  }
 
   const counters = document.querySelectorAll('.title-block__info-inner div p:first-child');
 
@@ -10765,35 +10769,44 @@ document.addEventListener("DOMContentLoaded", () => {
   const muteButton = document.querySelector('.mute-ico');
   const unmuteButton = document.querySelector('.unmute-ico');
 
-  muteButton.addEventListener('click', function () {
-    blogVideo.muted = false;
-    muteButton.style.display = 'none';
-    unmuteButton.style.display = 'block';
-  });
+  if (muteButton) {
+    muteButton.addEventListener('click', function () {
+      blogVideo.muted = false;
+      muteButton.style.display = 'none';
+      unmuteButton.style.display = 'block';
+    });
 
-  unmuteButton.addEventListener('click', function () {
-    blogVideo.muted = true;
-    muteButton.style.display = 'block';
-    unmuteButton.style.display = 'none';
-  });
+    unmuteButton.addEventListener('click', function () {
+      blogVideo.muted = true;
+      muteButton.style.display = 'block';
+      unmuteButton.style.display = 'none';
+    });
+  }
 
-  const mainVideo = document.querySelector('.title-block__video video');
-  const playButton = document.querySelector('.title-block__video button');
-
-  playButton.addEventListener('click', function () {
-    mainVideo.play();
-    mainVideo.controls = true;
-    playButton.style.display = 'none';
+  const mainVideos = document.querySelectorAll('.title-block__video video');
+  const playButtons = document.querySelectorAll('.title-block__video button');
+  
+  mainVideos.forEach((video, index) => {
+    const playButton = playButtons[index];
+    if (playButton) {
+      playButton.addEventListener('click', function () {
+        video.play();
+        video.controls = true;
+        playButton.style.display = 'none';
+      });
+    }
   });
 
   const prodVideo = document.querySelector('.production__video video');
   const prodPlayButton = document.querySelector('.production__video button');
 
-  prodPlayButton.addEventListener('click', function () {
-    prodVideo.play();
-    prodVideo.controls = true;
-    prodPlayButton.style.display = 'none';
-  });
+  if (prodPlayButton) {
+    prodPlayButton.addEventListener('click', function () {
+      prodVideo.play();
+      prodVideo.controls = true;
+      prodPlayButton.style.display = 'none';
+    });
+  }
 
 
   const rotationCards = document.querySelectorAll(".rotation-card");
@@ -10847,90 +10860,90 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.from(".type-of-package ul li", {
       scrollTrigger: {
         trigger: ".type-of-package ul",
-        start: "top 80%", // Анимация начнется, когда верхний край списка достигнет 80% высоты вьюпорта
+        start: "top 80%",
         end: "bottom top",
         toggleActions: "play none none none"
       },
       duration: 1.2,
       opacity: 0,
-      scale: 0.5, // начинаем анимацию с масштаба 50%
-      transformOrigin: "center", // центр анимации в середине элемента
-      ease: "elastic.out(1, 0.75)", // эластичный эффект при "разворачивании"
-      stagger: 0.1 // небольшая задержка между анимациями каждого элемента
+      scale: 0.5,
+      transformOrigin: "center",
+      ease: "elastic.out(1, 0.75)",
+      stagger: 0.1
     });
 
     gsap.from(".why-us ul li", {
       scrollTrigger: {
         trigger: ".why-us ul",
-        start: "top 90%", // Начало анимации при достижении верха списка 90% высоты вьюпорта
+        start: "top 90%",
         end: "bottom top",
         toggleActions: "play none none none"
       },
       duration: 1,
       x: (index, target) => {
-        return index % 2 === 0 ? -200 : 200; // Чередование направления "пролета" для каждого элемента
+        return index % 2 === 0 ? -200 : 200;
       },
       opacity: 0,
-      ease: "power3.out", // Плавная анимация
-      stagger: 0.2 // Задержка между анимациями каждого элемента
+      ease: "power3.out",
+      stagger: 0.2
     });
 
 
     gsap.from(".addition ul li", {
       scrollTrigger: {
         trigger: ".addition ul",
-        start: "top 60%", // Начало анимации, когда верх списка достигает нижней части вьюпорта
+        start: "top 60%",
         end: "bottom top",
         toggleActions: "play none none none"
       },
       duration: 0.7,
-      opacity: 0, // начинаем с полностью прозрачного состояния
-      y: 50, // начальное смещение вверх
-      ease: "power1.out", // плавная анимация
-      stagger: 0.15 // небольшая задержка между анимациями каждого элемента
+      opacity: 0,
+      y: 50,
+      ease: "power1.out",
+      stagger: 0.15
     });
 
     gsap.from(".our-works-swiper ul li", {
       scrollTrigger: {
         trigger: ".our-works-swiper ul",
-        start: "top bottom", // Начало анимации, когда верх списка достигает нижней части вьюпорта
+        start: "top bottom",
         end: "bottom top",
         toggleActions: "play none none none"
       },
       duration: 1,
       opacity: 0,
-      rotation: 90, // начальный угол вращения
-      ease: "power3.out", // плавная анимация
-      stagger: 0.2 // небольшая задержка между анимациями каждого элемента
+      rotation: 90,
+      ease: "power3.out",
+      stagger: 0.2
     });
 
     gsap.from(".our-clients ul li", {
       scrollTrigger: {
         trigger: ".our-clients ul",
-        start: "top bottom", // Начало анимации, когда верх списка достигает нижней части вьюпорта
+        start: "top bottom",
         end: "bottom top",
         toggleActions: "play none none none"
       },
       duration: 0.8,
       opacity: 0,
-      scale: 0.9, // начальный масштаб
-      blur: "20px", // начальное размытие
-      ease: "power2.out", // плавное изменение
-      stagger: 0.1 // задержка между анимациями каждого элемента
+      scale: 0.9,
+      blur: "20px",
+      ease: "power2.out",
+      stagger: 0.1
     });
 
     gsap.from(".technical-capabilities-swiper .swiper-slide", {
       scrollTrigger: {
         trigger: ".technical-capabilities__content",
-        start: "top 70%", // Начало анимации, когда верх списка достигает нижней части вьюпорта
+        start: "top 70%",
         end: "bottom top",
         toggleActions: "play none none none"
       },
       duration: 0.7,
       opacity: 0,
-      y: 100, // начальное смещение по вертикали
-      ease: "power3.out", // плавная анимация
-      stagger: 0.15 // небольшая задержка между анимациями каждого элемента
+      y: 100,
+      ease: "power3.out",
+      stagger: 0.15
     });
 
     gsap.from(".contacts__inner", {
@@ -10939,7 +10952,7 @@ document.addEventListener("DOMContentLoaded", () => {
         start: "top 50%",
         toggleActions: "play none none none"
       },
-      y: -200, // начальное смещение по горизонтали
+      y: -200,
       opacity: 0,
       duration: 1,
       ease: "power3.out"
@@ -10952,7 +10965,7 @@ document.addEventListener("DOMContentLoaded", () => {
         start: "top 50%",
         toggleActions: "play none none none"
       },
-      y: 200, // начальное смещение по горизонтали
+      y: 200,
       opacity: 0,
       duration: 1,
       delay: 0.4,
@@ -10962,10 +10975,10 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.from(".innovations ul li", {
       opacity: 0,
       y: 50,
-      stagger: 0.3, // Задержка между анимацией каждого элемента списка
+      stagger: 0.3,
       scrollTrigger: {
         trigger: ".innovations__content",
-        start: "top 80%", // Анимация начнется, когда верх блока .innovations__content достигнет 80% высоты окна просмотра
+        start: "top 80%",
         end: "bottom top",
         toggleActions: "play none none none"
       }
@@ -10974,7 +10987,7 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.from(".innovations__img", {
       opacity: 0,
       x: -50,
-      duration: 1, // Продолжительность анимации
+      duration: 1,
       scrollTrigger: {
         trigger: ".innovations__content",
         start: "top 80%",
@@ -10984,10 +10997,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const path = document.querySelector('.line-svg path');
-    const length = path.getTotalLength();
-
-    path.style.strokeDasharray = length;
-    path.style.strokeDashoffset = length;
+    if (path) {
+      const length = path.getTotalLength();
+      path.style.strokeDasharray = length;
+      path.style.strokeDashoffset = length;
+    }
 
     function animateLine() {
       gsap.to(path, {
@@ -11010,10 +11024,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const pathTop = document.querySelector('.stages-line path');
 
-    const lengthTop = pathTop.getTotalLength();
+    if (pathTop) {
+      const lengthTop = pathTop.getTotalLength();
 
-    pathTop.style.strokeDasharray = lengthTop;
-    pathTop.style.strokeDashoffset = lengthTop;
+      pathTop.style.strokeDasharray = lengthTop;
+      pathTop.style.strokeDashoffset = lengthTop;
+    }
 
     function animateTopPart() {
       gsap.to(pathTop, {
@@ -11091,7 +11107,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function animateElement(containerSelector, elementSelector) {
     var containers = document.querySelectorAll(containerSelector);
-    console.log(containers)
     if (!containers.length) {
       console.warn(`No containers found for ${containerSelector}.`);
       return;
@@ -11156,35 +11171,113 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       let isValid = true;
 
-      // Проверка каждого поля в форме
+
       this.querySelectorAll('input, textarea, select').forEach(input => {
-        if (!input.value) { // Проверка, если поле пустое
-          input.classList.add('error'); // Добавление класса error
+        if (!input.value) {
+          input.classList.add('error');
           isValid = false;
         } else {
-          input.classList.remove('error'); // Удаление класса error, если поле заполнено
+          input.classList.remove('error');
         }
       });
 
-      // Если все поля заполнены, отправить форму
       if (isValid) {
         applicationModal.close()
+        propositionModal.close()
+        closeModal.close()
         thanksModal.open()
         const formData = new FormData(this);
 
-        fetch('sendmail.php', {
+        fetch('send.php', {
           method: 'POST',
           body: formData
         })
           .then(response => response.text())
           .then(data => {
-            console.log(data);
           })
           .catch(error => console.error('Error:', error));
       }
     });
   });
 
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+
+  var dropbtns = document.getElementsByClassName("accordion");
+
+  for (var i = 0; i < dropbtns.length; i++) {
+    dropbtns[i].clicks = 0;
+
+    dropbtns[i].addEventListener("click", function (event) {
+      this.clicks++;
+      if (this.clicks < 2) {
+        event.preventDefault();
+      } else {
+        this.clicks = 0;
+      }
+    });
+  }
+
+  let closeModalZone = document.querySelector('.close-modal__zone')
 
 
+
+  if (window.matchMedia("(min-width: 1024px)").matches) {
+    closeModalZone.addEventListener('mouseover', e => {
+      closeModal.open()
+    })
+  }
+
+  function applyPhoneMask(value) {
+    // Удаляем все кроме цифр и специальных символов (+, -, (), и пробелов)
+    var cleaned = value.replace(/[^\d\+\-\(\) ]/g, '');
+
+    // Применяем маску для форматирования (можно модифицировать в соответствии с нужным форматом)
+    var match = cleaned.match(/^(\+\d{1,3}|\d)?[ ]?(\(?\d{3}\)?)?[ ]?(\d{3})?[ ]?(\d{2,4})?$/);
+
+    if (match) {
+      // Собираем номер из различных групп, игнорируя undefined группы
+      return [match[1], match[2], match[3], match[4]].filter(Boolean).join(' ');
+    }
+
+    return cleaned; // Возвращаем отфильтрованное значение
+  }
+
+  function applyEmailMask(input) {
+    // Фильтрация ввода: удаляем символы, не соответствующие стандарту ASCII
+    input.value = input.value.replace(/[^\x00-\x7F]/g, '');
+
+    var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (regex.test(input.value)) {
+      input.classList.add('valid-email');
+      input.classList.remove('invalid-email');
+    } else {
+      input.classList.add('invalid-email');
+      input.classList.remove('valid-email');
+    }
+  }
+
+  document.querySelectorAll('input[type="tel"]').forEach(input => {
+    input.addEventListener('input', function () {
+      this.value = applyPhoneMask(this.value);
+    });
+  });
+
+  document.querySelectorAll('input[type=email]').forEach(input => {
+    input.addEventListener('input', function () {
+      applyEmailMask(this);
+    });
+  });
 })

@@ -146,6 +146,14 @@
             height: 4rem;
         }
 
+        &:first-child {
+
+            svg {
+                stroke: var(--pink);
+                fill: var(--pink);
+            }
+        }
+
 
         svg {
             stroke: var(--black);
@@ -163,6 +171,7 @@
             }
         }
     }
+
 }
 
 @keyframes blogLineChange {

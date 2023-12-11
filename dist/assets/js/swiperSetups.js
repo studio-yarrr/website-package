@@ -34,4 +34,41 @@ export function initializeSwiper() {
             },
         });
     }
+
+    let flexoprintSwiper = new Swiper(".flexoprint-swiper", {
+        pagination: {
+            el: ".flexoprint-swiper__pagination",
+        },
+        navigation: {
+            nextEl: ".flexoprint-swiper__buttons button:last-child",
+            prevEl: ".flexoprint-swiper__buttons button:first-child",
+        },
+    });
+
+    let typeOfPrintSwiper = new Swiper(".type-of-print__swiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        breakpoints: {
+            500: {
+                slidesPerView: 2,
+            },
+        }
+    });
+
+    let shortsSwiper = new Swiper(".shorts-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        watchSlidesProgress: true,
+        pagination: {
+            el: ".shorts-swiper__pagination",
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 4,
+            },
+            500: {
+                slidesPerView: 2,
+            },
+        }
+    });
 }

@@ -261,6 +261,39 @@ h2 {
   }
 }
 
+.breadcrumbs {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 5rem;
+
+  @include breakpoint($sm-bp) {
+    margin-top: 2rem;
+  }
+
+  a,
+  p {
+    color: var(--gray);
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: normal;
+
+    @include breakpoint($sm-bp) {
+      font-size: 1.2rem;
+    }
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+
+    @include breakpoint($sm-bp) {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}
+
 
 
 @import './blocks/header.scss';
@@ -281,3 +314,8 @@ h2 {
 @import './blocks/stages.scss';
 @import './blocks/contacts.scss';
 @import './blocks/modals.scss';
+@import './blocks/contacts-page.scss';
+@import './blocks/flexoprint.scss';
+@import './blocks/type-of-print.scss';
+@import './blocks/shorts-container.scss';
+@import './blocks/addition-options.scss';

@@ -1,0 +1,119 @@
+.shorts-container {}
+
+.shorts-container__title {
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint($sm-bp) {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    h3 {
+        color: var(--blue);
+        font-size: 3.2rem;
+        font-weight: 500;
+        line-height: normal;
+
+        @include breakpoint($sm-bp) {
+            font-size: 2rem;
+        }
+    }
+}
+
+.shorts-container__contacts {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    @include breakpoint($sm-bp) {
+        gap: 1.7rem;
+    }
+
+    a {
+        svg {
+            width: 4rem;
+            height: 4rem;
+
+            @include breakpoint($sm-bp) {
+                width: 3.5rem;
+                height: 3.5rem;
+            }
+        }
+
+        &:first-child {
+            color: var(--black);
+            font-size: 2.4rem;
+            font-weight: 500;
+            line-height: normal;
+            width: fit-content;
+
+            @include breakpoint($sm-bp) {
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
+
+.shorts-swiper {
+    margin-top: 4.5rem;
+
+    @include breakpoint($sm-bp) {
+        margin-top: 2rem;
+    }
+
+    .title-block__video {
+        padding: 0;
+        border: none;
+        width: -webkit-max-content;
+        width: max-content;
+        border-radius: 2rem;
+        grid-area: 1/2/3/3;
+        position: relative;
+        width: unset;
+
+        @include breakpoint($xl-bp) {
+            height: unset;
+            margin-top: 0rem;
+        }
+
+        video {
+            height: 37rem;
+            border-radius: 2rem;
+
+            @include breakpoint($xl-bp) {
+                height: 50rem;
+            }
+
+            @include breakpoint($sm-bp) {
+                height: 28rem;
+            }
+        }
+    }
+}
+
+.shorts-swiper__pagination {
+    display: none;
+
+    @include breakpoint($sm-bp) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.4rem;
+        margin-top: 2rem;
+
+        .swiper-pagination-bullet {
+            margin: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            border: 0.2rem solid var(--green);
+            background: transparent;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--green);
+        }
+    }
+}

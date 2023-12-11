@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    $email = 'pecig55684@notedns.com'; // Замените на ваш электронный адрес
+    $email = 'swkypyz@mailto.plus'; // Замените на ваш электронный адрес
     $subject = 'Новое сообщение с формы';
     $message = '';
 

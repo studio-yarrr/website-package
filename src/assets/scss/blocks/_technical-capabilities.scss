@@ -1,7 +1,7 @@
 .technical-capabilities__content {
     margin-top: 5rem;
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
 
     @include breakpoint($xl-bp) {
         gap: 0rem;

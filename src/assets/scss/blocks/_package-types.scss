@@ -56,7 +56,7 @@
             padding: 1.7rem 1.5rem 1.5rem 1.8rem;
             border: 0.2rem solid var(--black);
             border-radius: 2rem;
-            width: 49.1rem;
+            width: 48.6rem;
             height: 36.4rem;
             background: var(--white);
 
@@ -129,7 +129,7 @@
 }
 
 .package-types__img {
-    width: 57rem;
+    width: 50rem;
     height: 26.1rem;
 
     @include breakpoint($xl-bp) {
@@ -145,7 +145,7 @@
     img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
     }
 }
 

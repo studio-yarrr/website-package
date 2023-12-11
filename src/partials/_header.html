@@ -1,33 +1,140 @@
 <header class="page-padding">
+    <div class="close-modal__zone"></div>
+    <button class="header-left-button" data-modal="#proposition-modal">
+        <span>Выгодное предложение</span>
+        <span>
+            <svg>
+                <use href="#header-left-button"></use>
+            </svg>
+        </span>
+    </button>
     <div class="header__logo-container">
         <a href="#">
             <svg>
                 <use href="#header-logo"></use>
             </svg>
         </a>
-
-        <div class="header__contacts">
-            <a href="tel:+7 (499) 394 44 31">+7 (499) 394 44 31</a>
-            <a href="mailto:sale@group-pack.ru">sale@group-pack.ru</a>
-        </div>
     </div>
 
     <ul>
         <li>
-            <a href="#">Дой пак</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Пленка
+                    <svg>
+                        <use href="#menu-green-triangle"></use>
+                    </svg>
+                </a>
+                <ul class="dropdown-content">
+                    <li>
+                        <a href="#">трехслойная</a>
+                    </li>
+                    <li>
+                        <a href="#">металлизированная</a>
+                    </li>
+                    <li>
+                        <a href="#">Дой пак</a>
+                    </li>
+                    <li>
+                        <a href="#">неметаллизированная</a>
+                    </li>
+                    <li>
+                        <a href="#">с evoh</a>
+                    </li>
+                    <li>
+                        <a href="#">с барьерными слоями</a>
+                    </li>
+                    <li>
+                        <a href="#">с алюминием</a>
+                    </li>
+                    <li>
+                        <a href="#">bopp +bopp</a>
+                    </li>
+                    <li>
+                        <a href="#">Pet+pe</a>
+                    </li>
+                    <li>
+                        <a href="#">Pet+bopp+pe</a>
+                    </li>
+                </ul>
+            </div>
         </li>
         <li>
-            <a href="#">Фасовка</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Пакеты
+                    <svg>
+                        <use href="#menu-green-triangle"></use>
+                    </svg>
+                </a>
+                <ul class="dropdown-content">
+                    <li>
+                        <a href="#">Дой пак</a>
+                    </li>
+                    <li>
+                        <a href="#">Крафт Дой пак</a>
+                    </li>
+                    <li>
+                        <a href="#">Дой пак с дозатором</a>
+                    </li>
+                    <li>
+                        <a href="#">Дой пак голография</a>
+                    </li>
+                    <li>
+                        <a href="#">Дой пак с дозатором</a>
+                    </li>
+                    <li>
+                        <a href="#">Квадропак</a>
+                    </li>
+                    <li>
+                        <a href="#">Трехшовный (flow-pack)</a>
+                    </li>
+                    <li>
+                        <a href="#">Саше</a>
+                    </li>
+                    <li>
+                        <a href="#">Стик</a>
+                    </li>
+                </ul>
+            </div>
         </li>
         <li>
-            <a href="#">Производство</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Фасовка</a>
+            </div>
         </li>
         <li>
-            <a href="#">Контакты</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Производство</a>
+            </div>
+        </li>
+
+        <li>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Контакты</a>
+            </div>
         </li>
     </ul>
 
-    <button class="pink-button" data-modal="#application-modal">Оставить заявку</button>
+    <div class="header-button__container">
+        <div class="header__contacts">
+            <div>
+                <a href="tel:+7 (499) 394 44 31">+7 (499) 394 44 31</a>
+                <a href="https://wa.me/+79363000520">
+                    <svg>
+                        <use href="#header-whatsApp-icon"></use>
+                    </svg>
+                </a>
+
+                <a href="https://t.me/group_pack">
+                    <svg>
+                        <use href="#header-tg-icon"></use>
+                    </svg>
+                </a>
+            </div>
+            <a href="mailto:sale@group-pack.ru">sale@group-pack.ru</a>
+        </div>
+
+        <button class="pink-button" data-modal="#application-modal">Оставить заявку</button>
+    </div>
 
     <button data-modal="#header-modal" class="burger-button">
         <svg>

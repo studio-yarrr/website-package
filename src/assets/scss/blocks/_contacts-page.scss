@@ -1,0 +1,149 @@
+.contacts-page {
+    margin-top: 5rem;
+
+    @include breakpoint($sm-bp) {
+        margin-top: 2rem;
+    }
+
+    h1 {
+        color: var(--blue);
+        font-size: 4rem;
+        font-weight: 600;
+        line-height: normal;
+
+        @include breakpoint($sm-bp) {
+            font-size: 2.4rem;
+        }
+    }
+}
+
+.contacts-page__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4.5rem;
+
+    @include breakpoint($sm-bp) {
+        flex-direction: column;
+        gap: 4rem;
+        margin-top: 2rem;
+    }
+}
+
+.contacts-page__content {
+    width: 30%;
+
+    @include breakpoint($xl-bp) {
+        width: 45%;
+    }
+
+    @include breakpoint($sm-bp) {
+        width: 100%;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+
+        @include breakpoint($sm-bp) {
+            gap: 2rem;
+        }
+
+        li {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            @include breakpoint($sm-bp) {
+                gap: 1.5rem;
+            }
+
+            p {
+                &:first-child {
+                    color: var(--blue);
+                    font-size: 2.4rem;
+                    font-weight: 500;
+                    line-height: normal;
+
+                    @include breakpoint($sm-bp) {
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+
+            a,
+            p {
+                color: var(--gray);
+                font-size: 2.4rem;
+                font-weight: 400;
+                line-height: normal;
+
+                @include breakpoint($sm-bp) {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}
+
+.contacts-page__social-media {
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+
+    a {
+        width: 4rem;
+        height: 4rem;
+
+        svg {
+            width: 100%;
+            height: 100%;
+            stroke: transparent;
+            fill: var(--black);
+        }
+    }
+
+}
+
+.contacts-page__map {
+    position: relative;
+    width: 65%;
+
+    @include breakpoint($xl-bp) {
+        width: 50%;
+    }
+
+    @include breakpoint($sm-bp) {
+        width: 100%;
+        height: 26rem;
+
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+
+        @include breakpoint($sm-bp) {
+            border-radius: 2rem;
+
+        }
+    }
+}
+
+.contacts-page__map-background {
+    position: absolute;
+    bottom: -20rem;
+    z-index: -1;
+    width: 27.2rem;
+    height: 27.2rem;
+    background: var(--green);
+    filter: blur(15rem);
+
+    @include breakpoint($sm-bp) {
+        width: 15rem;
+        height: 15rem;
+        filter: blur(10rem);
+        bottom: unset;
+        top: 0;
+    }
+}
