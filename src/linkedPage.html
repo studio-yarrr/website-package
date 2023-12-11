@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .rounded {
+            counter-reset: li;
+            list-style: none;
+            font: 22px "Trebuchet MS", "Lucida Sans";
+            padding: 0;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+            width: 40%;
+            margin: 0 auto;
+            margin-top: 200px;
+            margin-bottom: 200px;
+        }
+
+        @media (max-width: 1024px) {
+            .rounded {
+            width: 80%;
+            font: 18px "Trebuchet MS", "Lucida Sans";
+            margin-top: 100px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .rounded {
+            width: 80%;
+            font: 18px "Trebuchet MS", "Lucida Sans";
+            }
+        }
+
+        .rounded a {
+            position: relative;
+            display: block;
+            padding: .4em .4em .4em 2em;
+            margin: .5em 0;
+            background: #DAD2CA;
+            color: #444;
+            text-decoration: none;
+            border-radius: .3em;
+            transition: .3s ease-out;
+        }
+
+        .rounded a:hover {
+            background: #E9E4E0;
+        }
+
+        li {
+            transition: all 0.2s linear;
+        }
+
+        li:hover {
+            transform: translate(-25px, 0%);
+            transition: all 0.2s linear;
+        }
+
+        /* .rounded a:hover:before {
+            transform: rotate(360deg);
+        } */
+
+        .rounded a:before {
+            content: counter(li);
+            counter-increment: li;
+            position: absolute;
+            left: -1.3em;
+            top: 50%;
+            margin-top: -1.3em;
+            background: #8FD4C1;
+            height: 2em;
+            width: 2em;
+            line-height: 2em;
+            border: .3em solid white;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 2em;
+            transition: all .3s ease-out;
+        }
+    </style>
+    <ol class="rounded">
+        <li><a href="./index.html">Главная</a></li>
+        <li><a href="./contacts.html">Контакты</a></li>
+        <li><a href="./flexoprint.html">Флексопринт</a></li>
+        <li><a href="./addition-options.html">Дополнительные опции</a></li>
+    </ol>
+</body>
+
+</html>
