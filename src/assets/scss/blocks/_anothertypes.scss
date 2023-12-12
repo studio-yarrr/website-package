@@ -1,0 +1,60 @@
+.anothertypes-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  @include breakpoint($xl-bp) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include breakpoint($sm-bp) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.anothertypes-item {
+  position: relative;
+  background-color: var(--white);
+  border: 0.2rem solid var(--black);
+  border-radius: 2rem;
+  padding: 2rem 1.5rem 4rem;
+  overflow: hidden;
+  will-change: transform opacity;
+}
+.anothertypes-subtitle {
+  color: var(--black, #343434);
+  text-align: center;
+  font-size: 2.8rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0 auto;
+  max-width: 21.9rem;
+  @include breakpoint($xl-bp) {
+    font-size: 1.6rem;
+  }
+}
+.anothertypes-last {
+  grid-column: 3 span;
+  color: var(--gray);
+  margin-left: 3rem;
+  max-width: 98.2rem;
+  @include breakpoint($xl-bp) {
+    grid-column: 2 span;
+    margin-left: 0;
+  }
+}
+.anothertypes-img {
+  position: absolute;
+  top: 8rem;
+  left: 0;
+  float: left;
+  width: 17rem;
+  height: 20rem;
+  max-width: 100%;
+  @include breakpoint($sm-bp) {
+    top: 5rem;
+  }
+}
+.anothertypes-link {
+  margin-top: 14.6rem;
+  margin-left: auto;
+}
