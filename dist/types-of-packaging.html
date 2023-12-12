@@ -418,105 +418,740 @@
 
         <main>
 
-            <!DOCTYPE html>
-            <html lang="en">
+            <header class="page-padding">
+                <div class="close-modal__zone"></div>
+                <button class="header-left-button" data-modal="#proposition-modal">
+                    <span>Выгодное предложение</span>
+                    <span>
+                        <svg>
+                            <use href="#header-left-button"></use>
+                        </svg>
+                    </span>
+                </button>
+                <div class="header__logo-container">
+                    <a href="#">
+                        <svg>
+                            <use href="#header-logo"></use>
+                        </svg>
+                    </a>
+                </div>
             
-            <head>
-                <meta charset="UTF-8">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Document</title>
-            </head>
+                <ul>
+                    <li>
+                        <div class="dropdown">
+                            <a href="#" class="dropbtn">Пленка
+                                <svg>
+                                    <use href="#menu-green-triangle"></use>
+                                </svg>
+                            </a>
+                            <ul class="dropdown-content">
+                                <li>
+                                    <a href="#">трехслойная</a>
+                                </li>
+                                <li>
+                                    <a href="#">металлизированная</a>
+                                </li>
+                                <li>
+                                    <a href="#">Дой пак</a>
+                                </li>
+                                <li>
+                                    <a href="#">неметаллизированная</a>
+                                </li>
+                                <li>
+                                    <a href="#">с evoh</a>
+                                </li>
+                                <li>
+                                    <a href="#">с барьерными слоями</a>
+                                </li>
+                                <li>
+                                    <a href="#">с алюминием</a>
+                                </li>
+                                <li>
+                                    <a href="#">bopp +bopp</a>
+                                </li>
+                                <li>
+                                    <a href="#">Pet+pe</a>
+                                </li>
+                                <li>
+                                    <a href="#">Pet+bopp+pe</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <a href="#" class="dropbtn">Пакеты
+                                <svg>
+                                    <use href="#menu-green-triangle"></use>
+                                </svg>
+                            </a>
+                            <ul class="dropdown-content">
+                                <li>
+                                    <a href="#">Дой пак</a>
+                                </li>
+                                <li>
+                                    <a href="#">Крафт Дой пак</a>
+                                </li>
+                                <li>
+                                    <a href="#">Дой пак с дозатором</a>
+                                </li>
+                                <li>
+                                    <a href="#">Дой пак голография</a>
+                                </li>
+                                <li>
+                                    <a href="#">Дой пак с дозатором</a>
+                                </li>
+                                <li>
+                                    <a href="#">Квадропак</a>
+                                </li>
+                                <li>
+                                    <a href="#">Трехшовный (flow-pack)</a>
+                                </li>
+                                <li>
+                                    <a href="#">Саше</a>
+                                </li>
+                                <li>
+                                    <a href="#">Стик</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <a href="#" class="dropbtn">Фасовка</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <a href="#" class="dropbtn">Производство</a>
+                        </div>
+                    </li>
             
-            <body>
-                <style>
-                    .rounded {
-                        counter-reset: li;
-                        list-style: none;
-                        font: 22px "Trebuchet MS", "Lucida Sans";
-                        padding: 0;
-                        text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
-                        width: 40%;
-                        margin: 0 auto;
-                        margin-top: 200px;
-                        margin-bottom: 200px;
-                    }
+                    <li>
+                        <div class="dropdown">
+                            <a href="#" class="dropbtn">Контакты</a>
+                        </div>
+                    </li>
+                </ul>
             
-                    @media (max-width: 1024px) {
-                        .rounded {
-                        width: 80%;
-                        font: 18px "Trebuchet MS", "Lucida Sans";
-                        margin-top: 100px;
-                        }
-                    }
+                <div class="header-button__container">
+                    <div class="header__contacts">
+                        <div>
+                            <a href="tel:+7 (499) 394 44 31">+7 (499) 394 44 31</a>
+                            <a href="https://wa.me/+79363000520">
+                                <svg>
+                                    <use href="#header-whatsApp-icon"></use>
+                                </svg>
+                            </a>
             
-                    @media (max-width: 900px) {
-                        .rounded {
-                        width: 80%;
-                        font: 18px "Trebuchet MS", "Lucida Sans";
-                        }
-                    }
+                            <a href="https://t.me/group_pack">
+                                <svg>
+                                    <use href="#header-tg-icon"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <a href="mailto:sale@group-pack.ru">sale@group-pack.ru</a>
+                    </div>
             
-                    .rounded a {
-                        position: relative;
-                        display: block;
-                        padding: .4em .4em .4em 2em;
-                        margin: .5em 0;
-                        background: #DAD2CA;
-                        color: #444;
-                        text-decoration: none;
-                        border-radius: .3em;
-                        transition: .3s ease-out;
-                    }
+                    <button class="pink-button" data-modal="#application-modal">Оставить заявку</button>
+                </div>
             
-                    .rounded a:hover {
-                        background: #E9E4E0;
-                    }
+                <button data-modal="#header-modal" class="burger-button">
+                    <svg>
+                        <use href="#burger-icon"></use>
+                    </svg>
+                </button>
+            </header>
+            <div class="breadcrumbs page-padding">
+              <a href="#">Главная</a>
+              <svg>
+                <use href="#breadcrumbs-arrow-ico"></use>
+              </svg>
+              <p>Пленка</p>
+            </div>
             
-                    li {
-                        transition: all 0.2s linear;
-                    }
+            <ul class="flexoprint-links --types page-padding">
+              <li class="active">
+                <a href="#">Пленка</a>
+              </li>
+              <li>
+                <a href="#">Пакет дой-пак с зип-лок</a>
+              </li>
+              <li>
+                <a href="#">Пакет дой-пак с окошком</a>
+              </li>
+              <li>
+                <a href="#">Крафт пакет дой-пак</a>
+              </li>
+              <li>
+                <a href="#">Пакет трехшовный</a>
+              </li>
+              <li>
+                <a href="#">Пакет квадропак</a>
+              </li>
+            </ul>
             
-                    li:hover {
-                        transform: translate(-25px, 0%);
-                        transition: all 0.2s linear;
-                    }
+            <section class="film page-padding mt-50">
+              <h1 class="h1">Пленка</h1>
             
-                    /* .rounded a:hover:before {
-                        transform: rotate(360deg);
-                    } */
+              <div class="h2 mt-45">Предлагаем изготовление пленки тиражом от 50 кг. с печатью.</div>
             
-                    .rounded a:before {
-                        content: counter(li);
-                        counter-increment: li;
-                        position: absolute;
-                        left: -1.3em;
-                        top: 50%;
-                        margin-top: -1.3em;
-                        background: #8FD4C1;
-                        height: 2em;
-                        width: 2em;
-                        line-height: 2em;
-                        border: .3em solid white;
-                        text-align: center;
-                        font-weight: bold;
-                        border-radius: 2em;
-                        transition: all .3s ease-out;
-                    }
-                </style>
-                <ol class="rounded">
-                    <li><a href="./index.html">Главная</a></li>
-                    <li><a href="./contacts.html">Контакты</a></li>
-                    <li><a href="./flexoprint.html">Флексопринт</a></li>
-                    <li><a href="./addition-options.html">Дополнительные опции</a></li>
-                    <li><a href="./development.html">Разработка</a></li>
-                    <li><a href="./types-of-packaging.html">Виды упаковки</a></li>
-                    <li><a href="./fasovka.html">Фасовка</a></li>
-                </ol>
-            </body>
+              <div class="film-wrapper grid-cols-12 mt-45">
+                <div class="film-img col-span-7 img-cover">
+                  <img src="./assets/images/film/1.jpg" alt="Пленка">
+                </div>
+                <div class="col-span-5">
+                  <div class="wysiwyg-block pr-10">
+                    <p>Пленка минимальным тиражом производится из таких материалов как:</p>
+                    <ul>
+                      <li>Вopp+Bopp</li>
+                      <li>Pet+Bopp+Pe</li>
+                      <li>Pet матовый+Bopp+Pe</li>
+                      <li>Кraft+Pe</li>
+                      <li>Kraft металлиз+Pe</li>
+                    </ul>
+                  </div>
             
-            </html>
-
+                  <div class="film-two-column">
+                    <div class="film-block">
+                      <div class="film-subtitle">Срок изготовления:</div>
+                      <div>от 4-7 рабочих дней.</div>
+                    </div>
+                    <div class="film-block">
+                      <div class="film-block">
+                        <div class="film-subtitle">Тип печати:</div>
+                        <div>полноцветная 8+8 цветов</div>
+                      </div>
+                    </div>
+                  </div>
+            
+                  <button class="blue-button film-button" data-modal="#application-modal">
+                    Заказать
+                  </button>
+                </div>
+              </div>
+            
+              <div class="green-ball --1"></div>
+            
+            </section>
+            <div class="effective page-padding block-margin">
+              <div class="h2">Эффективность пленки</div>
+            
+              <ul class="effective-list mt-45">
+                <li class="effective-item">
+                  <div class="effective-img img-contain"><img src="./assets/images/film/effective.svg" alt="Это просто фиктивный текст "></div>
+                  <div class="effective-subtitle text-20">Это просто фиктивный текст </div>
+                </li>
+                <li class="effective-item">
+                  <div class="effective-img img-contain"><img src="./assets/images/film/effective.svg" alt="Это просто фиктивный текст "></div>
+                  <div class="effective-subtitle text-20">Это просто фиктивный текст </div>
+                </li>
+                <li class="effective-item">
+                  <div class="effective-img img-contain"><img src="./assets/images/film/effective.svg" alt="Это просто фиктивный текст "></div>
+                  <div class="effective-subtitle text-20">Это просто фиктивный текст </div>
+                </li>
+                <li class="effective-item">
+                  <div class="effective-img img-contain"><img src="./assets/images/film/effective.svg" alt="Это просто фиктивный текст "></div>
+                  <div class="effective-subtitle text-20">Это просто фиктивный текст </div>
+                </li>
+              </ul>
+            
+              <div class="effective-two-columns text-24">
+                <div>
+                  Это просто фиктивный текст полиграфической промышленности. Lorem Ipsum был стандартным в отрасли фиктивным текстом с 1500-х годов, когда
+                  неизвестный печатник взял набор шрифтов и скремблировал его, чтобы создать книгу с образцами шрифтов.
+                </div>
+                <div>
+                  Это просто фиктивный текст полиграфической промышленности. Lorem Ipsum был стандартным в отрасли фиктивным текстом с 1500-х годов, когда
+                  неизвестный печатник взял набор шрифтов и скремблировал его, чтобы создать книгу с образцами шрифтов.
+                </div>
+              </div>
+            </div>
+            <div class="forwhat page-padding block-margin">
+            
+              <div class="h2">Для чего подходит?</div>
+            
+              <ul class="forwhat-list mt-45">
+                <li class="forwhat-item">
+                  <div class="forwhat-subtitle pink text-24">Продовольственные товары</div>
+                  <ul class="forwhat-sublist text-20">
+            
+                    <li>Сахара</li>
+                    <li>Кофе</li>
+                    <li>Чая</li>
+                    <li>Цикория</li>
+                    <li>Сухофруктов</li>
+                    <li>Мюсли</li>
+                    <li>Печенья</li>
+                    <li>Круп</li>
+                    <li>Специй и приправ</li>
+                    <li>Чипсов</li>
+                    <li>Сухариков</li>
+                    <li>Конфет</li>
+                    <li>Снеков</li>
+                    <li class="w-full">Макарон и макаронных изделий</li>
+                    <li class="w-full">Пельменей и других замороженных полуфабрикатов</li>
+                    <li class="w-full">Корма для домашних животных</li>
+                  </ul>
+                </li>
+                <li class="forwhat-item">
+                  <div class="forwhat-subtitle green text-24">Продовольственные товары</div>
+                  <ul class="forwhat-sublist text-20">
+                    <li>Гранул</li>
+                    <li>Наполнителя для животных</li>
+                    <li>Бытовой химии</li>
+                    <li>Удобрений</li>
+                    <li>Стирального порошка</li>
+                    <li>Угля</li>
+                    <li>Декоративных камней</li>
+                    <li>Соли для ванн</li>
+                    <li>Земли для растений</li>
+                    <li>Декоративного песка</li>
+                    <li>Щепок</li>
+                    <li>Семян для рассады</li>
+                    <li>Средства от крыс и мышей</li>
+                    <li>Прикормки для рыб</li>
+                    <li class="w-full">Скраба для тела и других принадлежностей для ухода за телом</li>
+                    <li class="w-full">Порошка для посудомоечной машины</li>
+                  </ul>
+                </li>
+                <li class="forwhat-item">
+                  <div class="forwhat-subtitle blue text-24">Продовольственные товары</div>
+                  <ul class="forwhat-sublist text-20">
+                    <li class="w-full">Конфеты</li>
+                    <li class="w-full">Печенье</li>
+                    <li class="w-full">Овощи</li>
+                    <li class="w-full">Игрушки</li>
+                    <li class="w-full">Запчасти</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <div class="green-ball --2"></div>
+            </div>
+            <div class="our-works page-padding block-margin">
+              <div class="h2">Наши работы</div>
+              <div class="swiper our-works-swiper">
+                  <ul class="swiper-wrapper">
+                      <li class="swiper-slide rotation-card">
+                          <div class="panel-container">
+                              <img src="./assets/images/our-works/our-works-img1.jpg" alt="#">
+                          </div>
+                      </li>
+                      <li class="swiper-slide rotation-card">
+                          <div class="panel-container">
+                              <img src="./assets/images/our-works/our-works-img4.jpg" alt="#">
+                          </div>
+                      </li>
+                      <li class="swiper-slide rotation-card">
+                          <div class="panel-container">
+                              <img src="./assets/images/our-works/our-works-img9.jpg" alt="#">
+                          </div>
+                      </li>
+                      <li class="swiper-slide rotation-card">
+                          <div class="panel-container">
+                              <img src="./assets/images/our-works/our-works-img10.jpg" alt="#">
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+            
+              <div class="our-works-pagination"></div>
+              
+            </div>
+            <div class="anothertypes page-padding block-margin">
+              <div class="anothertypes-title h2">Другие виды упаковки</div>
+            
+              <ul class="anothertypes-list mt-45">
+                <li class="anothertypes-item">
+                  <div class="anothertypes-subtitle">Пакет дой-пак с зип-лок</div>
+                  <div class="anothertypes-img img-contain">
+                    <img src="./assets/images/anothertypes/1.png" alt="Пакет дой-пак с зип-лок">
+                  </div>
+                  <a href="#" class="anothertypes-link blue-button">Подробнее</a>
+                </li>
+                <li class="anothertypes-item">
+                  <div class="anothertypes-subtitle">Пакет дой-пак с окошком</div>
+                  <div class="anothertypes-img img-contain">
+                    <img src="./assets/images/anothertypes/2.png" alt="Пакет дой-пак с окошком">
+                  </div>
+                  <a href="#" class="anothertypes-link blue-button">Подробнее</a>
+                </li>
+                <li class="anothertypes-item">
+                  <div class="anothertypes-subtitle">Крафт пакет дой-пак</div>
+                  <div class="anothertypes-img img-contain">
+                    <img src="./assets/images/anothertypes/3.png" alt="Крафт пакет дой-пак">
+                  </div>
+                  <a href="#" class="anothertypes-link blue-button">Подробнее</a>
+                </li>
+                <li class="anothertypes-item">
+                  <div class="anothertypes-subtitle">Пакет трехшовный</div>
+                  <div class="anothertypes-img img-contain">
+                    <img src="./assets/images/anothertypes/4.png" alt="Пакет трехшовный">
+                  </div>
+                  <a href="#" class="anothertypes-link blue-button">Подробнее</a>
+                </li>
+                <li class="anothertypes-item">
+                  <div class="anothertypes-subtitle">Пакет квадропак</div>
+                  <div class="anothertypes-img img-contain">
+                    <img src="./assets/images/anothertypes/5.png" alt="Пакет квадропак">
+                  </div>
+                  <a href="#" class="anothertypes-link blue-button">Подробнее</a>
+                </li>
+                <li class="anothertypes-last text-24">
+                  Это просто фиктивный текст полиграфической промышленности. Lorem Ipsum был стандартным в отрасли фиктивным текстом с 1500-х годов, когда
+                  неизвестный печатник взял набор шрифтов и скремблировал его, чтобы создать книгу с образцами шрифтов. Это просто фиктивный текст полиграфической
+                  промышленности. Lorem Ipsum был стандартным в отрасли фиктивным текстом с 1500-х годов, когда неизвестный печатник взял набор шрифтов и
+                  скремблировал его, чтобы создать книгу с образцами шрифтов.
+                </li>
+              </ul>
+            </div>
+            <div class="green-form-wrapper">
+              <div class="green-ball --3"></div>
+              <form action="#" class="main-form page-margin block-margin" name="main-form">
+                  <h2>
+                      Заполните форму, и наш<br>специалист свяжется с вами
+                  </h2>
+              
+                  <div class="main-form__inputs">
+                      <input type="text" placeholder="Имя" name="name">
+                      <input type="email" placeholder="E-mail" name="mail">
+                      <input type="tel" placeholder="Телефон" name="phone">
+                  </div>
+              
+                  <div class="main-form__submit">
+                      <p>Нажимая кнопку «Отправить», вы соглашаетесь с <a href="#">Политикой обработки персональных данных</a> и <a
+                              href="#">Политикой конфиденциальности</a></p>
+              
+                      <button class="pink-button" type="submit">
+                          Отправить
+                      </button>
+                  </div>
+              </form></div>
+            
+            <div class="contacts page-padding block-margin">
+              <div class="contacts__content">
+                  <div class="contacts__inner">
+                      <div class="contacts__inner-bg">
+                          <img src="./assets/images/contacts/contacts-left-img.jpg" alt="">
+                      </div>
+                      <p>Принимаем звонки с 9:00 до 20:00</p>
+            
+                      <a href="#">127015, Москва, ул.<br>Новодмитровская, д. 2к1</a>
+            
+                      <a href="tel:+7 (499) 394 44 31">+7 (499) 394 44 31</a>
+            
+                      <a href="mailto:sale@group-pack.ru">sale@group-pack.ru</a>
+            
+                      
+                  </div>
+            
+                  <form action="#" name="contacts-form">
+                      <div class="form-bg">
+                          <svg>
+                              <use href="#contacts-bg-right"></use>
+                          </svg>
+                      </div>
+                      <h3>Консультация дизайнера</h3>
+            
+                      <div class="form-content">
+                          <input type="text" placeholder="Имя" name="name">
+                          <input type="tel" placeholder="Телефон" name="phone">
+            
+                          <button type="submit" class="blue-button">Оставить заявку</button>
+            
+                          <p>
+                              Нажимая кнопку «Отправить», вы соглашаетесь c <a href="#">Политикой обработки персональных
+                                  данных</a> и <a href="#">Политикой конфиденциальности</a>
+                          </p>
+                      </div>
+                  </form>
+              </div>
+            </div>
+            <div class="block-margin"></div>
+            
+            <footer class="page-padding">
+                <div class="footer-inner">
+                    <a href="#">
+                        <svg>
+                            <use href="#footer-logo"></use>
+                        </svg>
+                    </a>
+            
+                    <ul>
+                        <li>
+                            <a href="#">Пленка</a>
+                        </li>
+                        <li>
+                            <a href="#">Пакеты</a>
+                        </li>
+                        <li>
+                            <a href="#">Фасовка</a>
+                        </li>
+                        <li>
+                            <a href="#">Производство</a>
+                        </li>
+                        <li>
+                            <a href="#">Контакты</a>
+                        </li>
+                    </ul>
+            
+                    <div class="footer__social-media">
+                        <a href="https://www.youtube.com/@Group-Pack" target="_blank">
+                            <svg>
+                                <use href="#youtube-ico"></use>
+                            </svg>
+                        </a>
+            
+                        <a href="https://t.me/group_pack" target="_blank">
+                            <svg>
+                                <use href="#tg-icon"></use>
+                            </svg>
+                        </a>
+            
+                        <a href="https://wa.me/+79363000520" target="_blank">
+                            <svg>
+                                <use href="#whatsApp-ico"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            
+                <div class="footer-addition">
+                    <p>Group Pack © (ООО "Открытый ритейл", ИНН 9721126373) 2010 - 2024</p>
+                    <a href="mailto:sale@group-pack.ru">sale@group-pack.ru</a>
+                    <a href="tel:+7 (499) 394 44 31">+7 (499) 394 44 31</a>
+                    <a href="https://yar-studio.com">Разработка сайта студия “ЯР”</a>
+                </div>
+            </footer>
+            <div id="header-modal" class="header-modal">
+                <div class="header-modal-content">
+            
+                    <div class="header-modal__background"></div>
+            
+                    <div class="header-modal__inner">
+                        <div class="close-container">
+                            <button class="close">
+                                <svg>
+                                    <use href="#cross-icon"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        <a href="#" class="header-modal__logo">
+                            <svg>
+                                <use href="#header-logo"></use>
+                            </svg>
+                        </a>
+            
+                        <ul>
+                            <li>
+                                <a href="#" class="accordion">Пленка
+                                    <svg>
+                                        <use href="#menu-green-triangle"></use>
+                                    </svg>
+                                </a>
+                                <div class="panel">
+                                    <a href="#">трехслойная</a>
+                                    <a href="#">металлизированная</a>
+                                    <a href="#">Дой пак</a>
+                                    <a href="#">неметаллизированная</a>
+                                    <a href="#">с evoh</a>
+                                    <a href="#">с барьерными слоями</a>
+                                    <a href="#">с алюминием</a>
+                                    <a href="#">bopp +bopp</a>
+                                    <a href="#">Pet+pe</a>
+                                    <a href="#">Pet+bopp+pe</a>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="accordion">Пакеты
+                                    <svg>
+                                        <use href="#menu-green-triangle"></use>
+                                    </svg>
+                                </a>
+                                <div class="panel">
+                                    <a href="#">Дой пак</a>
+                                    <a href="#">Крафт Дой пак</a>
+                                    <a href="#">Дой пак с дозатором</a>
+                                    <a href="#">Дой пак голография</a>
+                                    <a href="#">Дой пак с дозатором</a>
+                                    <a href="#">Квадропак</a>
+                                    <a href="#">Трехшовный (flow-pack)</a>
+                                    <a href="#">Саше</a>
+                                    <a href="#">Стик</a>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="accordion">Фасовка</a>
+                            </li>
+                            <li>
+                                <a href="#" class="accordion">Производство</a>
+                            </li>
+            
+                            <li>
+                                <a href="#" class="accordion">Контакты</a>
+                            </li>
+                        </ul>
+                    </div>
+            
+                    <div class="header-modal__contacts">
+                        <div>
+                            <a href="tel:+7 (499) 394 44 31">+7 (499) 394 44 31</a>
+                            <a href="https://wa.me/+79363000520">
+                                <svg>
+                                    <use href="#header-whatsApp-icon"></use>
+                                </svg>
+                            </a>
+            
+                            <a href="https://t.me/group_pack">
+                                <svg>
+                                    <use href="#header-tg-icon"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        
+                        <a href="mailto:sale@group-pack.ru">sale@group-pack.ru</a>
+                        <a href="#" class="pink-button">Оставить заявку</a>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div id="application-modal" class="application-modal">
+                <div class="application-modal-content">
+            
+                    <div class="application-modal__background"></div>
+            
+                    <div class="application-modal__close-container">
+                        <button class="close">
+                            <svg>
+                                <use href="#cross-icon"></use>
+                            </svg>
+                        </button>
+                    </div>
+            
+                    <form action="#" name="application-form" class="application-form">
+                        <h2>
+                            Оставить заявку
+                        </h2>
+            
+                        <p>Заполните форму, и наш специалист свяжется с вами</p>
+            
+                        <div class="application-form__inputs">
+                            <input type="text" placeholder="Имя" name="name">
+                            <input type="email" placeholder="E-mail" name="mail">
+                            <input type="tel" placeholder="Телефон" name="phone">
+                        </div>
+            
+                        <div class="application-form__submit">
+                            <p>Нажимая кнопку «Отправить», вы&nbsp;соглашаетесь с&nbsp;<a href="#">Политикой обработки персональных
+                                    данных</a> и&nbsp;<a href="#">Политикой конфиденциальности</a></p>
+            
+                            <button class="blue-button" type="submit">
+                                Заказать
+                            </button>
+                        </div>
+                    </form>
+            
+                </div>
+            </div>
+            
+            
+            <div id="thanks-modal" class="thanks-modal">
+                <div class="thanks-modal-content">
+            
+                    <div class="thanks-modal__background">
+                        <img src="./assets/images/modals/mobile-line.jpg" alt="#">
+                    </div>
+            
+                    <h2>Спасибо за Вашу заявку!</h2>
+            
+                    <p>
+                        Наши специалисты свяжутся с вами в течение <span>15 минут</span> в рабочее время. Заявки обрабатываются с
+                        <span>09:00</span> до <span>21:00</span> по будням, и с <span>10:00</span> до <span>20:00</span> по
+                        выходным. Заявки, отправленные в нерабочее время, обрабатываются на следующий день.
+                    </p>
+            
+                    <button class="blue-button close">Закрыть</button>
+            
+                </div>
+            </div>
+            
+            <div id="proposition-modal" class="proposition-modal">
+                
+                <div class="proposition-modal__content">
+                    <button class="close">
+                        <svg>
+                            <use href="#cross-icon"></use>
+                        </svg>
+                    </button>
+                    <div class="proposition-modal__left-inner">
+                        <h3>Выгодное предложение!</h3>
+                        <p>Посылая заявку вы получите эксклюзивное предложение от нашей компании.  Которое выделит ваш продукт среди конкурентов. И поможет повысить как узнаваемость бренда, так и продажи.</p>
+                    </div>
+            
+                    <form action="#" name="application-form" class="application-form">
+                        <h3>
+                            Оставить заявку
+                        </h3>
+            
+                        <p>Заполните форму, и наш специалист свяжется с вами</p>
+            
+                        <div class="application-form__inputs">
+                            <input type="text" placeholder="Имя" name="name">
+                            <input type="email" placeholder="E-mail" name="mail">
+                            <input type="tel" placeholder="Телефон" name="phone">
+                        </div>
+            
+                        <div class="application-form__submit">
+                            <p>Нажимая кнопку «Отправить», вы&nbsp;соглашаетесь с&nbsp;<a href="#">Политикой обработки персональных
+                                    данных</a> и&nbsp;<a href="#">Политикой конфиденциальности</a></p>
+            
+                            <button class="blue-button" type="submit">
+                                Заказать
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div id="close-modal" class="proposition-modal">
+                
+                <div class="proposition-modal__content">
+                    <button class="close">
+                        <svg>
+                            <use href="#cross-icon"></use>
+                        </svg>
+                    </button>
+                    <div class="proposition-modal__left-inner">
+                        <h3>Вы уже уходите?<br>У нас для вас предложение</h3>
+                        <p>Посылая заявку вы получите эксклюзивное предложение от нашей компании.  Которое выделит ваш продукт среди конкурентов. И поможет повысить как узнаваемость бренда, так и продажи.</p>
+                    </div>
+            
+                    <form action="#" name="application-form" class="application-form">
+                        <h3>
+                            <br>
+                        </h3>
+            
+                        <p>Заполните форму, и наш специалист свяжется с вами</p>
+            
+                        <div class="application-form__inputs">
+                            <input type="text" placeholder="Имя" name="name">
+                            <input type="email" placeholder="E-mail" name="mail">
+                            <input type="tel" placeholder="Телефон" name="phone">
+                        </div>
+            
+                        <div class="application-form__submit">
+                            <p>Нажимая кнопку «Отправить», вы&nbsp;соглашаетесь с&nbsp;<a href="#">Политикой обработки персональных
+                                    данных</a> и&nbsp;<a href="#">Политикой конфиденциальности</a></p>
+            
+                            <button class="blue-button" type="submit">
+                                Заказать
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </main>
 
     </div>

@@ -1,6 +1,7 @@
 .flexoprint-links {
     display: flex;
     gap: 9rem;
+    row-gap: 2rem;
     margin-top: 5rem;
     flex-wrap: wrap;
 
@@ -9,7 +10,8 @@
     }
 
     @include breakpoint($sm-bp) {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         gap: 1rem;
         margin-top: 3rem;
     }
@@ -41,6 +43,25 @@
                 color: var(--white);
             }
         }
+    }
+
+    &.--types {
+      gap: 5rem;
+      row-gap: 2rem;
+      max-width: 136rem;
+      @include breakpoint($xl-bp) {
+        gap: 2rem;
+      }
+      @include breakpoint($sm-bp) {
+        gap: 1rem;
+        padding-right: 1.5rem;
+      }
+      li {
+        @include breakpoint($xl-bp) {
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+        }
+      }
     }
 }
 

@@ -32,6 +32,9 @@
     "@fancyapps/ui": "^4.0.27",
     "bootstrap": "^5.2.0-beta1",
     "choices.js": "^10.1.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-notify": "^4.0.0",
+    "gulp-uglify": "^3.0.2",
     "swiper": "^8.2.6"
   }
 }

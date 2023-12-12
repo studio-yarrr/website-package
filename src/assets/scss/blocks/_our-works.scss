@@ -80,6 +80,7 @@
 
 .panel-container {
     transform-style: preserve-3d;
+    transition: transform .2s;
 }
 
 .our-works__background {
