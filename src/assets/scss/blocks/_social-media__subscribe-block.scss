@@ -1,0 +1,100 @@
+.social-media__subscribe-block {
+    margin-top: 30rem;
+
+    @include breakpoint($xl-bp) {
+        margin-top: 15rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        margin-top: 6rem;
+    }
+}
+
+.social-media__subscribe-block-wrapper {
+    background: var(--gradient);
+    display: flex;
+    justify-content: space-between;
+    padding: 4.4rem 8.6rem 6.5rem 12rem;
+    border-radius: 2rem;
+    position: relative;
+
+    @include breakpoint($xl-bp) {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 5rem 5rem 0rem 5rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        padding: 2rem 1rem 0rem 2rem;
+    }
+}
+
+.social-media__subscribe-text {
+    width: 60rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include breakpoint($sm-bp) {
+        gap: 1rem;
+        width: 100%;
+    }
+
+    h3 {
+        color: var(--white);
+        font-size: 4.8rem;
+        font-weight: 500;
+        line-height: normal;
+
+        @include breakpoint($sm-bp) {
+            font-size: 2rem;
+        }
+    }
+
+    p {
+        color: var(--white);
+        font-size: 3.2rem;
+        font-weight: 500;
+        line-height: normal;
+        width: 42.6rem;
+
+        @include breakpoint($sm-bp) {
+            font-size: 1.6rem;
+            width: 100%;
+        }
+    }
+
+    a {
+        width: 42.6rem;
+        text-align: center;
+
+        @include breakpoint($sm-bp) {
+            width: 100%;
+        }
+    }
+}
+
+
+.social-media__subscribe-img {
+    position: absolute;
+    right: 8.6rem;
+    width: 51rem;
+    height: 55rem;
+    bottom: 0;
+
+    @include breakpoint($xl-bp) {
+        position: unset;
+        margin: 0 auto;
+    }
+
+    @include breakpoint($sm-bp) {
+        width: 27rem;
+        height: 27rem;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
