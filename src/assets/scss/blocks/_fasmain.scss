@@ -1,0 +1,63 @@
+.fasmain-two-column {
+  color: var(--gray);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  @include breakpoint($sm-bp) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.fasmain-left {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  @include breakpoint($sm-bp) {
+    gap: 2rem;
+    flex-direction: column-reverse;
+  }
+}
+
+.fasmain-img {
+  height: 46rem;
+  border-radius: 2rem;
+  @include breakpoint($xl-bp) {
+    height: 29.2rem;
+  }
+}
+
+.fasmain-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.fasmain-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  @include breakpoint($sm-bp) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.fasmain-item {
+  background-color: rgba($color: #60DD68, $alpha: 0.5);
+  border-radius: 2rem;
+  padding: 1.5rem;
+  padding-bottom: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.fasmain-subtitle {
+  font-weight: 500;
+  color: var(--blue);
+}
+.fasmain-desc {
+  font-size: 2rem;
+  color: var(--black);
+  @include breakpoint($xl-bp) {
+    font-size: 1.6rem;
+  }
+}
