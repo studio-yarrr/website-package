@@ -1,0 +1,142 @@
+.addition-options__variants-of-use {
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint($xl-bp) {
+        flex-direction: column;
+    }
+}
+
+.addition-options__variants-of-use-text {
+    width: 54rem;
+
+    @include breakpoint($xl-bp) {
+        width: 100%;
+    }
+
+    h3 {
+        color: var(--black);
+        font-size: 4.8rem;
+        font-weight: 500;
+        line-height: normal;
+
+        @include breakpoint($sm-bp) {
+            font-size: 1.8rem;
+        }
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-top: 5rem;
+
+        @include breakpoint($xl-bp) {
+            justify-content: space-between;
+        }
+
+        @include breakpoint($sm-bp) {
+            margin-top: 2rem;
+            gap: 1.5rem;
+        }
+
+        li {
+            padding-left: 2.5rem;
+            position: relative;
+            width: 26rem;
+
+            @include breakpoint($sm-bp) {
+                padding-left: 2.2rem;
+                width: 16rem;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 1.6rem;
+                height: 1.6rem;
+                background: var(--pink);
+                border-radius: 50%;
+                left: 0;
+                top: 0.8rem;
+
+                @include breakpoint($sm-bp) {
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    top: 0.4rem;
+                }
+            }
+
+            a {
+                color: var(--black);
+                font-size: 2.4rem;
+                font-weight: 400;
+                line-height: normal;
+                text-decoration-line: underline;
+
+                @include breakpoint($sm-bp) {
+                    font-size: 1.4rem;
+                    text-decoration-line: none;
+                }
+            }
+
+
+        }
+    }
+}
+
+.addition-options__variants-of-use-swiper {
+    width: 89rem;
+    position: relative;
+
+    @include breakpoint($xl-bp) {
+        width: 100%;
+        margin-top: 6rem;
+    }
+
+    .swiper-slide {
+        height: 55.3rem;
+
+        @include breakpoint($sm-bp) {
+            height: 25.2rem;
+        }
+    }
+
+    .flexoprint-swiper__pagination {
+        bottom: -4rem;
+    }
+}
+
+.addition-options__images-container {
+    position: relative;
+
+    div {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &:first-child {
+            width: 47.5rem;
+            position: absolute;
+            z-index: 1;
+            top: 16.6rem;
+
+            @include breakpoint($sm-bp) {
+                width: 22rem;
+                top: 6.6rem;
+            }
+        }
+
+        &:last-child {
+            width: 63rem;
+            position: absolute;
+            right: 0;
+
+            @include breakpoint($sm-bp) {
+                width: 28rem;
+            }
+        }
+    }
+}

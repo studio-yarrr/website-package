@@ -38,7 +38,6 @@
     margin-top: 4.5rem;
 
     @include breakpoint($xl-bp) {
-        font-size: calc(100vw / 1024 * 10);
         flex-direction: column;
     }
 
