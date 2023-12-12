@@ -186,24 +186,7 @@
         bottom: -3rem !important;
     }
 
-    .swiper-pagination-bullet {
-        margin: 0;
-        width: 2rem;
-        height: 2rem;
-        border: 0.3rem solid var(--green);
-        border-radius: 50%;
-        background: transparent;
-        opacity: 1;
-
-        @include breakpoint($sm-bp) {
-            width: 1.5rem;
-            height: 1.5rem;
-        }
-    }
-
-    .swiper-pagination-bullet-active {
-        background: var(--green);
-    }
+    
 }
 
 .flexoprint-swiper__background {

@@ -94,6 +94,7 @@
 
 .shorts-swiper__pagination {
     display: none;
+    position: unset !important;
 
     @include breakpoint($sm-bp) {
         display: flex;
@@ -101,19 +102,5 @@
         align-items: center;
         gap: 1.4rem;
         margin-top: 2rem;
-
-        .swiper-pagination-bullet {
-            margin: 0;
-            width: 1.5rem;
-            height: 1.5rem;
-            border-radius: 50%;
-            border: 0.2rem solid var(--green);
-            background: transparent;
-            opacity: 1;
-        }
-
-        .swiper-pagination-bullet-active {
-            background: var(--green);
-        }
     }
 }

@@ -239,21 +239,4 @@
         margin-top: 1.5rem;
         gap: 1rem;
     }
-
-    .swiper-pagination-bullet {
-        background: var(--white);
-        border: 0.3rem solid var(--green);
-        margin: 0;
-        width: 2rem;
-        height: 2rem;
-
-        @include breakpoint($sm-bp) {
-            width: 1.5rem;
-            height: 1.5rem;
-        }
-    }
-
-    .swiper-pagination-bullet-active {
-        background: var(--green);
-    }
 }

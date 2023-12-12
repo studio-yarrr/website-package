@@ -294,6 +294,38 @@ h2 {
   }
 }
 
+.swiper-pagination {
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+
+  .swiper-pagination-bullet {
+    margin: 0;
+    width: 2rem;
+    height: 2rem;
+    border: 0.3rem solid var(--green);
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+
+    @include breakpoint($sm-bp) {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    background: var(--green);
+  }
+}
+
+.mt-5 {
+  margin-top: 5rem;
+
+  @include breakpoint($sm-bp) {
+    margin-top: 3rem;
+  }
+}
 
 
 @import './blocks/header.scss';
@@ -319,3 +351,5 @@ h2 {
 @import './blocks/type-of-print.scss';
 @import './blocks/shorts-container.scss';
 @import './blocks/addition-options.scss';
+@import './blocks/development-title-block.scss';
+@import './blocks/development-prepress.scss';

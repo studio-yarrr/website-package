@@ -1,0 +1,112 @@
+.development-prepress {
+    h3 {
+        color: var(--blue);
+        font-size: 3.2rem;
+        font-weight: 500;
+        line-height: normal;
+
+        @include breakpoint($sm-bp) {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+.development-prepress__wrapper {
+    display: flex;
+    gap: 2rem;
+    margin-top: 4.5rem;
+
+    @include breakpoint($xl-bp) {
+        flex-direction: column;
+    }
+
+    @include breakpoint($sm-bp) {
+        margin-top: 2rem;
+        gap: 3rem;
+    }
+
+    ul {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        @include breakpoint($xl-bp) {
+            width: 100%;
+        }
+
+        @include breakpoint($sm-bp) {
+            gap: 1.5rem;
+        }
+
+        li {
+            color: var(--gray);
+            font-size: 2rem;
+            font-weight: 400;
+            line-height: normal;
+            padding-left: 3.5rem;
+            position: relative;
+
+            @include breakpoint($sm-bp) {
+                padding-left: 2.5rem;
+                font-size: 1.6rem;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 1.6rem;
+                height: 1.6rem;
+                background: var(--pink);
+                border-radius: 50%;
+                top: 0.6rem;
+                left: 0;
+
+                @include breakpoint($sm-bp) {
+                    width: 1.2rem;
+                    height: 1.2rem;
+                }
+            }
+        }
+    }
+}
+
+.development-prepress__img {
+    width: 50%;
+    border-radius: 2rem;
+    overflow: hidden;
+
+    @include breakpoint($xl-bp) {
+        width: 100%;
+    }
+
+    @include breakpoint($sm-bp) {
+        height: 24rem;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.development-press {
+
+    .development-prepress__img {
+        position: relative;
+        overflow: unset;
+
+        div {
+            position: sticky;
+            top: 20rem;
+
+            @include breakpoint($sm-bp) {
+                position: unset;
+                height: 24rem;
+                overflow: hidden;
+                border-radius: 2rem;
+            }
+        }
+    }
+}

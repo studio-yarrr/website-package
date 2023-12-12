@@ -1,0 +1,129 @@
+.development-title-block {
+
+    h1 {
+        color: var(--blue);
+        font-size: 4rem;
+        font-weight: 600;
+        line-height: normal;
+
+        @include breakpoint($sm-bp) {
+            font-size: 2.4rem;
+        }
+    }
+}
+
+.development-title-block__text {
+    display: flex;
+    gap: 2rem;
+    margin-top: 4.5rem;
+
+    @include breakpoint($xl-bp) {
+        flex-direction: column;
+        margin-top: 2rem;
+    }
+
+    p {
+        width: 50%;
+        color: var(--gray);
+        font-size: 2.4rem;
+        font-weight: 400;
+        line-height: normal;
+
+        @include breakpoint($xl-bp) {
+            width: 100%;
+        }
+
+        @include breakpoint($sm-bp) {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+.development-title-block__content {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+
+    @include breakpoint($xl-bp) {
+        flex-direction: column;
+    }
+}
+
+.development-title-block__content-list {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 3rem;
+    row-gap: 14rem;
+
+    @include breakpoint($xl-bp) {
+        width: 100%;
+        row-gap: 3rem;
+    }
+}
+
+.development-title-block__content-list-inner {
+    display: flex;
+    gap: 2rem;
+    width: 35rem;
+
+    @include breakpoint($xl-bp) {
+        width: 44rem;
+    }
+
+    &>p {
+        font-size: 5rem;
+        color: var(--green);
+
+        @include breakpoint($sm-bp) {
+            font-size: 3.9rem;
+            padding-top: 0.5rem;
+        }
+    }
+
+    div {
+        color: var(--blue);
+        line-height: normal;
+
+        p {
+            font-size: 3.1rem;
+            font-weight: 500;
+
+            @include breakpoint($sm-bp) {
+                font-size: 2.4rem;
+
+            }
+        }
+
+        span {
+            font-size: 2.4rem;
+            font-weight: 400;
+
+            @include breakpoint($sm-bp) {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+
+.development-title-block__swiper {
+    width: 50%;
+
+    @include breakpoint($xl-bp) {
+        width: 100%;
+    }
+
+    .flexoprint-swiper {
+        @include breakpoint($xl-bp) {
+            height: 24rem;
+        }
+    }
+}
+
+.development-title-block__swiper {
+    position: relative;
+
+    .flexoprint-swiper__pagination {
+        bottom: -1rem;
+    }
+}

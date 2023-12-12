@@ -110,3 +110,13 @@
         }
     }
 }
+
+.type-of-print__pagination {
+    display: none;
+    position: unset !important;
+    margin-top: 2rem;
+
+    @include breakpoint($sm-bp) {
+        display: flex;
+    }
+}

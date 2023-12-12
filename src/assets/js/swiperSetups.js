@@ -52,7 +52,11 @@ export function initializeSwiper() {
             500: {
                 slidesPerView: 2,
             },
-        }
+        },
+        pagination: {
+            el: ".type-of-print__pagination",
+        },
+        
     });
 
     let shortsSwiper = new Swiper(".shorts-swiper", {
