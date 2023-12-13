@@ -269,6 +269,7 @@ h2 {
 
   @include breakpoint($sm-bp) {
     margin-top: 2rem;
+    flex-wrap: wrap;
   }
 
   a,
@@ -354,8 +355,8 @@ h2 {
 @import './blocks/development-title-block.scss';
 @import './blocks/development-prepress.scss';
 
-@import './blocks/addition-options__variants-of-use.scss';
-
+@import './blocks/social-media__subscribe-block.scss';
+@import './blocks/anothertypes.scss';
 @import './blocks/film.scss';
 @import './blocks/effective.scss';
 @import './blocks/forwhat.scss';

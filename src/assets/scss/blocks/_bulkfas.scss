@@ -26,6 +26,12 @@
   }
 }
 
+.bulkfas-title {
+  @include breakpoint($sm-bp) {
+    font-size: 2rem;
+  }
+}
+
 
 .text-grey {
   color: var(--gray);

@@ -61,3 +61,9 @@
     font-size: 1.6rem;
   }
 }
+
+.fasovka-title {
+  @include breakpoint($sm-bp) {
+    font-size: 2rem;
+  }
+}

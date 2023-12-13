@@ -114,7 +114,7 @@
     }
 
     .flexoprint-swiper {
-        @include breakpoint($xl-bp) {
+        @include breakpoint($sm-bp) {
             height: 24rem;
         }
     }
