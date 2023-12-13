@@ -34,6 +34,7 @@
         svg {
             width: 4rem;
             height: 4rem;
+            transition: all 0.2s linear;
 
             @include breakpoint($sm-bp) {
                 width: 3.5rem;
@@ -50,6 +51,14 @@
 
             @include breakpoint($sm-bp) {
                 font-size: 1.6rem;
+            }
+        }
+
+        &:hover {
+
+            svg {
+                fill: var(--pink);
+                transition: all 0.2s linear;
             }
         }
     }

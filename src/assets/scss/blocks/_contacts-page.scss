@@ -82,6 +82,23 @@
                     font-size: 1.6rem;
                 }
             }
+
+            a {
+                background-image: linear-gradient(to right,
+                        var(--pink),
+                        var(--pink) 50%,
+                        var(--gray) 50%);
+                background-size: 200% 100%;
+                background-position: 100%;
+                position: relative;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    background-position: 0;
+                }
+            }
         }
     }
 }
@@ -100,6 +117,13 @@
             height: 100%;
             stroke: transparent;
             fill: var(--black);
+        }
+
+        &:hover {
+            svg {
+                transition: all 0.2s linear;
+                fill: var(--pink);
+            }
         }
     }
 
