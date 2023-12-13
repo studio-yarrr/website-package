@@ -269,6 +269,7 @@ h2 {
 
   @include breakpoint($sm-bp) {
     margin-top: 2rem;
+    flex-wrap: wrap;
   }
 
   a,
@@ -362,3 +363,5 @@ h2 {
 @import './blocks/anothertypes.scss';
 @import './blocks/fasmain.scss';
 @import './blocks/bulkfas.scss';
+@import './blocks/teamain.scss';
+@import './blocks/teatypes.scss';

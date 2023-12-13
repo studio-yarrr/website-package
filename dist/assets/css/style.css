@@ -761,6 +761,8 @@ h2::before {
 @media (max-width: 500px) {
     .breadcrumbs {
         margin-top: 2rem;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     }
 }
 
@@ -6869,6 +6871,10 @@ header ul a:hover {
 @media (max-width: 1024px) {
     .green-ball {
         display: none;
+        width: 6.9rem;
+        height: 6.9rem;
+        -webkit-filter: blur(5.5rem);
+        filter: blur(5.5rem);
     }
 }
 
@@ -6885,6 +6891,38 @@ header ul a:hover {
 .green-ball.--3 {
     right: 20rem;
     top: 10rem;
+}
+
+.green-ball.--4 {
+    bottom: 1.2rem;
+    right: 5.9rem;
+}
+
+.green-ball.--5 {
+    bottom: 8.6rem;
+    left: 16rem;
+}
+
+@media (max-width: 1024px) {
+    .green-ball.--5 {
+        display: block;
+        left: 1rem;
+        bottom: 0;
+    }
+}
+
+.green-ball.--6 {
+    top: 35.6rem;
+    right: 22rem;
+}
+
+@media (max-width: 1024px) {
+    .green-ball.--6 {
+        display: block;
+        left: auto;
+        right: 1rem;
+        bottom: 70%;
+    }
 }
 
 .effective-list {
@@ -7104,6 +7142,21 @@ header ul a:hover {
     left: 0.5rem;
 }
 
+.forwhat-sublist a {
+    color: inherit;
+    background-image: linear-gradient(to right, var(--pink), var(--pink) 50%, var(--black) 50%);
+    background-size: 200% 100%;
+    background-position: 100%;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.forwhat-sublist a:hover {
+    background-position: 0;
+}
+
 .forwhat-sublist .w-full {
     -webkit-column-span: all;
     -moz-column-span: all;
@@ -7283,6 +7336,272 @@ header ul a:hover {
 
 @media (max-width: 1024px) {
     .fasmain-desc {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .fasovka-title {
+        font-size: 2rem;
+    }
+}
+
+.bulkfas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    position: relative;
+}
+
+@media (max-width: 500px) {
+    .bulkfas {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px) {
+    .bulkfas.--sm-column-reverse {
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+    }
+}
+
+.bulkfas-wrapper {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.mt-30 {
+    margin-top: 3rem;
+}
+
+@media (max-width: 1024px) {
+    .mt-30 {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .bulkfas-title {
+        font-size: 2rem;
+    }
+}
+
+.text-grey {
+    color: var(--gray);
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.bulkfas-lists {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 1024px) {
+    .bulkfas-lists {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin-top: 2rem;
+        gap: 4rem;
+    }
+}
+
+.mt-20 {
+    margin-top: 2rem;
+}
+
+.bulkfas-list li {
+    text-decoration: underline;
+    -webkit-text-decoration-skip-ink: none;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: 0.1rem;
+    padding-left: 2rem;
+    position: relative;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 500px) {
+    .bulkfas-list li {
+        margin-top: 1rem;
+    }
+}
+
+.bulkfas-list li:first-child {
+    margin-top: 0;
+}
+
+.bulkfas-list li::before {
+    content: "";
+    border-radius: 100%;
+    width: 0.3rem;
+    height: 0.3rem;
+    background-color: var(--black);
+    position: absolute;
+    top: 1rem;
+    left: 0.5rem;
+}
+
+.bulkfas-list a {
+    color: inherit;
+    background-image: linear-gradient(to right, var(--pink), var(--pink) 50%, var(--black) 50%);
+    background-size: 200% 100%;
+    background-position: 100%;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.bulkfas-list a:hover {
+    background-position: 0;
+}
+
+.bulkfas-img {
+    height: 46.2rem;
+    border-radius: 2rem;
+}
+
+@media (max-width: 500px) {
+    .bulkfas-img {
+        height: 20.7rem;
+    }
+}
+
+.bulkfas-button {
+    width: 100%;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+    margin-top: 3rem;
+    font-family: inherit;
+}
+
+@media (max-width: 1024px) {
+    .bulkfas-button {
+        margin-top: 2rem;
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+    }
+}
+
+.pink-line {
+    height: 1.2rem;
+    width: 100%;
+    background-color: var(--pink);
+    margin-top: auto;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 500px) {
+    .pink-line {
+        display: none;
+    }
+}
+
+.fasmain-twocolumns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .fasmain-twocolumns {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+.teatypes-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .teatypes-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .teatypes-list {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+.teatypes-item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+@media (max-width: 500px) {
+    .teatypes-title {
+        font-size: 2rem;
+    }
+}
+
+.teatypes-subtitle {
+    text-align: center;
+}
+
+.teatypes-image {
+    padding: 4rem 1rem;
+    min-height: 35rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-size: cover;
+    border-radius: 2rem;
+    overflow: hidden;
+    margin-top: 2rem;
+    width: 100%;
+    background-color: var(--gray);
+}
+
+@media (max-width: 500px) {
+    .teatypes-image {
+        padding: 1.7rem 2rem;
+        min-height: 32.1rem;
+    }
+}
+
+.teatypes-btn {
+    margin-top: auto;
+    font-family: inherit;
+    font-size: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 500px) {
+    .teatypes-btn {
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
         font-size: 1.6rem;
     }
 }
