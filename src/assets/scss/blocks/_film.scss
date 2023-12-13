@@ -204,6 +204,9 @@
   z-index: -1;
   @include breakpoint($xl-bp) {
     display: none;
+    width: 6.9rem;
+    height: 6.9rem;
+    filter: blur(5.5rem);
   }
 
   &.--1 {
@@ -217,5 +220,28 @@
   &.--3 {
     right: 20rem;
     top: 10rem;
+  }
+  &.--4 {
+    bottom: 1.2rem;
+    right: 5.9rem;
+  }
+  &.--5 {
+    bottom: 8.6rem;
+    left: 16rem;
+    @include breakpoint($xl-bp) {
+      display: block;
+      left: 1rem;
+      bottom: 0;
+    }
+  }
+  &.--6 {
+    top: 35.6rem;
+    right: 22rem;
+    @include breakpoint($xl-bp) {
+      display: block;
+      left: auto;
+      right: 1rem;
+      bottom: 70%;
+    }
   }
 }

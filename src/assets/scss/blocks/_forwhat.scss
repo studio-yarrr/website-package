@@ -91,6 +91,19 @@
 
     }
   }
+  a {
+    color: inherit;
+    background-image: linear-gradient(to right, var(--pink), var(--pink) 50%, var(--black) 50%);
+    background-size: 200% 100%;
+    background-position: 100%;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-position: 0;
+    }
+  }
   .w-full {
     column-span: all;
   }
