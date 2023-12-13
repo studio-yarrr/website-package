@@ -172,7 +172,7 @@ svg {
   width: max-content;
   position: relative;
   overflow: hidden;
-
+  font-family: inherit;
   @include breakpoint($sm-bp) {
     font-size: 1.6rem;
     padding: 0.8rem 2rem;
@@ -208,6 +208,7 @@ svg {
   padding: 1.5rem 3rem;
   position: relative;
   overflow: hidden;
+  font-family: inherit;
 
   @include breakpoint($sm-bp) {
     font-size: 1.6rem;
