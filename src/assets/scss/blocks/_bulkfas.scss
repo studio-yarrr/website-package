@@ -19,12 +19,13 @@
   flex-direction: column;
 }
 
-.bulkfas-title {
-  margin-bottom: 3rem;
-  @include breakpoint($sm-bp) {
-    margin-bottom: 2rem;
+.mt-30 {
+  margin-top: 3rem;
+  @include breakpoint($xl-bp) {
+    margin-top: 2rem;
   }
 }
+
 
 .text-grey {
   color: var(--gray);

@@ -7331,13 +7331,13 @@ header ul a:hover {
     flex-direction: column;
 }
 
-.bulkfas-title {
-    margin-bottom: 3rem;
+.mt-30 {
+    margin-top: 3rem;
 }
 
-@media (max-width: 500px) {
-    .bulkfas-title {
-        margin-bottom: 2rem;
+@media (max-width: 1024px) {
+    .mt-30 {
+        margin-top: 2rem;
     }
 }
 
@@ -7456,4 +7456,10 @@ header ul a:hover {
     .pink-line {
         display: none;
     }
+}
+
+.fasmain-twocolumns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
 }
