@@ -284,6 +284,24 @@ h2 {
     }
   }
 
+  a {
+    line-height: normal;
+    background-image: linear-gradient(to right,
+        var(--pink),
+        var(--pink) 50%,
+        var(--gray) 50%);
+    background-size: 200% 100%;
+    background-position: 100%;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-position: 0;
+    }
+  }
+
   svg {
     width: 2rem;
     height: 2rem;
@@ -354,7 +372,7 @@ h2 {
 @import './blocks/addition-options.scss';
 @import './blocks/development-title-block.scss';
 @import './blocks/development-prepress.scss';
-
+@import './blocks/addition-options__variants-of-use.scss';
 @import './blocks/social-media__subscribe-block.scss';
 @import './blocks/anothertypes.scss';
 @import './blocks/film.scss';
