@@ -649,6 +649,7 @@ svg {
     width: max-content;
     position: relative;
     overflow: hidden;
+    font-family: inherit;
 }
 
 @media (max-width: 500px) {
@@ -688,6 +689,7 @@ svg {
     padding: 1.5rem 3rem;
     position: relative;
     overflow: hidden;
+    font-family: inherit;
 }
 
 @media (max-width: 500px) {
