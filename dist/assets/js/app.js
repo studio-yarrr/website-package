@@ -1,6 +1,6 @@
-import * as Modals from './modals.js';
+// import * as Modals from './modals.js';
 
-import { initializeSwiper } from './swiperSetups.js';
+// import { initializeSwiper } from './swiperSetups.js';
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -10694,11 +10694,154 @@ document.addEventListener("DOMContentLoaded", () => {
     touchpadSupport: true,
   })
 
-  const headerModal = new Modals.Modal("#header-modal")
-  const applicationModal = new Modals.Modal("#application-modal")
-  const thanksModal = new Modals.Modal("#thanks-modal")
-  const propositionModal = new Modals.Modal("#proposition-modal")
-  const closeModal = new Modals.Modal("#close-modal")
+  class Modal {
+    constructor(modalSelector) {
+      this.modal = document.querySelector(modalSelector);
+      this.initOpenButtons(modalSelector);
+      this.initCloseButton();
+    }
+
+    initOpenButtons(modalSelector) {
+      const buttons = document.querySelectorAll(`[data-modal="${modalSelector}"]`);
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          this.open();
+          this.disableBodyScroll();
+        });
+      });
+    }
+
+    initCloseButton() {
+      if (this.modal) {
+        const closeButton = this.modal.querySelector('.close');
+        if (closeButton) {
+          closeButton.addEventListener('click', () => {
+            this.close();
+            this.enableBodyScroll();
+          });
+        }
+      }
+
+      window.addEventListener('click', (event) => {
+        if (this.modal && event.target === this.modal) {
+          this.close();
+          this.enableBodyScroll();
+        }
+      });
+    }
+
+    open() {
+      this.modal.style.display = 'block';
+      setTimeout(() => {
+        this.modal.classList.add('open');
+      }, 10);
+    }
+
+    close() {
+      this.modal.classList.remove('open');
+      setTimeout(() => {
+        this.modal.style.display = 'none';
+      }, 300);
+    }
+
+    disableBodyScroll() {
+      const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.paddingRight = scrollBarWidth + 'px';
+      document.body.style.overflow = 'hidden';
+    }
+
+    enableBodyScroll() {
+      document.body.style.paddingRight = '';
+      document.body.style.overflow = '';
+    }
+  }
+
+  function initializeSwiper() {
+    if (window.matchMedia("(max-width: 1024px)").matches) {
+      let materialsTypesSwiper = new Swiper(".materials-types-swiper", {
+        slidesPerView: 1,
+        pagination: {
+          el: ".materials-types-pagination",
+          clickable: true,
+        },
+      });
+
+      let ourWorksSwiper = new Swiper(".our-works-swiper", {
+        slidesPerView: 1,
+        grid: {
+          rows: 2,
+        },
+        spaceBetween: 20,
+        pagination: {
+          el: ".our-works-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          500: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+        }
+      });
+
+      let technicalCapabilitiesSwiper = new Swiper(".technical-capabilities-swiper", {
+        slidesPerView: 1,
+        pagination: {
+          el: ".technical-capabilities-pagination",
+          clickable: true,
+        },
+      });
+    }
+
+    let flexoprintSwiper = new Swiper(".flexoprint-swiper", {
+      pagination: {
+        el: ".flexoprint-swiper__pagination",
+      },
+      navigation: {
+        nextEl: ".flexoprint-swiper__buttons button:last-child",
+        prevEl: ".flexoprint-swiper__buttons button:first-child",
+      },
+    });
+
+    let typeOfPrintSwiper = new Swiper(".type-of-print__swiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      breakpoints: {
+        500: {
+          slidesPerView: 2,
+        },
+      },
+      pagination: {
+        el: ".type-of-print__pagination",
+      },
+
+    });
+
+    let shortsSwiper = new Swiper(".shorts-swiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      watchSlidesProgress: true,
+      pagination: {
+        el: ".shorts-swiper__pagination",
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 4,
+        },
+        500: {
+          slidesPerView: 2,
+        },
+      }
+    });
+  }
+
+
+
+  const headerModal = new Modal("#header-modal")
+  const applicationModal = new Modal("#application-modal")
+  const thanksModal = new Modal("#thanks-modal")
+  const propositionModal = new Modal("#proposition-modal")
+  const closeModal = new Modal("#close-modal")
 
   initializeSwiper();
 
@@ -10785,7 +10928,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const mainVideos = document.querySelectorAll('.title-block__video video');
   const playButtons = document.querySelectorAll('.title-block__video button');
-  
+
   mainVideos.forEach((video, index) => {
     const playButton = playButtons[index];
     if (playButton) {
@@ -10842,159 +10985,178 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
   if (window.matchMedia("(min-width: 1024px)").matches) {
-    gsap.from(".package-types ul li", {
-      scrollTrigger: {
-        trigger: ".package-types ul",
-        start: "top 75%",
-        end: "bottom top",
-        toggleActions: "play none none none"
-      },
-      duration: 1,
-      opacity: 0,
-      y: 30,
-      stagger: 0.2,
-      ease: "power2.out"
-    });
+    if (document.querySelector('.package-types ul li')) {
+      gsap.from(".package-types ul li", {
+        scrollTrigger: {
+          trigger: ".package-types ul",
+          start: "top 75%",
+          end: "bottom top",
+          toggleActions: "play none none none"
+        },
+        duration: 1,
+        opacity: 0,
+        y: 30,
+        stagger: 0.2,
+        ease: "power2.out"
+      });
+    }
+    
+    if (document.querySelector('type-of-package ul li')) {
+      gsap.from(".type-of-package ul li", {
+        scrollTrigger: {
+          trigger: ".type-of-package ul",
+          start: "top 80%",
+          end: "bottom top",
+          toggleActions: "play none none none"
+        },
+        duration: 1.2,
+        opacity: 0,
+        scale: 0.5,
+        transformOrigin: "center",
+        ease: "elastic.out(1, 0.75)",
+        stagger: 0.1
+      });
+    }
 
+    if (document.querySelector('.why-us ul li')) {
+      gsap.from(".why-us ul li", {
+        scrollTrigger: {
+          trigger: ".why-us ul",
+          start: "top 90%",
+          end: "bottom top",
+          toggleActions: "play none none none"
+        },
+        duration: 1,
+        x: (index, target) => {
+          return index % 2 === 0 ? -200 : 200;
+        },
+        opacity: 0,
+        ease: "power3.out",
+        stagger: 0.2
+      });
+    }
 
-    gsap.from(".type-of-package ul li", {
-      scrollTrigger: {
-        trigger: ".type-of-package ul",
-        start: "top 80%",
-        end: "bottom top",
-        toggleActions: "play none none none"
-      },
-      duration: 1.2,
-      opacity: 0,
-      scale: 0.5,
-      transformOrigin: "center",
-      ease: "elastic.out(1, 0.75)",
-      stagger: 0.1
-    });
+    if (document.querySelector('.addition ul li')) {
+      gsap.from(".addition ul li", {
+        scrollTrigger: {
+          trigger: ".addition ul",
+          start: "top 60%",
+          end: "bottom top",
+          toggleActions: "play none none none"
+        },
+        duration: 0.7,
+        opacity: 0,
+        y: 50,
+        ease: "power1.out",
+        stagger: 0.15
+      });
+    }
+    
+    if (document.querySelector('.our-works-swiper ul li')) {
+      gsap.from(".our-works-swiper ul li", {
+        scrollTrigger: {
+          trigger: ".our-works-swiper ul",
+          start: "top bottom",
+          end: "bottom top",
+          toggleActions: "play none none none"
+        },
+        duration: 1,
+        opacity: 0,
+        rotation: 90,
+        ease: "power3.out",
+        stagger: 0.2
+      });
+    }
 
-    gsap.from(".why-us ul li", {
-      scrollTrigger: {
-        trigger: ".why-us ul",
-        start: "top 90%",
-        end: "bottom top",
-        toggleActions: "play none none none"
-      },
-      duration: 1,
-      x: (index, target) => {
-        return index % 2 === 0 ? -200 : 200;
-      },
-      opacity: 0,
-      ease: "power3.out",
-      stagger: 0.2
-    });
+    if (document.querySelector(".our-clients ul li")) {
+      gsap.from(".our-clients ul li", {
+        scrollTrigger: {
+          trigger: ".our-clients ul",
+          start: "top bottom",
+          end: "bottom top",
+          toggleActions: "play none none none"
+        },
+        duration: 0.8,
+        opacity: 0,
+        scale: 0.9,
+        blur: "20px",
+        ease: "power2.out",
+        stagger: 0.1
+      });
+    }
+    
+    if (document.querySelector(".technical-capabilities-swiper .swiper-slide")) {
+      gsap.from(".technical-capabilities-swiper .swiper-slide", {
+        scrollTrigger: {
+          trigger: ".technical-capabilities__content",
+          start: "top 70%",
+          end: "bottom top",
+          toggleActions: "play none none none"
+        },
+        duration: 0.7,
+        opacity: 0,
+        y: 100,
+        ease: "power3.out",
+        stagger: 0.15
+      });
+    }
 
+    if (document.querySelector('.contacts__inner')) {
+      gsap.from(".contacts__inner", {
+        scrollTrigger: {
+          trigger: ".contacts",
+          start: "top 50%",
+          toggleActions: "play none none none"
+        },
+        y: -200,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out"
+      });
+    }
 
-    gsap.from(".addition ul li", {
-      scrollTrigger: {
-        trigger: ".addition ul",
-        start: "top 60%",
-        end: "bottom top",
-        toggleActions: "play none none none"
-      },
-      duration: 0.7,
-      opacity: 0,
-      y: 50,
-      ease: "power1.out",
-      stagger: 0.15
-    });
+    if (document.querySelector('.contacts__content form')) {
+      gsap.from(".contacts__content form", {
+        scrollTrigger: {
+          trigger: ".contacts",
+          start: "top 50%",
+          toggleActions: "play none none none"
+        },
+        y: 200,
+        opacity: 0,
+        duration: 1,
+        delay: 0.4,
+        ease: "power3.out"
+      });
+    }
 
-    gsap.from(".our-works-swiper ul li", {
-      scrollTrigger: {
-        trigger: ".our-works-swiper ul",
-        start: "top bottom",
-        end: "bottom top",
-        toggleActions: "play none none none"
-      },
-      duration: 1,
-      opacity: 0,
-      rotation: 90,
-      ease: "power3.out",
-      stagger: 0.2
-    });
+    if (document.querySelector('.innovations ul li')) {
+      gsap.from(".innovations ul li", {
+        opacity: 0,
+        y: 50,
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".innovations__content",
+          start: "top 80%",
+          end: "bottom top",
+          toggleActions: "play none none none"
+        }
+      });
+    }
 
-    gsap.from(".our-clients ul li", {
-      scrollTrigger: {
-        trigger: ".our-clients ul",
-        start: "top bottom",
-        end: "bottom top",
-        toggleActions: "play none none none"
-      },
-      duration: 0.8,
-      opacity: 0,
-      scale: 0.9,
-      blur: "20px",
-      ease: "power2.out",
-      stagger: 0.1
-    });
-
-    gsap.from(".technical-capabilities-swiper .swiper-slide", {
-      scrollTrigger: {
-        trigger: ".technical-capabilities__content",
-        start: "top 70%",
-        end: "bottom top",
-        toggleActions: "play none none none"
-      },
-      duration: 0.7,
-      opacity: 0,
-      y: 100,
-      ease: "power3.out",
-      stagger: 0.15
-    });
-
-    gsap.from(".contacts__inner", {
-      scrollTrigger: {
-        trigger: ".contacts",
-        start: "top 50%",
-        toggleActions: "play none none none"
-      },
-      y: -200,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out"
-    });
-
-    // Анимация для блока с формой
-    gsap.from(".contacts__content form", {
-      scrollTrigger: {
-        trigger: ".contacts",
-        start: "top 50%",
-        toggleActions: "play none none none"
-      },
-      y: 200,
-      opacity: 0,
-      duration: 1,
-      delay: 0.4,
-      ease: "power3.out"
-    });
-
-    gsap.from(".innovations ul li", {
-      opacity: 0,
-      y: 50,
-      stagger: 0.3,
-      scrollTrigger: {
-        trigger: ".innovations__content",
-        start: "top 80%",
-        end: "bottom top",
-        toggleActions: "play none none none"
-      }
-    });
-
-    gsap.from(".innovations__img", {
-      opacity: 0,
-      x: -50,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".innovations__content",
-        start: "top 80%",
-        end: "bottom top",
-        toggleActions: "play none none none"
-      }
-    });
+    if (document.querySelector(".innovations__img")) {
+      gsap.from(".innovations__img", {
+        opacity: 0,
+        x: -50,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".innovations__content",
+          start: "top 80%",
+          end: "bottom top",
+          toggleActions: "play none none none"
+        }
+      });
+    }
 
     const path = document.querySelector('.line-svg path');
     if (path) {
@@ -11010,16 +11172,18 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    gsap.to('.blog__content', {
-      scrollTrigger: {
-        trigger: '.blog__content',
-        start: 'top center',
-        end: 'bottom top',
-        onEnter: () => animateLine(),
-        onEnterBack: () => animateLine(),
-        once: true
-      }
-    });
+    if (document.querySelector('.blog__content')) {
+      gsap.to('.blog__content', {
+        scrollTrigger: {
+          trigger: '.blog__content',
+          start: 'top center',
+          end: 'bottom top',
+          onEnter: () => animateLine(),
+          onEnterBack: () => animateLine(),
+          once: true
+        }
+      });
+    }
 
 
     const pathTop = document.querySelector('.stages-line path');
@@ -11038,14 +11202,16 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    gsap.to('.stages ul', {
-      scrollTrigger: {
-        trigger: '.stages ul',
-        start: "top 80%",
-        onEnter: () => animateTopPart(),
-        onEnterBack: () => animateTopPart(),
-      }
-    });
+    if (document.querySelector('.stages ul')) {
+      gsap.to('.stages ul', {
+        scrollTrigger: {
+          trigger: '.stages ul',
+          start: "top 80%",
+          onEnter: () => animateTopPart(),
+          onEnterBack: () => animateTopPart(),
+        }
+      });
+    }
 
 
 
@@ -11055,20 +11221,22 @@ document.addEventListener("DOMContentLoaded", () => {
     order.forEach((num, i) => {
       const li = document.querySelector(`.stages ul li:nth-child(${num + 1})`);
 
-      gsap.fromTo(li,
-        { opacity: 0, x: -50 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: '.stages ul',
-            start: "top 80%",
-            toggleActions: "play none none none"
-          },
-          delay: i * 0.3
-        }
-      );
+      if (li) {
+        gsap.fromTo(li,
+          { opacity: 0, x: -50 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            scrollTrigger: {
+              trigger: '.stages ul',
+              start: "top 80%",
+              toggleActions: "play none none none"
+            },
+            delay: i * 0.3
+          }
+        );
+      }
     });
 
   }
@@ -11162,8 +11330,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  animateElement('.why-us .rotation-card', '.rotation-card__background');
-  animateElement('.innovations', '.innovations__background');
+  if (document.querySelector('.why-us')) {
+    animateElement('.why-us .rotation-card', '.rotation-card__background');
+  }
+
+  if (document.querySelector('.innovations')){
+    animateElement('.innovations', '.innovations__background');
+  }
+  
+ 
 
 
   document.querySelectorAll('form').forEach(form => {
