@@ -700,7 +700,7 @@ document.addEventListener("DOMContentLoaded", () => {
         applicationModal.close()
         propositionModal.close()
         closeModal.close()
-        thanksModal.open()
+        // thanksModal.open()
         const formData = new FormData(this);
 
         fetch('send.php', {
