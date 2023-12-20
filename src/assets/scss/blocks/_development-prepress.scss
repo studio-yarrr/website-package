@@ -89,6 +89,11 @@
         height: 100%;
         object-fit: cover;
     }
+
+    div {
+        border-radius: 2rem;
+        overflow: hidden;
+    }
 }
 
 .development-press {

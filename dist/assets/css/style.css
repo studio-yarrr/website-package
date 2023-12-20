@@ -5668,6 +5668,8 @@ header ul a:hover {
     width: 100%;
     margin: 0;
     position: relative;
+    overflow: hidden;
+    border-radius: 2rem;
 }
 
 .flexoprint-swiper .swiper-slide img {
@@ -6502,6 +6504,11 @@ header ul a:hover {
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
+}
+
+.development-prepress__img div {
+    border-radius: 2rem;
+    overflow: hidden;
 }
 
 .development-press .development-prepress__img {

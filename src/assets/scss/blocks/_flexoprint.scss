@@ -157,6 +157,7 @@
 .flexoprint-swiper__container {
     width: 58%;
     position: relative;
+    
 
     @include breakpoint($xl-bp) {
         width: 100%;
@@ -168,6 +169,8 @@
     width: 100%;
     margin: 0;
     position: relative;
+    overflow: hidden;
+    border-radius: 2rem;
 
     .swiper-slide {
         img {
