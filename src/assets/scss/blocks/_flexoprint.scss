@@ -27,6 +27,10 @@
             width: fit-content;
         }
 
+        .non-clickable {
+            pointer-events: none;
+        }
+
         &:before {
             content: '';
             position: absolute;
@@ -38,10 +42,12 @@
             border-radius: 3rem;
             transition: all 1s ease;
             z-index: 0;
+            pointer-events: none;
           }
         
           &:hover:before {
             width: 100%;
+            
           }
 
         a {

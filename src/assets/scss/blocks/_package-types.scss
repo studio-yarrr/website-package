@@ -5,11 +5,22 @@
         margin-top: 7rem;
     }
 
-    h2 {
+    h2,
+    h1 {
         &::before {
             right: 0;
             bottom: 0;
         }
+    }
+
+    h1 {
+        color: var(--black);
+        font-size: 5.6rem;
+        font-weight: 600;
+        line-height: normal;
+        position: relative;
+        width: -webkit-fit-content;
+        width: fit-content;
     }
 
 
@@ -81,9 +92,11 @@
                 font-weight: 500;
                 line-height: normal;
                 text-align: center;
+                height: 6.7rem;
 
                 @include breakpoint($sm-bp) {
                     font-size: 1.1rem;
+                    height: 2.7rem;
                 }
             }
         }
@@ -119,11 +132,10 @@
 // }
 
 .package-types__inner {
-    margin-top: 3rem;
     display: flex;
 
     @include breakpoint($sm-bp) {
-        margin-top: 1rem;
+        margin-top: 0.5rem;
         flex-direction: column;
     }
 }
@@ -163,6 +175,7 @@
         font-size: 2rem;
         font-weight: 400;
         line-height: normal;
+        margin-top: 2rem;
 
         @include breakpoint($xl-bp) {
             display: none;
