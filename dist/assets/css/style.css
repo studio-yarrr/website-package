@@ -1862,9 +1862,21 @@ header ul a:hover {
     }
 }
 
-.package-types h2::before {
+.package-types h2::before,
+.package-types h1::before {
     right: 0;
     bottom: 0;
+}
+
+.package-types h1 {
+    color: var(--black);
+    font-size: 5.6rem;
+    font-weight: 600;
+    line-height: normal;
+    position: relative;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
 }
 
 .package-types ul {
@@ -1953,11 +1965,13 @@ header ul a:hover {
     font-weight: 500;
     line-height: normal;
     text-align: center;
+    height: 6.7rem;
 }
 
 @media (max-width: 500px) {
     .package-types ul li h3 {
         font-size: 1.1rem;
+        height: 2.7rem;
     }
 }
 
@@ -1974,14 +1988,13 @@ header ul a:hover {
 }
 
 .package-types__inner {
-    margin-top: 3rem;
     display: -ms-flexbox;
     display: flex;
 }
 
 @media (max-width: 500px) {
     .package-types__inner {
-        margin-top: 1rem;
+        margin-top: 0.5rem;
         -ms-flex-direction: column;
         flex-direction: column;
     }
@@ -2034,6 +2047,7 @@ header ul a:hover {
     font-size: 2rem;
     font-weight: 400;
     line-height: normal;
+    margin-top: 2rem;
 }
 
 @media (max-width: 1024px) {
@@ -3771,6 +3785,10 @@ header ul a:hover {
     transition: transform 0.2s, -webkit-transform 0.2s;
 }
 
+.panel-container img {
+    border-radius: 2rem;
+}
+
 .our-works__background {
     position: absolute;
     z-index: -1;
@@ -4158,6 +4176,8 @@ header ul a:hover {
 .technical-capabilities__img {
     margin-top: 4rem;
     width: 100%;
+    border-radius: 2rem;
+    overflow: hidden;
 }
 
 @media (max-width: 500px) {
@@ -5486,6 +5506,10 @@ header ul a:hover {
     }
 }
 
+.flexoprint-links li .non-clickable {
+    pointer-events: none;
+}
+
 .flexoprint-links li:before {
     content: "";
     position: absolute;
@@ -5497,6 +5521,7 @@ header ul a:hover {
     border-radius: 3rem;
     transition: all 1s ease;
     z-index: 0;
+    pointer-events: none;
 }
 
 .flexoprint-links li:hover:before {

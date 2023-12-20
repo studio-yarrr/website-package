@@ -81,6 +81,10 @@
 .panel-container {
     transform-style: preserve-3d;
     transition: transform .2s;
+
+    img {
+        border-radius: 2rem;
+    }
 }
 
 .our-works__background {

@@ -1,6 +1,6 @@
-// import * as Modals from './modals.js';
+import * as Modals from './modals.js';
 
-// import { initializeSwiper } from './swiperSetups.js';
+import { initializeSwiper } from './swiperSetups.js';
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -34,154 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
     touchpadSupport: true,
   })
 
-  class Modal {
-    constructor(modalSelector) {
-      this.modal = document.querySelector(modalSelector);
-      this.initOpenButtons(modalSelector);
-      this.initCloseButton();
-    }
 
-    initOpenButtons(modalSelector) {
-      const buttons = document.querySelectorAll(`[data-modal="${modalSelector}"]`);
-      buttons.forEach(button => {
-        button.addEventListener('click', () => {
-          this.open();
-          this.disableBodyScroll();
-        });
-      });
-    }
-
-    initCloseButton() {
-      if (this.modal) {
-        const closeButton = this.modal.querySelector('.close');
-        if (closeButton) {
-          closeButton.addEventListener('click', () => {
-            this.close();
-            this.enableBodyScroll();
-          });
-        }
-      }
-
-      window.addEventListener('click', (event) => {
-        if (this.modal && event.target === this.modal) {
-          this.close();
-          this.enableBodyScroll();
-        }
-      });
-    }
-
-    open() {
-      this.modal.style.display = 'block';
-      setTimeout(() => {
-        this.modal.classList.add('open');
-      }, 10);
-    }
-
-    close() {
-      this.modal.classList.remove('open');
-      setTimeout(() => {
-        this.modal.style.display = 'none';
-      }, 300);
-    }
-
-    disableBodyScroll() {
-      const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-      document.body.style.paddingRight = scrollBarWidth + 'px';
-      document.body.style.overflow = 'hidden';
-    }
-
-    enableBodyScroll() {
-      document.body.style.paddingRight = '';
-      document.body.style.overflow = '';
-    }
-  }
-
-  function initializeSwiper() {
-    if (window.matchMedia("(max-width: 1024px)").matches) {
-      let materialsTypesSwiper = new Swiper(".materials-types-swiper", {
-        slidesPerView: 1,
-        pagination: {
-          el: ".materials-types-pagination",
-          clickable: true,
-        },
-      });
-
-      let ourWorksSwiper = new Swiper(".our-works-swiper", {
-        slidesPerView: 1,
-        grid: {
-          rows: 2,
-        },
-        spaceBetween: 20,
-        pagination: {
-          el: ".our-works-pagination",
-          clickable: true,
-        },
-        breakpoints: {
-          500: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-        }
-      });
-
-      let technicalCapabilitiesSwiper = new Swiper(".technical-capabilities-swiper", {
-        slidesPerView: 1,
-        pagination: {
-          el: ".technical-capabilities-pagination",
-          clickable: true,
-        },
-      });
-    }
-
-    let flexoprintSwiper = new Swiper(".flexoprint-swiper", {
-      pagination: {
-        el: ".flexoprint-swiper__pagination",
-      },
-      navigation: {
-        nextEl: ".flexoprint-swiper__buttons button:last-child",
-        prevEl: ".flexoprint-swiper__buttons button:first-child",
-      },
-    });
-
-    let typeOfPrintSwiper = new Swiper(".type-of-print__swiper", {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      breakpoints: {
-        500: {
-          slidesPerView: 2,
-        },
-      },
-      pagination: {
-        el: ".type-of-print__pagination",
-      },
-
-    });
-
-    let shortsSwiper = new Swiper(".shorts-swiper", {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      watchSlidesProgress: true,
-      pagination: {
-        el: ".shorts-swiper__pagination",
-      },
-      breakpoints: {
-        1024: {
-          slidesPerView: 4,
-        },
-        500: {
-          slidesPerView: 2,
-        },
-      }
-    });
-  }
-
-
-
-  const headerModal = new Modal("#header-modal")
-  const applicationModal = new Modal("#application-modal")
-  const thanksModal = new Modal("#thanks-modal")
-  const propositionModal = new Modal("#proposition-modal")
-  const closeModal = new Modal("#close-modal")
+  const headerModal = new Modals.Modal("#header-modal")
+  const applicationModal = new Modals.Modal("#application-modal")
+  const thanksModal = new Modals.Modal("#thanks-modal")
+  const propositionModal = new Modals.Modal("#proposition-modal")
+  const closeModal = new Modals.Modal("#close-modal")
 
   initializeSwiper();
 
@@ -340,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "power2.out"
       });
     }
-    
+
     if (document.querySelector('type-of-package ul li')) {
       gsap.from(".type-of-package ul li", {
         scrollTrigger: {
@@ -391,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
         stagger: 0.15
       });
     }
-    
+
     if (document.querySelector('.our-works-swiper ul li')) {
       gsap.from(".our-works-swiper ul li", {
         scrollTrigger: {
@@ -424,7 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
         stagger: 0.1
       });
     }
-    
+
     if (document.querySelector(".technical-capabilities-swiper .swiper-slide")) {
       gsap.from(".technical-capabilities-swiper .swiper-slide", {
         scrollTrigger: {
@@ -674,46 +532,46 @@ document.addEventListener("DOMContentLoaded", () => {
     animateElement('.why-us .rotation-card', '.rotation-card__background');
   }
 
-  if (document.querySelector('.innovations')){
+  if (document.querySelector('.innovations')) {
     animateElement('.innovations', '.innovations__background');
   }
-  
- 
 
 
-  document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      let isValid = true;
 
 
-      this.querySelectorAll('input, textarea, select').forEach(input => {
-        if (!input.value) {
-          input.classList.add('error');
-          isValid = false;
-        } else {
-          input.classList.remove('error');
-        }
-      });
+  // document.querySelectorAll('form').forEach(form => {
+  //   form.addEventListener('submit', function (e) {
+  //     e.preventDefault();
+  //     let isValid = true;
 
-      if (isValid) {
-        applicationModal.close()
-        propositionModal.close()
-        closeModal.close()
-        // thanksModal.open()
-        const formData = new FormData(this);
 
-        fetch('send.php', {
-          method: 'POST',
-          body: formData
-        })
-          .then(response => response.text())
-          .then(data => {
-          })
-          .catch(error => console.error('Error:', error));
-      }
-    });
-  });
+  //     this.querySelectorAll('input, textarea, select').forEach(input => {
+  //       if (!input.value) {
+  //         input.classList.add('error');
+  //         isValid = false;
+  //       } else {
+  //         input.classList.remove('error');
+  //       }
+  //     });
+
+  //     if (isValid) {
+  //       applicationModal.close()
+  //       propositionModal.close()
+  //       closeModal.close()
+  //       thanksModal.open()
+  //       const formData = new FormData(this);
+
+  //       fetch('send.php', {
+  //         method: 'POST',
+  //         body: formData
+  //       })
+  //         .then(response => response.text())
+  //         .then(data => {
+  //         })
+  //         .catch(error => console.error('Error:', error));
+  //     }
+  //   });
+  // });
 
   var acc = document.getElementsByClassName("accordion");
   var i;
@@ -755,44 +613,66 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  function applyPhoneMask(value) {
-    // Удаляем все кроме цифр и специальных символов (+, -, (), и пробелов)
-    var cleaned = value.replace(/[^\d\+\-\(\) ]/g, '');
+  // function applyPhoneMask(value) {
+  //   var cleaned = value.replace(/[^\d\+\-\(\) ]/g, '');
+  //   var match = cleaned.match(/^(\+\d{1,3}|\d)?[ ]?(\(?\d{3}\)?)?[ ]?(\d{3})?[ ]?(\d{2,4})?$/);
 
-    // Применяем маску для форматирования (можно модифицировать в соответствии с нужным форматом)
-    var match = cleaned.match(/^(\+\d{1,3}|\d)?[ ]?(\(?\d{3}\)?)?[ ]?(\d{3})?[ ]?(\d{2,4})?$/);
+  //   if (match) {
+  //     return [match[1], match[2], match[3], match[4]].filter(Boolean).join(' ');
+  //   }
 
-    if (match) {
-      // Собираем номер из различных групп, игнорируя undefined группы
-      return [match[1], match[2], match[3], match[4]].filter(Boolean).join(' ');
-    }
+  //   return cleaned;
+  // }
 
-    return cleaned; // Возвращаем отфильтрованное значение
+  // function applyEmailMask(input) {
+  //   input.value = input.value.replace(/[^\x00-\x7F]/g, '');
+
+  //   var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  //   if (regex.test(input.value)) {
+  //     input.classList.add('valid-email');
+  //     input.classList.remove('invalid-email');
+  //   } else {
+  //     input.classList.add('invalid-email');
+  //     input.classList.remove('valid-email');
+  //   }
+  // }
+
+  // document.querySelectorAll('input[type="tel"]').forEach(input => {
+  //   input.addEventListener('input', function () {
+  //     this.value = applyPhoneMask(this.value);
+  //   });
+  // });
+
+  // document.querySelectorAll('input[type=email]').forEach(input => {
+  //   input.addEventListener('input', function () {
+  //     applyEmailMask(this);
+  //   });
+  // });
+
+  if (document.querySelectorAll('.flexoprint-links li')) {
+    document.querySelectorAll('.flexoprint-links li').forEach(link => {
+      let hoverTimer, leaveTimer;
+
+      link.addEventListener('mouseover', () => {
+        clearTimeout(leaveTimer);
+        hoverTimer = setTimeout(() => {
+          link.classList.add('non-clickable');
+        }, 1000);
+      });
+
+      link.addEventListener('mouseout', () => {
+        clearTimeout(hoverTimer);
+        leaveTimer = setTimeout(() => {
+          link.classList.remove('non-clickable');
+        }, 1000);
+      });
+
+      link.addEventListener('click', (e) => {
+        if (link.classList.contains('non-clickable')) {
+          e.preventDefault();
+        }
+      });
+    });
   }
 
-  function applyEmailMask(input) {
-    // Фильтрация ввода: удаляем символы, не соответствующие стандарту ASCII
-    input.value = input.value.replace(/[^\x00-\x7F]/g, '');
-
-    var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    if (regex.test(input.value)) {
-      input.classList.add('valid-email');
-      input.classList.remove('invalid-email');
-    } else {
-      input.classList.add('invalid-email');
-      input.classList.remove('valid-email');
-    }
-  }
-
-  document.querySelectorAll('input[type="tel"]').forEach(input => {
-    input.addEventListener('input', function () {
-      this.value = applyPhoneMask(this.value);
-    });
-  });
-
-  document.querySelectorAll('input[type=email]').forEach(input => {
-    input.addEventListener('input', function () {
-      applyEmailMask(this);
-    });
-  });
 })
