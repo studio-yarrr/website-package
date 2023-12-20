@@ -6594,12 +6594,17 @@ header ul a:hover {
     padding-left: 2.5rem;
     position: relative;
     width: 26rem;
+    color: var(--black);
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: normal;
 }
 
 @media (max-width: 500px) {
     .addition-options__variants-of-use-text ul li {
         padding-left: 2.2rem;
         width: 16rem;
+        font-size: 1.4rem;
     }
 }
 
@@ -6624,9 +6629,6 @@ header ul a:hover {
 
 .addition-options__variants-of-use-text ul li a {
     color: var(--black);
-    font-size: 2.4rem;
-    font-weight: 400;
-    line-height: normal;
     -webkit-text-decoration-line: underline;
     text-decoration-line: underline;
     line-height: normal;
@@ -6641,7 +6643,6 @@ header ul a:hover {
 
 @media (max-width: 500px) {
     .addition-options__variants-of-use-text ul li a {
-        font-size: 1.4rem;
         -webkit-text-decoration-line: none;
         text-decoration-line: none;
     }
